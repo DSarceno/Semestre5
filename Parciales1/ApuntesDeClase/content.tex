@@ -46,14 +46,24 @@ Tomando la temperatura en la frontera de la lamina como $f(x,y)$, entonces se ti
 	$$T(x,y) = f(x,y) \quad \quad (x,y) \in \partial \Omega$$
 El cual es un modelo de equilibrio de temperatura. En EDP estos son modelos llamados \textbf{Problemas de Valores de Frontera.} \\
 
-El problema de resolver la ecuación de Laplace para una región $\Omega$ con condiciones de frontera se le conoce como \textbf{El Prolema de Drichlet.}
+El problema de resolver la ecuación de Laplace para una región $\Omega$ con condiciones de frontera se le conoce como \textbf{El Prolema de Drichlet.} \\
 
 
 % CLASE 2
 \label{CLASE2}
 
+En general, un modelo de evolución EDP de segundo orden, se tiene una ecuación de la forma:
+	$$G(x,t,u,u_x,u_t,u_{xx},u_{tt},u_{xt}) = 0, \, x\in I, \, t > 0$$
+Donde $I$ es un intervalo espacial acotado o no acotado. El \textbf{orden} de la ecuación es el orden de la derivada más grande que tiene; además, la \textbf{linealidad} de $G$ depende del exponente de la función y sus derivadas, la EDP es lineal si todos dichos exponentes son $1$. También, la \textbf{homogeneidad} de la EDP depende de que cada término de la ecuación contiene a $u$ o a una derivada de $u$. \\
 
-
+En ciertos casos es mejor utilizar la notación de operadores, es decir:
+	$$u_t - ku_{xx} = 0 \, \equiv \, Lu = 0 \quad L = \pdv{t} - k\pdv[2]{x}$$
+	
+Este se dice que es operador lineal si se cumple que $L(u + v) = Lu + Lv$ y $L(cu) = cLu$. Si el operador es lineal, entonces la ecuación se dice que es \textbf{homogenea}. Para las EDPs lineales las soluciones forman un espacio vectorial, es decir, las combinaciones lineales de dichas soluciones forman una solución, matemáticamente hablando, se tiene, si $\{ u_1, \ldots ,u_n \}$ son soluciones de $Lu = 0$ y $c_1,\ldots ,c_n$, entonces:
+	$$c_1 u_1 + \cdots + c_n u_n$$
+Es también una solución de la EDP, a esto se le conoce como \textbf{Principio de Superposición}. El mismo se extiene para sumas infinitas y para un continuo de soluciones. Es decir, si $u(x,t,\xi)$ es una familia de soluciones dependientes de un único parámetro, para toda $\xi \in J$ se puede demostrar que:
+	$$\int _J c(\xi) u(x,t,\xi) \dd{\xi}$$
+Es también una solución de $Lu = 0$ para condiciones específicas de $c(\xi)$.
 
 
 
