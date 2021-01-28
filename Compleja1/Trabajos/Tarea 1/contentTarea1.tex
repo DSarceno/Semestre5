@@ -1,0 +1,109 @@
+% Tarea 1 Compleja
+
+% PROBLEMA 3
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Es claro que el módulo de $z$ es $1$, con lo que, la forma polar esta dada por:
+			$$z = \cis {\flatfrac{\pi}{4}}$$
+		Sabiendo el Teorema de Moivre, se tiene que:
+			$$\cis{1^2 \flatfrac{\pi}{4}} + \cis{2^2 \flatfrac{\pi}{4}} + \cdots + \cis{12^2 \flatfrac{\pi}{4}}$$
+		Con esto desarrollando se tiene que para los impares el resultado es: $\flatfrac{1+i}{\sqrt{2}}$. Para las potencias de $2$ y $12$ se tiene: $1$, para el resto es $-1$. Con esto la parte izquierda tiene un valor total de:
+		$$z^{1^2} + z^{2^2} + \cdots + z^{12^2} = 1+6\frac{1+i}{\sqrt{2}}$$
+		Para el lado derecho, se tiene que el inverso de $\qty(\flatfrac{1+i}{\sqrt{2}})^{-1} = \flatfrac{1-i}{\sqrt{2}}$, con esto el lado derecho de la expresión:
+			$$\frac{1}{z^{1^2}} + \frac{1}{z^{2^2}} + \cdots + \frac{1}{z^{12^2}} = 1 + 6\frac{1-i}{\sqrt{2}}$$
+		Multiplicando ambos resultados se tiene que:
+			$$\qty(z^{1^2} + z^{2^2} + \cdots + z^{12^2}) \qty(\frac{1}{z^{1^2}} + \frac{1}{z^{2^2}} + \cdots + \frac{1}{z^{12^2}}) = \boxed{37 + 6\sqrt{2}}$$
+	\end{problem}
+\end{mdframed}
+
+
+% PROBLEMA 6
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Por inducción, el caso base se cumple claramente. La hipotesis inductiva: $n = k$
+			$$\cos{\theta} + \cos{3\theta} + \cdots + \cos{(2k - 1)\theta} = \frac{\sin{2k\theta}}{2\sin{\theta}}$$
+		Paso inductivo $k + 1$:
+			$$\cos{\theta} + \cos{3\theta} + \cdots + \cos{(2k + 1)\theta} = \frac{\sin{2k\theta}}{2\sin{\theta}} + \cos{(2k + 1)\theta}$$
+		Tomando el lado derecho de la ecuación, se tiene que:
+			$$ = \frac{1}{2\sin{\theta}} \qty[\sin{2k\theta} + \underbrace{2\cos{\theta} \sin{\theta}}_{\sin{2\theta}} \cos{2k\theta} - 2\sin ^2 {\theta} \sin{2k\theta}]$$
+			$$ = \frac{1}{2\sin{\theta}} \qty[\sin{2k\theta} \cos{2\theta} + \sin{2\theta} \cos{2k\theta}]$$
+		Con lo que, utilizando identidades trigonométricas, se tiene que:
+			$$\cos{\theta} + \cos{3\theta} + \cdots + \cos{(2k + 1)\theta} = \frac{\sin{2(k + 1)\theta}}{2\sin{\theta}}$$
+		$\QED$
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+% PROBLEMA 9
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Como $\lambda _i \geq 0$ y $\lambda1 + \cdots + \lambda _n = 1$, esto implica que $\lambda _i \leq 1$. Por la desigualdad triangular: 
+			$$\abs{\sum _i \lambda _i a_i} \leq \sum _i \abs{\lambda _i a_i}$$
+		Como cada $\abs{a_i}$ y $\lambda _i$ son menores a $1$, entonces su producto también es menor a $1$, además de ser menor a ambos factores, con esto es claro que:
+			$$\sum _i \abs{\lambda _i a_i} < 1$$
+		Por ende:
+			$$\abs{\sum _i \lambda _i a_i} < 1$$
+		$\QED$
+	\end{problem}
+\end{mdframed}
+
+
+
+% PROBLEMA 14
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Incisos:
+		\begin{enumerate}[a)]
+			\item Sea $z\in \C$ con $\abs{\alpha} = \abs{\beta} = 1$, $\alpha , \beta \in \C$. \\
+				$(\Rightarrow)$ Sabiendo que $z = \alpha + \beta$, con esto $\abs{z} = \abs{\alpha + \beta}$. Utilizando la desigualdad triangular:
+					$$\abs{\alpha + \beta} \leq \abs{\alpha} + \abs{\beta} = 2$$
+				Con esto se tiene que:
+					$$\abs{z} \leq 2$$
+				$(\Leftarrow)$ Es claro que existen $\alpha ,\beta \in \C$ tales que $\abs{\alpha} = \abs{\beta} = 1$, puesto que son números complejos pertenecientes al circulo unitario. Además, por la desigualdad triangular se tiene que $\abs{\alpha} + \abs{\beta} \geq \abs{\alpha + \beta}$. Con esto $\alpha + \beta$ es un vector dentro de la circunferencia de radio $2$. Como $\abs{z} \leq 2$, es un vector dentro del circulo de radio $2$. Como ambos son arbitrarios, sin pérdida de generalidad, $z = \alpha + \beta \QED$
+		\end{enumerate}
+	\end{problem}
+\end{mdframed}
+
+
+
+
+% PROBLEMA 15
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Separando la expresión de la izquierda por pares, se tiene que:
+			$$\underbrace{\qty(\frac{\xi}{1 + \xi ^2} + \frac{\xi ^2}{1 + \xi ^4})}_{1} + \underbrace{\qty(\frac{\xi ^3}{1 + \xi} + \frac{\xi ^4}{1 + \xi ^3})}_{2}$$
+		Tomando los parentesis, tomando y desarrollando la suma de fracciones, con esto se tiene que, para $1$: (Sabiendo $\xi ^5 = 1$)
+			$$\qty(\frac{\xi}{1 + \xi ^2} + \frac{\xi ^2}{1 + \xi ^4}) = \frac{1 + \xi + \xi ^2 + \xi ^4}{(1 + \xi ^2)(1 + \xi ^4)} = \frac{1 + \xi ^2 + \xi ^4 + \xi ^6}{(1 + \xi ^2)(1 + \xi ^4)} = 1$$
+		Siguiendo con la parte $2$:
+			$$\qty(\frac{\xi ^3}{1 + \xi} + \frac{\xi ^4}{1 + \xi ^3}) = \frac{\xi ^3 + \xi ^6 + \xi ^4 + \xi ^5}{(1 + \xi)(1 + \xi ^3)} = \frac{1 + \xi + \xi ^3 + \xi ^4}{(1 + \xi)(1 + \xi ^3)} = 1$$
+		Por lo que, sumando ambas partes se tiene que:
+			$$\frac{\xi}{1 + \xi ^2} + \frac{\xi ^2}{1 + \xi ^4} + \frac{\xi ^3}{1 + \xi} + \frac{\xi ^4}{1 + \xi ^3} = 2$$
+		$\QED$
+	\end{problem}
+\end{mdframed}
+
+
+
+
+% PROBLEMA 17
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Nombrando a $\abs{z + 1} = \alpha$ y $\abs{z - 1} = \beta$, como se trata de módulos, ambos son reales. Además, nombramos a $z = a + bi$. Con esto, la igualdad se reescribe como:
+			$$\sqrt{(a - \alpha) ^2 + b^2} = \sqrt{(a + \beta)^2 + b^2}$$
+		Con esto es claro que:
+			$$(a - \alpha) ^2 = (a + \beta) ^2$$
+		Desarrollando ambos lados de la ecuación se llega a lo siguiente:
+			$$(\alpha + \beta) \qty[(\alpha - \beta) - 2a] = 0$$
+		Con esto se tienen dos casos:
+		\begin{description}
+			\item[$\alpha + \beta = 0$] Como $\alpha ,\beta \geq 0$, entonces $\alpha = -\beta = 0$. Dado esto, se tiene que:
+				$$(a \pm 1) ^2 + b^2 = 0$$
+			Con esto, se concluye que $\boxed{\Im{z} = 0}$ y $\boxed{\Re{z} = \pm 1}$.
+			\item[$(\alpha - \beta) = 2a$] Considerando $\Re{z} = 0$, la parte imaginaria queda libre, por lo que, la otra solución a la ecuación propuesta es: $\boxed{\Re{z} = 0}$ y por lo tanto $\boxed{\Im{z} = \text{libre}}$.
+		\end{description}
+	$\QED$
+	\end{problem}
+\end{mdframed}

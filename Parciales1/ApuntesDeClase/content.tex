@@ -1,0 +1,76 @@
+% CLASE 1
+\label{CLASE1}
+
+\section{Introducción}
+\subsection{Distribución de Zonas}
+
+\begin{table}[H]
+	\centering
+	\caption{Zona}
+	\begin{tabular}{||c||c|c||}
+		\hline
+		\hline
+		$2$ & Parciales & $40$ \\
+		$n$ & Hojas de Trabajo, Investigaciones & $20$ \\
+		$1$ & Proyecto & $15$ \\
+		$1$ & Final & $25$ \\
+		\hline
+		 & Total & $100$ \\
+		\hline
+		\hline
+	\end{tabular}
+	\label{zonas}
+\end{table}
+
+\section{Origenes Físicos de las EDP's}
+\subsection{Modelos de Ecuaciones Diferenciales Parciales}
+
+Los modelos en EDP difieren claramente de los modelos EDO, puesto que la variable a entontrar depende de varias variables independientes. Físicamente, las EDPs modelan la evolución de sistemas en tiempo y espacio. \\
+
+Ejemplos de EDPs en física:
+	$$u_{tt} (x,t) = c^2 u_{xx} (x,t) \quad \quad \text{Ecuación de Onda}$$
+	$$u_{xx} (x,y) + u_{yy} = 0 \quad \quad \text{Ecuación de Laplace}$$
+	
+
+Otro ejemplo claro es el flujo de calor, este modela la temperatura como una función del tiempo y de posición. La ecuación de calor es:
+	$$\pdv{T}{t} = k\pdv[2]{T}{x}$$
+Donde $k$ es conocida como la constante de difusividad (propiedad del material). Además, para este problema se tienen diferentes condiciones de frontera, dadas por el mismo espacio en el que se encuentra el sistema, en concreto, para este sistema se tienen:
+	$$T(0,t) = T(l,t) = 0$$
+Estas son distintas de las ya conocidas, condiciones iniciales, las cuales son:
+	$$T(x,0) = \phi (x)$$
+Para $0 < x < l$. Es claro la diferencia entre ambas condiciones, las condiciones de frontera son referidas a las variables espaciales, mientras que las condiciones iniciales son referidas al parametro temporal. A este sistema se le llama un \textbf{modelo de evolución.} \\
+
+Los modelos que no dependen del tiempo se les conocen como \textbf{modelos estacionarios.} Por ejemplo, si $\Omega$ es un dominio espacial acotado representando una placa laminar. En la frontera de $\Omega$, denotada por $\partial \Omega$, se le impone una temperatura independiente del tiempo. Cuando la distribución de temperatura de estado estacionario $T(x,y)$ en $\Omega$ satisface la ecuación de Laplace:
+	$$T_{xx} + T_{yy} = 0 \quad \quad (x,y)\in \Omega$$
+Tomando la temperatura en la frontera de la lamina como $f(x,y)$, entonces se tiene:
+	$$T(x,y) = f(x,y) \quad \quad (x,y) \in \partial \Omega$$
+El cual es un modelo de equilibrio de temperatura. En EDP estos son modelos llamados \textbf{Problemas de Valores de Frontera.} \\
+
+El problema de resolver la ecuación de Laplace para una región $\Omega$ con condiciones de frontera se le conoce como \textbf{El Prolema de Drichlet.}
+
+
+% CLASE 2
+\label{CLASE2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
