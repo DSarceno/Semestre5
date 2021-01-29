@@ -106,7 +106,7 @@ Propiedades de los números complejos: $z,w\in \C$
 
 
 % CLASE 3
-\label{CLASE 3}
+\label{CLASE3}
 \subsubsection{El Infinito en los Complejos}
 
 Así como en los reales, existen relaciones de orden, en $\C$ no, no existe una comparación de orden en los números complejos. Esto es más claro analizando la propiedad de tricotomía:
@@ -161,7 +161,7 @@ Como esta esfera es isomorfa al espacio complejo, existe un isomorfismo entre la
 
 
 % CLASE 4
-\label{CLASE 4}
+\label{CLASE4}
 \subsubsection{Proyección Estereográfica}
 
 Como $\C \cup \{ \infty \} \cong \text{Esfera de Riemann}$, entonces existe un isomorfismo entre ambos espacios. Entonces, a cada punto de la esfera $x_1 ^2 + x_2 ^2 + x_3 ^2 = 1$, se le asocia $z = \flatfrac{(x_1 + ix_2)}{(1 - x_3)}$, es decir: dado $(x_1,x_2,x_3) \in \text{Esfera de Riemann}$
@@ -182,9 +182,49 @@ Similarmente, se pueden encontrar expresiones para $x_1$ y $x_2$, con lo que se 
 	
 
 
+% CLASE 5
+\label{CLASE5}
+\subsection{Teorema de DeMoivre}
 
+Utilizando la notación Eulereana para dos complejos $z,w$, con argumentos $\theta ,\alpha$. Con esto se tiene:
+	$$z = \abs{z} e^{i\theta} \quad \quad w = \abs{w} e^{i\alpha}$$
+Multiplicando ambos:
+	$$zw = \abs{z} \abs{w} e^{i(\theta + \alpha)}$$
+Con esta idea, se calcula:
+	$$z^n = \abs{z} ^n e^{in\theta}$$
+A esto se le conoce como el \textbf{Teorema de DeMoivre}, el cual es cierto, no solo para enteros, sino que para todos los complejos, i.e. $n\in \C$.
 
+\subsection{Geometría Analítica en $\C$}
 
+\subsubsection{Circunferencia}
+
+Se define como el siguente conjunto:
+	$$A = \{ z\in \C : \abs{z} = 1 \}$$
+Sin embargo, para una circunferencia desplazada a $z_o$ con radio $r$, se tiene:
+	$$\abs{z - z_o} = r$$
+
+\subsubsection{Elipse}
+
+La elipse, asi como en su definición clásica, para sus focos en los puntos $a$ y $b$, se tiene:
+
+	$$\abs{z - a} + \abs{z - b} = k$$
+Donde $z$ es todo punto sobre la elipse.
+
+\subsubsection{Recta}
+
+Para una recta entre dos complejos, se tiene que, tomando un parametro $t\in \R$, la recta que pasa por ambos complejos esta dada por:
+	$$z + t(z + w)$$
+Segmentando dicha recta, se tiene que, para la distancia entre ambos complejos, se limita $t$  a $0 \leq t \leq 1$. Y en base a esto se puede calcular el punto medio entre dos complejos, el cual es simplemente haciendo el valor de $t = 2$.
+
+\subsubsection{Gravicentro}
+
+Sabiendo la relación de las medianas y el gravicentro, entonces tomando los segmentos de recta, simplemente se realiza dicho procedimiento. Tomando cualquier lado (en este caso se tomará $ac$) se tiene que el punto medio entre dichos vértices es:
+	$$\frac{a + c}{2}$$
+Ahora, para el segmento entre este nuevo punto y el vértice restante es:
+	$$b + t\qty(\frac{a + c}{2} - b)$$
+Por la relación se tiene que $t = \flatfrac{2}{3}$, con esto y desarrollando se tiene:
+	$$\boxed{G = \frac{a + b + c}{3}}$$
+	
 
 
 
