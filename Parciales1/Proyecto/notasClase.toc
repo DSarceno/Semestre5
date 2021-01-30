@@ -1,0 +1,3 @@
+\babel@toc {spanish}{}
+\contentsline {part}{I\hspace {1em}Ecuaciones Diferenciales Ordinarias con más de dos Variables}{2}{part.1}%
+\contentsline {section}{\numberline {1}Superficies y Curvas en Tres Dimensiones}{2}{section.1}%

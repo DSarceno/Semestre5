@@ -1,0 +1,30 @@
+% Indice
+\tableofcontents
+\newpage
+
+%% Capitulo 1
+\thispagestyle{empty}
+\part{Ecuaciones Diferenciales Ordinarias con más de dos Variables}
+
+En este capítulo se estudiarán conceptos básicos para la solución de ecuaciones diferenciales parciales, para lo cual se recolectan conceptos de geometría y ecuaciones diferenciales ordinarias.
+
+\section{Superficies y Curvas en Tres Dimensiones}
+
+Tomando una superficie en el espacio cartesiano $(x,y,z)$
+	$$f(x,y,z) = 0$$
+Se escoje un punto que satisface la ecuación anterior y se incrementa $(\delta x, \delta y, \delta z)$ lo que esta relacionado con la ecuación
+	$$\pdv{f}{x} \delta x + \pdv{f}{y} \delta y + \pdv{f}{z} \delta z = 0$$
+En otras palabras, en la vecindad de $P(x,y,z)$ existen puntos $P'(x + \xi ,y + \eta , z + \zeta)$ que satisfacen la ecuación de superficie y que para cualesquiera dos, el tercero esta dado por:
+	$$\xi \pdv{f}{x} + \eta \pdv{f}{y} + \zeta \pdv{f}{z} = 0$$
+	
+Las ecuaciones de la forma:
+	$$x = F_1 (u,v) \quad \quad y = F_2 (u,v) \quad \quad z = F_3 (u,v)$$
+Son conocidas como las \textbf{Ecuaciónes Paramétricas de la Superficie.} Esto es porque tanto $u$ como $v$ pueden ser expresadas como funciones de $x$ e $y$, una vez se encuentre dichos valores, se conocerán $u$ y $v$; además, $z$ se encuentra sustituyendo lo encontrado anteriormente en su ecuación, con esto, es claro que cumplen con la ecuación de superficie. \\
+
+Cabe recalcar que varios conjuntos de ecucaciones paramétricas generan las mismas superficies, vease:
+	$$(a\sin{u} \cos{v} , a\sin{u} \cos{v} ,a\cos{u})$$
+Y 
+	$$\qty(a\frac{1 - v^2}{1 + v^2} \cos{u} , a\frac{1 - v^2}{1 + v^2} \sin{u} ,\frac{2av}{1 + v^2})$$
+
+Generan la superficie esférica
+	$$x^2 + y^2 + z^2 = a^2$$
