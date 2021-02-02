@@ -29,7 +29,7 @@ Y
 Generan la superficie esférica
 	$$x^2 + y^2 + z^2 = a^2$$
 	
-Las superficies pueden ser previstas como una curva, siempre y cuando cumplan con las ecuaciones de la superficie y esten en el plano $z = k$. Lo que significa que $(x,y,z)$ esta en la curva $\lambda _k$.
+Las superficies pueden ser previstas como una curva, siempre y cuando cumplan con las ecuaciones de la superficie y esten en el plano $z = k$. Lo que significa que $(x,y,z)$ esta en la curva $\Gamma _k$.
 
 Tomando como ejemplo:
 
@@ -40,7 +40,7 @@ Tomando como ejemplo:
 	\label{curveSurface}
 \end{figure}
 
-Esta idea puede ser facilmente generalizada simplemente tomando dos superficies que se intersectan, la curva de intersección es el análogo de $\Lambda _k$ en el ejemplo anterior. Esta idea esta representada en la "Figure 2" de \ref{curveSurface}. Matemáticamente hablando, la curva $C$ es conformada por todos aquellos puntos que cumplen las ecuaciones de ambas superficies:
+Esta idea puede ser facilmente generalizada simplemente tomando dos superficies que se intersectan, la curva de intersección es el análogo de $\Gamma _k$ en el ejemplo anterior. Esta idea esta representada en la "Figure 2" de \ref{curveSurface}. Matemáticamente hablando, la curva $C$ es conformada por todos aquellos puntos que cumplen las ecuaciones de ambas superficies:
 	$$f(x,y,z) = 0 \quad \quad g(x,y,z) = 0$$
 Dicha curva se puede representar por medio de sus ecuaciones paramétricas. Ahora, suponiendo que la curva $C$ esta sobre la superficie cuya ecuación es:
 	$$F(x(t),y(t),z(t)) = 0$$
@@ -76,23 +76,104 @@ En otras palabras, las razones de dirección de la recta $L$ son:
 
 \section{Ecuaciones Diferenciales de Primer Orden y Primer Grado de Tres Variables}
 
+Un ejemplo claro de sistema de ecuaciones simultaneas de primer orden y primer grado es:
+	$$\dv{x_i}{t} = f_i (x_1 ,\ldots ,x_n ,t)$$
+aparece frecuentemente en física. Otro ejemplo claro, es el Hamiltoniano de un sistema en movimiento con $n$ grados de libertad tiene la forma:
+	$$\dv{p_i}{t} = -\pdv{H}{q_i} \quad \quad \dv{q_i}{t} = \pdv{H}{p_i} \quad \quad i = 1,\ldots ,n$$
+Donde $H(q_1,\ldots ,q_n ,p_1,\ldots ,p_n ,t)$ es el Hamiltoneano del sistema. Para un sistema de un grado de libertad se tiene:
+	$$\dv{p}{t} = -\pdv{H}{q} \quad \quad \dv{q}{t} = \pdv{H}{p}$$
+Si se tiene:	
+	$$-\pdv{H}{q} = \frac{P(p,q,t)}{R(p,q,t)} \quad \quad \pdv{H}{p} = \frac{Q(p,q,t)}{R(p,q,t)}$$
+La ecuación anterior se puede colocar de la forma:
+	$$\frac{\dd{p}}{P(p,q,t)} = \frac{\dd{q}}{Q(p,q,t)} = \frac{\dd{t}}{R(p,q,t)}$$
+Dado esto, la ecuación anterior se puede expresar de una forma general, teniendo $P,Q,R$ funciones de $x,y,z$, entonces se tiene:
+
+\begin{align}
+	\frac{\dd{x}}{P} = \frac{\dd{y}}{Q} = \frac{\dd{z}}{R} \label{formaPQR}
+\end{align}
+
+Para asegurar la unicidad de la ecuación se tiene el siguiente teorema:
+
+\begin{teorema} \it
+	Si las funciones $f_1 (x,y,z)$ y $f_2 (x,y,z)$ son continuas en una región definida por $\abs{x - a} < k$, $\abs{y - b} < l$, $\abs{z - c} < m$ y si en dicha región las funciones satisfacen una condición Lipschitz del tipo:
+		$$\abs{f_1 (x,y,z) - f_1 (x,\eta ,\zeta)} \leq A_1 \abs{y - \eta} + B_1 \abs{z - \zeta}$$
+		$$\abs{f_2 (x,y,z) + f_2 (x,\eta ,\zeta)} \leq A_2 \abs{y - \eta} + B_2 \abs{z - \zeta}$$
+	en un intervalo adecuado $\abs{x - a} < h$ existe un único par de funciones $y(x)$ y $z(x)$ continuas y con derivadas continuas en dicho intervalo, que satisfacen las siguientes ecuaciones diferenciales:
+		$$\dv{y}{x} = f_1 \quad \quad \dv{z}{x} = f_2$$
+	y que tienen la propiedad de $y(a) = b$, $z(a) = c$ donde $a,b,c$ son arbitrarios.
+\end{teorema}
+
+No se demostrará este teorema, para una demostración formal consulte el siguiente libro de análisis\footnote{E. Goursat, "A Course in Mathematical Analysis" (Ginn, Boston, 1917), vol. II, pt. II, pp. 45ff.}. \\
+
+El resultado del teorema se muestra en la figura \ref{teorem1Figure}. En base al teorema, existe un cilindro $y = y(x)$ pasando por el punto $(a,b,0)$, y un cilindro $z = z(x)$ pasando por le punto $(a,0,c)$, tales que $\dv{y}{x} = f_1$ y $\dv{z}{x} = f_2$. La solución completa del par de ecuaciones consiste en un conjunto de puntos en común con los cilindros, es decir, la curva de intersección $\Gamma$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.15]{Images/teorem1Figure.jpeg}
+	\caption{Visualización del Teorema $1$}
+	\label{teorem1Figure}
+\end{figure}
+
+De esto se concluye que, la solución general del conjunto de ecuaciones del tipo \eqref{formaPQR} será una familia de curvas de dos parámetros.
+
+\subsection{Métodos de Solución de $\flatfrac{\dd{x}}{P} = \flatfrac{\dd{y}}{Q} = \flatfrac{\dd{z}}{R}$}
+
+
+De la sección anterior se tiene:
+	$$\frac{\dd{x}}{P} = \frac{\dd{y}}{Q} = \frac{\dd{z}}{R}$$
+Si se pueden derivar dos relaciones de la forma:
+	$$u_1 (x,y,z) = c_1 \quad \quad u_2 (x,y,z) = c_2$$
+Variando esas constantes, se obtiene la familia de curvas que satisfacen la ecuación. \\
+
+\textit{Método (a): } Para encontrar las funciones $u_1$ y $u_2$ se puede observar que cualquier dirección tangencial por un punto $(x,y,z)$ a una superficie $u_1 = c_1$ satisface la relación:
+	$$\pdv{u_1}{x} \dd{x} + \pdv{u_1}{y} \dd{y} + \pdv{u_1}{z} \dd{z} = 0$$
+
+Si $u_1 = c_1$ es un sistema adecuado de superficies, la dirección tangencial a la curva de integral por el punto $(x,y,z)$ si también es una dirección tangencial a esta superficie. De esto:
+	$$P\pdv{u_1}{x} + Q\pdv{u_1}{y} + R\pdv{u_1}{z} = 0$$
+Para encontrar $u_1$, y similarmente $u_2$, se intenta encontrar funciones $P'$, $Q'$ y $R'$ tales que:
+	\begin{align}
+		PP' + QQ' + RR' = 0 \label{PPQQRR}
+	\end{align}
+Y, además, existe una función $u_1$ con las propiedades:
+	$$P' = \pdv{u_1}{x}, \quad \quad Q' = \pdv{u_1}{y},\quad \quad R' = \pdv{u_1}{z}$$
+Lo que implica que:
+	$$P' \dd{x} + Q'\dd{y} + R'\dd{z}$$
+Es una diferencial exacta de $\dd{u_1}$. Se tomará el ejemplo $2$ del libro (Sección $3$, capítulo $1$, pp. 11.)
+
+\begin{ejemplo} \it
+	Encuentre las curvas de integral de las ecuaciones:
+		$$\frac{\dd{x}}{y(x + y) + az} = \frac{\dd{y}}{x(x + y) - az} = \frac{\dd{z}}{z(x + y)}$$
+	En este caso se tiene:
+		$$P = y(x + y) + az \quad \quad Q = x(x + y) - az \quad \quad R = z(x + y) $$
+	Tomando
+		$$P' = \frac{1}{z} \quad \quad Q' = \frac{1}{z} \quad \quad R' = -\frac{x + y}{z^2}$$
+	La condición \eqref{PPQQRR} se satisface, entonces:
+		$$u_1 = \frac{x + y}{z}$$
+	Similarmente, si se toma:
+		$$P' = x \quad \quad Q' = -y \quad \quad R' = -a$$
+	la condición \eqref{PPQQRR} se satisface, la función correspondiente:
+		$$u_2 = \frac{1}{2} (x^2 - y^2) - az$$
+	De modo que las curvas de integral para las ecuaciones diferenciales son la familia de dos parámetros:	
+		$$x + y = c_1 z \quad \quad x^2 - y^2 - 2az = c_2$$
+\end{ejemplo}
+
+
+
+\textit{Método (b): } Suponga que se pueden encontrar tres funciones $P',Q',R'$ tal que:
+	$$\frac{P' \dd{x} + Q' \dd{y} + R'\dd{z}}{PP' + QQ' + RR'}$$
+Es un diferencial exacto $\dd{W'}$, y si se pueden encontrar otras tres funciones $P'',Q'',R''$ tales que:
+	$$\frac{P'' \dd{x} + Q'' \dd{y} + R''\dd{z}}{PP'' + QQ'' + RR''}$$
+El cual es un diferencial exacto $\dd{W''}$. De esto, se sabe que:
+	$$\dd{W'} = \dd{W''}$$
+De lo que se deriva.
+	$$W' = W'' + c_1$$
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+  	
 
 
 
