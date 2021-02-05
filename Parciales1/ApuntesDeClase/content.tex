@@ -63,9 +63,19 @@ Este se dice que es operador lineal si se cumple que $L(u + v) = Lu + Lv$ y $L(c
 	$$c_1 u_1 + \cdots + c_n u_n$$
 Es también una solución de la EDP, a esto se le conoce como \textbf{Principio de Superposición}. El mismo se extiene para sumas infinitas y para un continuo de soluciones. Es decir, si $u(x,t,\xi)$ es una familia de soluciones dependientes de un único parámetro, para toda $\xi \in J$ se puede demostrar que:
 	$$\int _J c(\xi) u(x,t,\xi) \dd{\xi}$$
-Es también una solución de $Lu = 0$ para condiciones específicas de $c(\xi)$.
+Es también una solución de $Lu = 0$ para condiciones específicas de $c(\xi)$. Algo importante a recalcar es la linealidad del operador en $\R$ y $\C$, es decir:
+	$$L(u + iv) = Lu + iLv$$
+Esto no sucede para ecuaciones no lineales, las cuales son mucho más dificil de resolver y analizar. \\
 
+La clasificación de las EDPs puede ser dependiente de su aparición en la física o directamente en la matemática, de esto, las EDPs se clasifican:
+	\begin{itemize}
+		\item Ecuaciones de Onda $\equiv$ Ecuaciones Hiperbólicas
+		\item Ecuación de Difusión $\equiv$ Ecuaciones Parabólicas
+		\item Ecuación de Equilibrio $\equiv$ Ecuación Elíptica
+	\end{itemize}
+Estas clasificaciones son para EDPs lineales de segundo orden. \\
 
+Una solución a una EDP se refiere a una función $u(x,t)$ definida para $t > 0$ y $x\in I$, que satisface por sustitución en la EDP original.
 
 
 

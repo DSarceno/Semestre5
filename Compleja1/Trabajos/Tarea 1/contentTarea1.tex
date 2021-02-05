@@ -1,5 +1,32 @@
 % Tarea 1 Compleja
 
+
+% PROBLEMA 2
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Tomando la propiedad $z\bar{z} = \abs{z} ^2$, se tiene:
+			$$\abs{\frac{z + \alpha}{1 + \bar{\alpha} z}} ^2 = \qty(\frac{z + \alpha}{1 + \bar{\alpha} z}) \qty(\overline{\frac{z + \alpha}{1 + \bar{\alpha} z}})$$
+		Desrrollando se tiene:
+			$$ = \frac{\abs{z} ^2 + \abs{\alpha} ^2 + \bar{z}\alpha + \overline{\bar{z} \alpha}}{1 + \bar{\alpha} z + \overline{\bar{\alpha} z} + \abs{\bar{\alpha} z}} = \frac{\abs{z} ^2 + \abs{\alpha} ^2 + 2\Re{\bar{z} \alpha}}{1 + 2\Re{\bar{\alpha} z} + \abs{\bar{\alpha} z } ^2}$$
+		Por las condiciones del problema se tiene que $\abs{z} ^2 \abs{\alpha} ^2 < 2$ y $\abs{\alpha z} ^2 < 1$, con lo que:
+			$$< \frac{2 + 2\Re{\bar{z} \alpha}}{2 + 2\Re{\bar{\alpha} z}} = 1$$
+		Asumiendo que existe caso de igualdad, se toma:
+			$$\abs{z + \alpha} = \abs{1 + \bar{\alpha} z}$$
+		Siguiendo la idea del inicio:
+			$$(z + \alpha)(\bar{z} + \bar{\alpha}) = (1 + \bar{\alpha} z)(1 + \alpha \bar{z})$$
+		Desarrollando se llega a:
+			$$\abs{z} ^2 + \abs{\alpha} ^2 = 1 + \abs{z} ^2 \abs{\alpha} ^2$$
+		De modo que:
+			$$(1 - \abs{z} ^2)(1 - \abs{\alpha} ^2) = 0$$
+		Como $\abs{\alpha} < 1$, entonces es necesario que $\abs{z} = 1$. Con esto se concluye que:
+			$$\abs{\frac{z + \alpha}{1 + \bar{\alpha} z}} \leq 1$$
+		Con el caso de igualdad cuando $z$ esta en el circulo unitario. $\QED$
+	\end{problem}
+\end{mdframed}
+
+
+
+
 % PROBLEMA 3
 \begin{mdframed}[style = warning]
 	\begin{problem}
@@ -7,14 +34,33 @@
 			$$z = \cis {\flatfrac{\pi}{4}}$$
 		Sabiendo el Teorema de Moivre, se tiene que:
 			$$\cis{1^2 \flatfrac{\pi}{4}} + \cis{2^2 \flatfrac{\pi}{4}} + \cdots + \cis{12^2 \flatfrac{\pi}{4}}$$
-		Con esto desarrollando se tiene que para los impares el resultado es: $\flatfrac{1+i}{\sqrt{2}}$. Para las potencias de $2$ y $12$ se tiene: $1$, para el resto es $-1$. Con esto la parte izquierda tiene un valor total de:
-		$$z^{1^2} + z^{2^2} + \cdots + z^{12^2} = 1+6\frac{1+i}{\sqrt{2}}$$
+		Con esto, para los impares se tiene que $\flatfrac{1 + i}{\sqrt{2}}$. Multiplos de $4$, el resultado es $1$ y pares no multiplos de $4$ se tiene $-1$. De modo que:
+		$$z^{1^2} + z^{2^2} + \cdots + z^{12^2} = 6\frac{1+i}{\sqrt{2}}$$
 		Para el lado derecho, se tiene que el inverso de $\qty(\flatfrac{1+i}{\sqrt{2}})^{-1} = \flatfrac{1-i}{\sqrt{2}}$, con esto el lado derecho de la expresión:
-			$$\frac{1}{z^{1^2}} + \frac{1}{z^{2^2}} + \cdots + \frac{1}{z^{12^2}} = 1 + 6\frac{1-i}{\sqrt{2}}$$
-		Multiplicando ambos resultados se tiene que:
-			$$\qty(z^{1^2} + z^{2^2} + \cdots + z^{12^2}) \qty(\frac{1}{z^{1^2}} + \frac{1}{z^{2^2}} + \cdots + \frac{1}{z^{12^2}}) = \boxed{37 + 6\sqrt{2}}$$
+			$$\frac{1}{z^{1^2}} + \frac{1}{z^{2^2}} + \cdots + \frac{1}{z^{12^2}} = 6\frac{1-i}{\sqrt{2}}$$
+		Multiplicando ambos resultados se tiene que: (usando $\bar{z} z = \abs{z} ^2$)
+			$$\qty(z^{1^2} + z^{2^2} + \cdots + z^{12^2}) \qty(\frac{1}{z^{1^2}} + \frac{1}{z^{2^2}} + \cdots + \frac{1}{z^{12^2}}) = \boxed{36}$$
 	\end{problem}
 \end{mdframed}
+
+
+
+
+% PROBLEMA 5
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Sabiendo la relación de las medianas y el gravicentro, entonces tomando los segmentos de recta, simplemente se realiza dicho procedimiento. Tomando cualquier lado (en este caso se tomará $ac$) se tiene que el punto medio entre dichos vértices es:
+			$$\frac{a + c}{2}$$
+		Ahora, para el segmento entre este nuevo punto y el vértice restante es:
+			$$b + t\qty(\frac{a + c}{2} - b)$$
+		Por la relación se tiene que $t = \flatfrac{2}{3}$, con esto y desarrollando se tiene:
+			$$\boxed{G = \frac{a + b + c}{3}}$$
+	\end{problem}
+\end{mdframed}
+
+
+
+
 
 
 % PROBLEMA 6
@@ -49,6 +95,53 @@
 		$\QED$
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+% PROBLEMA 10
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Expresando los complejos en forma polar y, por teorema de DeMoivre, se tiene:
+			$$2^m \qty[\cos{\qty(\frac{m\pi}{3})} + i\sin{\qty(\frac{m\pi }{3})}] = 2^{\flatfrac{n}{2}} \qty[\cos{\qty(\frac{n\pi}{4})} - i\sin{\qty(\frac{n\pi}{4})}]$$
+		Con esto se tiene que:
+			$$\cos{\qty[\pi \qty(\frac{m}{3} + \frac{n}{4})]} + i\sin{\qty[\pi \qty(\frac{m}{3} + \frac{n}{4})]} = 2^{\flatfrac{n}{2} - m}$$
+		Con esto es necesario que la parte imaginaria sea cero, por ende la suma del ángulo debe de ser par. Además, $m$ debe ser multiplo de $3$, y $n$ multiplo de $4$, también debe de cumplir que $n$ es el doble de $m$. Matemáticamente hablando:
+			$$\qty(\frac{m}{3} + \frac{n}{4}) \equiv 0 \quad \text{mod} \, 2$$
+		Y
+			$$\frac{n}{2} = m$$
+		Con esto, se tiene que:
+			$$\frac{5}{6} m \equiv 0 \quad \text{mod} \, 2$$
+		En otra forma $\dfrac{5}{6} m = 2q$, con lo que $m = \dfrac{12}{5} q$. Para el mínimo de $q$ para que $m$ sea entero, es decir $q = 5$, entonces $\boxed{m = 12}$ y $\boxed{n = 24}$. Al valuar se comprueba que la igualdad se cumple.
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+% PROBLEMA 13
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Sabiendo que $\abs{z} = \sqrt{2}$, de la expresión dada, se desarrolla la diferencia de cuadrados:
+			$$\abs{(z^2 - 1)(z - 1)} = \abs{(z - 1)^2 (z + 1)}$$
+		Como el módulo cuadrado es igual al producto entre el complejo y el conjugado:
+			$$\abs{(z + 1)(z - 1)^2} ^2 = (z + 1)(\bar{z} + 1)(z - 1)^2 (\bar{z} - 1)^2$$
+		Desarrollando y sustituyendo el módulo de $z$, asi como la identidad $z + \bar{z} = 2\Re{z}$, se tiene:
+			$$ = \qty[9 - 4\Re{z} ^2] \qty[3 - 2\Re{z}]$$
+			$$ = 27 - 18\Re{z} - 12 \Re{z} ^2 + 8\Re{z} ^3$$
+		Para encontrar el máximo, el máximo de esta ecuación, también es el máximo para la expresión dada, entonces, $x = \Re{z}$, se tiene:
+			$$f(x) = 27 - 18x - 12 x^2 + 8x^3$$
+		Como es una función de variable real, el criterio de la primera y segunda derivada es válido, por ende:
+			$$f'(x) = 4x^2 - 4x - 3 = 0$$
+		De esto, las dos soluciones $x_1 = \flatfrac{3}{2}$ y $x_2 = \flatfrac{-1}{2}$. Faluandolo en la segunda derivada, se tiene que el máximo de la función esta en $x_2$. Por lo que, valuando $f(x_2)$, se tiene: $f(\flatfrac{-1}{2}) = 32$, con lo que:
+			$$\boxed{\abs{(z^2 - 1)(z - 1)} = \sqrt{32}}$$
+	\end{problem}
+\end{mdframed}
+
 
 
 
