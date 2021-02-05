@@ -231,6 +231,37 @@ Por la relación se tiene que $t = \flatfrac{2}{3}$, con esto y desarrollando se
 
 
 
+% CLASE 7
+\label{CLASE7}
+\textbf{Resolviendo el ejemplo: } \\
+
+Tomando la forma polar de un complejo de módulo $1$, se eleva a la $90$ potencia:
+	$$\qty(\cos{\alpha} + i\sin{\alpha})^{90} = \cos{90\alpha} + i\sin{90\alpha}$$
+Por teorema del Binomio:
+	$$\sum _{k=0} ^{90} \binom{90}{k} \cos ^{n - k} {\alpha} \, i^k \sin ^k {\alpha} = \cos{90\alpha} + i\sin{90\alpha}$$
+Sabiendo que para potencias pares, la identidad imaginaria es real, entonces:
+	$$\sum _{k=0} ^{44} (-1)^k \binom{90}{2k} \cos ^{90 - 2k} {\alpha} \sin ^{2k} {\alpha} = \cos{90\alpha}$$
+Reescribiendo el lado izquierdo de la ecuación.
+
+Para $\alpha$ impar:
+	$$\sum_{k=0} ^{44} \binom{90}{2k} (-1)^k \tan ^{2k} {\alpha} = 0$$
+Entonces, sustituyendo $x = \tan ^2 {\alpha}$, por Cardano$-$Vieta, la suma de todas las soluciones da como resultado uno de los coeficientes del polinomio, por ende, la suma propuesta da como resultado un número entero, por lo que queda demostrado. $\QED$
+
+
+
+
+\section{Funciones Complejas}
+Una función compleja, se define igual que las funciones reales, simplemente se tiene que el dominio y el rango son los complejos, es decir:
+	$$f:\, \C \to \C$$
+En las funciones complejas, no se tienen gráficas como las que se tienen en funciones de $\R$ o $\R^2$. En los complejos, se sabe de, álgebra lineal, que, los complejos son un espacio vectorial de dimensión dos, sobre los reales; de modo que, las funciones son una aplicación de dimension $4$, por lo que no se puede visualizar una gráfica. Para graficar las funciones complejas se toman dos espacios complejos, simplemente para comparar el dominio de la función, con el rango de la misma.
+
+\subsection{Función Exponencial}
+
+Sea $z = x + iy$, se define la exponencial:
+	$$e^z := e^x e^{iy}$$
+La cual es completamente intuitiva.
+	
+
 
 
 
