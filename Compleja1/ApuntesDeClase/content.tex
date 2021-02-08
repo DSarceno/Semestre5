@@ -263,13 +263,56 @@ La cual es completamente intuitiva.
 	
 
 
+% CLASE 8
+\label{CLASE8}
 
+\subsection{Funciones Seno y Coseno}
 
+Para definir al seno y al coseno, tomamos una forma exponencial:
+	$$\sin{z} := \frac{e^{iz} - e^{-iz}}{2i}$$
+Y
+	$$\cos{z} := \frac{e^{iz} + e^{-iz}}{2}$$
 
+Para la identidad pitagórica, se sabe que se cumple para todo número real; sin embargo, con estas nuevas definiciones, se tiene que dicha identidad es cierta para todo $z\in \C$.
 
+\begin{teorema} \it
+	$$\sin ^2 {z} + \cos ^2 {z} = 1$$
+\end{teorema}
 
+La demostración es bastante simple, solo se elevan ambas definiciones al cuadrado y por productos notables queda. \\
 
+Además, cumplen todas las identidades ya conocidas para los números reales.
+\begin{teorema} \it
+	La función:
+		$$f(z) = e^{z}$$
+	Es periódica, con periodo $2\pi i$
+\end{teorema}
 
+Lo curioso de esto, es que la función exponencial para valores reales \textbf{no} es periódica, pero en los complejos si lo es. Para veríficar que la función es periódica simplemente se sustituye la definción de funciones periódicas:
+	$$f(z) = f(z + T)$$
+La demostración es igual de simple que la anterior, simplemente sustituyendo la definción, se tiene la periodicidad.
+
+\subsubsection{Funciones Seno y Coseno Hiperbólicos}
+
+Para las funciones hiperbólicas, se tienen definiciones muy parecidas a sus respectivas funciones no hiperbólicas, es decir:
+	$$\sinh{z} := \frac{e^z - e^{-z}}{2}$$
+Y
+	$$\cosh{z} := \frac{e^z + e^{-z}}{2}$$
+Para todo $z\in \C$.
+
+\subsection{Función Logarítmica}
+
+La función logarítmica debe cumplir ser la inversa de la exponencial, obviamente, en dominio complejo. Entonces, para $z\in \C$, se tiene:
+	$$\ln{z} := \ln{\abs{z}} + i\text{arg} (x)$$
+Para comprobar que la función logarítmica compleja es, efectivamente, la función inversa de la exponencial. Comprobando con:
+	$$f(f^{-1}) = z \quad \quad f^{-1} (f) = z$$
+Comprobando que la definción cumple, se tiene:
+	$$e^{\ln{z}} = e^{\ln{\abs{z}}} e^{i\text{arg} (z)} = z$$
+Ahora, para la otra propiedad de las funciones inversas:
+	$$\ln{e^z} = \ln{\abs{e^z}} + i\text{arg} (e^z)$$
+Por la forma de la exponencial compleja, se tiene:
+	$$= \ln{e^x} + iy = x + iy = z$$
+Lo que comprueba las propiedades de función inversa. Cabe recalcar que el logaritmo es una función multivaluada, por lo que se define le logaritmo principal, el cual toma como argumento el argumento principal del complejo. Además, con todo esto, permite encontrar el logaritmo para números negativos. De todo esto, la función logarítmica es válida para $f:\C \setminus \{ 0 \} \to \C$.
 
 
 
