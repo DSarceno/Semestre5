@@ -11,7 +11,7 @@
 		Tomando únicamente la parte imaginaria, se tiene:
 			$$b\qty[(a + 1)^2 - b^2] - 2ab(a + 1) = -2a^2 b - 2ab - b^3 + 2ab + b = -b(a^2 + b^2 - 1) = 0$$
 		Lo que demuestra:
-			$$\Im{\frac{z}{(z + 1)^2}}$$
+			$$\Im{\frac{z}{(z + 1)^2}} = 0$$
 		$\QED$
 	\end{problem}
 \end{mdframed}
@@ -100,6 +100,21 @@
 		$\QED$
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+% PROBLEMA 7
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Tomando a dos complejos $z_1$ y $z_2$, con parte real y compleja pertenecientes a los naturales; lo que implica que, $\abs{z_1} ^2 = \Re{z_1} ^2 + \Im{z_1} ^2$ y $\abs{z_2} ^2 = \Re{z_2} ^2 + \Im{z_2} ^2$. Por lo que $\abs{z_1} ^2 ,\abs{z_2} ^2 \in C$, realizando el producto de los dos módulos $\abs{z_1} ^2 \abs{z_2} ^2 = z_1 \bar{z_1} z_2 \bar{z_2} = z_1 z_2 \overline{z_1 z_2} = \abs{z_1 z_2} ^2$. Ahora, verificando que las componentes sean enteros:
+			$$\abs{z_1 z_2} ^2 = \qty(\underbrace{\Re{z_1} \Re{z_2} - \Im{z_1} \Im{z_2}}_{\in \Z})^2 + \qty(\underbrace{\Re{z_1} \Im{z_2} + \Re{z_2} \Im{z_1}}_{\in \Z})^2$$
+		Por lo que $\abs{z_1 z_2} ^2 \in C$. $\QED$
+	\end{problem}
+\end{mdframed}
+
+
 
 
 
@@ -210,8 +225,8 @@
 		$(\Rightarrow)$ Tomando la forma polar del complejo se tiene $z = \cos{\theta} +i\sin{\theta}$. Con esto, y por el teorema de DeMoivre es claro que:
 			$$\sin{\theta} = -\sin{n\theta}$$
 			$$\cos{\theta} + \cos{n\theta} = -1$$
-		Claramente, la identidad del seno, y por el dominio de los argumentos, se tiene que el ángulo $\theta$ debe cumplir $\theta = 2k\pi - n\theta$. Sustituyendo en la identidad del coseno: $\cos{2k\pi - \theta} = \cos{2k\pi} \cos{\theta} + \sin{2k\pi} \sin{\theta}$, por lo que $2\cos{\theta} = -1$, por lo que $\theta = \flatfrac{2\pi}{3}$ y $n\theta = \flatfrac{4\pi}{3}$. De esto es claro que, debido a que para que $\flatfrac{2\pi}{3}$ es tres veces menor que $2\pi$, y el único angulo que cumple que la suma de los cosenos sea $-1$, es el $\flatfrac{4\pi}{3}$, por lo que el $n$ debe cumplir que $n\equiv 2 \, \text{mod} \, 3$, esto es para que el ángulo sea $240$ o un equivalente. \\
-		$(\Leftarrow)$
+		Claramente, la identidad del seno, y por el dominio de los argumentos, se tiene que el ángulo $\theta$ debe cumplir $\theta = 2k\pi - n\theta$. Sustituyendo en la identidad del coseno: $\cos{2k\pi - \theta} = \cos{2k\pi} \cos{\theta} + \sin{2k\pi} \sin{\theta}$, por lo que $2\cos{\theta} = -1$, por lo que $\theta = \flatfrac{2\pi}{3}$ y $n\theta = \flatfrac{4\pi}{3}$. De esto es claro que, debido a que para que $\flatfrac{2\pi}{3}$ es tres veces menor que $2\pi$, y el único angulo que cumple que la suma de los cosenos sea $-1$, es el $\flatfrac{4\pi}{3}$, por lo que el $n$ debe cumplir que $n\equiv 2 \, \text{mod} \, 3$, esto es para que el ángulo sea $240$ o un equivalente. \\[0.5cm]
+		$(\Leftarrow)$ Sabiendo que $n\equiv 2 \, \text{mod} \, 3$, implica que $n = 3q + 2$ para $q = 0,1,\ldots $. Además, tomando $x ^3 - 1 = 0$ con $\abs{x} \neq 1$. Por lo que $(x - 1)(x^2 + x + 1) = 0$, entonces $x^2 + x + 1 = 0$. Teniendo $p(z) = z^{3q + 2} + z + 1$. Despejando $(x + 1)$ del polinomio igualado a cero, y valuando $x$ en $p(z)$, se tiene $p(x) = x^2 (x^{3q} - 1) = 0$; lo que claramente implica que existe un número complejo con $\abs{x} = 1$, tal que es solución del polinomio $z^{3q + 2} + z + 1$. $\QED$
 	\end{problem}
 \end{mdframed}
 
