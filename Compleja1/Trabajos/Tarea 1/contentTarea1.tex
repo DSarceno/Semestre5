@@ -68,6 +68,20 @@
 
 
 
+
+% PROBLEMA 4
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+
 % PROBLEMA 5
 \begin{mdframed}[style = warning]
 	\begin{problem}
@@ -119,6 +133,24 @@
 
 
 
+% PROBLEMA 8
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Como se tiene que $\xi = \exp{\frac{2\pi i}{n}}$, de modo que el polinomio se puede representar de dos formas distintas:
+			$$\frac{z^n - 1}{z - 1} = 1 + z + \cdots + z^{n - 1}$$
+			$$(z - 1)\prod _{k=1} ^{n - 1} (z - \xi ^k) = z^n - 1$$
+		Sustituyendo la segunda representación en la primera, con lo que se tiene:	
+			$$\prod _{k = 1} ^{n - 1} (z - \xi ^k) = 1 + z + z^2 + \cdots + z^{n - 1}$$
+		La productoria es representa la serie de multiplicandos dada en el problema, por lo que, sustituyendo $z = 1$ en la ecuación dada, con esto se tiene que el resultado es:
+			$$\boxed{\prod _{k = 1} ^{n - 1} (1 - \xi ^k) = n}$$
+		El hecho de hacer $z\to 1$ no genera problema, es sencillo verlo aplicando limites.
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
 
 % PROBLEMA 9
 \begin{mdframed}[style = warning]
@@ -154,6 +186,38 @@
 		En otra forma $\dfrac{5}{6} m = 2q$, con lo que $m = \dfrac{12}{5} q$. Para el mínimo de $q$ para que $m$ sea entero, es decir $q = 5$, entonces $\boxed{m = 12}$ y $\boxed{n = 24}$. Al valuar se comprueba que la igualdad se cumple.
 	\end{problem}
 \end{mdframed}
+
+
+
+
+% PROBLEMA 11
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Reescribiendo la igualdad como una productoria y tomando el seno como función compleja:
+		\begin{align*}
+			\prod _{k=1} ^{n - 1} \sin{\frac{k\pi}{n}} &= \prod _{k=1} ^{n - 1} \qty(\frac{-i}{2}) \qty(e^{\frac{k\pi i}{n}} - e^{-\frac{k\pi i}{n}}) \\
+			&= \qty(\frac{i}{2})^{n - 1} \prod_{k=1} ^{n - 1} e^{-\frac{k\pi i}{n}} \qty(1 - e^{\frac{2\pi ki}{n}}) \\
+			&= \qty(\frac{i}{2})^{n - 1} \exp{\frac{-\pi i}{n} \sum _{k=1} ^{n - 1} k} \underbrace{\prod _{k=1} ^{n - 1} \qty(1 - e^{\frac{2\pi ki}{n}})}_{\frac{z^n - 1}{z - 1}}
+		\end{align*}
+		Aplicando L'Hopital a la fracción de polinomios y valuando en $1$; además, aplicando la formula de Gauss a la sumatoria dada:
+			$$ = n\qty(\frac{i}{2})^{n - 1} \exp{-\frac{\pi i(n - 1)}{2}}$$
+		Separando la exponencial y sustituyendo por la forma polar del complejo se tiene:
+			$$ = n\qty(\frac{i}{2})^{n - 1} \qty[i(-i)^n] = \frac{n}{2^{n - 1}} i^{2n} (-1)^n = \frac{n}{2^{n - 1}} (i^4)^n = \frac{n}{2^{n - 1}}$$
+		Lo que demuestra la igualdad. $\QED$
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+% PROBLEMA 12
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		
+	\end{problem}
+\end{mdframed}
+
 
 
 
@@ -256,3 +320,50 @@
 	$\QED$
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+
+
+
+
+% PROBLEMA 18
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
