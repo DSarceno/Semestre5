@@ -1,4 +1,4 @@
-% Tarea 1 Electro
+ % Tarea 1 Electro
 
 
 
@@ -7,7 +7,14 @@
 % PROBLEMA 1
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Utilizando la definición de campo eléctrico:
+			$$\vec{E} = \frac{1}{4\pi \varepsilon _o}\int \frac{\dd{q}}{r^2}$$
+		Además, por simetría, las componentes $x,y$ del campo son cero, ademas, la componente $z$, es $4$ veces la contribución de un lado del cuadrado. Tomando unicamente un lado del cuadrado se tiene que la distancia de la carga al punto es: $r = z\vz - \frac{l}{2} \vy - x\vx$, con lo que:
+			$$\vec{E} _1 = \frac{1}{4\pi \varepsilon _o} \int _{-\flatfrac{l}{2}} ^{\flatfrac{l}{2}} \frac{\lambda}{x^2 + z^2 + \flatfrac{l^2}{4}} \frac{z\vz - \frac{l}{2} \vy - x\vx}{\sqrt{x^2 + z^2 + \flatfrac{l^2}{4}}} \dd{x}$$
+		Unicamente integrando la componente $z$, utilizando herramientas computacionales:
+			$$ = \frac{z\lambda}{4\pi \varepsilon _o} \frac{1}{z^2 + \flatfrac{l^2}{4}} \frac{l}{\sqrt{z^2 + \flatfrac{l^2}{2}}}$$
+		Sumando las $4$ contribuciones se tiene:
+			$$\boxed{\vec{E} _z = \frac{4z\lambda}{\pi \varepsilon _o} \frac{1}{4z^2 + l^2} \frac{l}{\sqrt{z^2 + \flatfrac{l^2}{2}}} \vz}$$
 	\end{problem}
 \end{mdframed}
 
@@ -45,7 +52,12 @@
 % PROBLEMA 4
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Tomando el campo eléctrico dado, utilizando la Ley de Gauss en forma diferencial se tiene:
+			$$\div{\vec{E}} = \frac{\rho}{\varepsilon _o}$$
+		Entonces:
+			$$\pdv{r} \qty(A\frac{e^{-rb}}{r}) = \frac{\rho}{\varepsilon _o}$$
+		Despejando la densidad de carga volumétrica:
+			$$\boxed{\rho (r) = -A\varepsilon _o e^{-br} \qty(\frac{1}{r^2} + \frac{b}{r})}$$
 	\end{problem}
 \end{mdframed}
 
