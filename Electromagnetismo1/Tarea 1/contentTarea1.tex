@@ -27,7 +27,19 @@
 % PROBLEMA 2
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Como en la región dentro de ambas esferas no hay carga, se utiliza Laplace en $1$ y, por simetría esférica, se tiene:
+			$$\nabla ^2 \varphi = 0 \quad \quad \varphi (r) = -\frac{a}{r} + b$$
+		Condiciones de frontera:
+		\begin{multicols}{2}
+			$$\varphi (r_a) = \varphi _a = -\frac{a}{r_a} + b$$
+			\columnbreak
+			$$\varphi (r_b) = \varphi _b = -\frac{a}{r_b} + b$$
+		\end{multicols}
+		Resolviendo el sistema de ecuaciones, se tiene que:
+			$$a = \frac{\varphi _b - \varphi _a}{r_b - r_a} r_a r_b$$
+			$$b = \frac{\varphi _b r_b - \varphi _a r_a}{r_b - r_a}$$
+		Sustituyendo, se encuentra el potencial entre las dos esferas concéntricas:
+			$$\boxed{\varphi (r) = \frac{\varphi _b - \varphi _a}{r_b - r_a} \frac{r_a r_b}{r} + \frac{\varphi _b r_b - \varphi _a r_a}{r_b - r_a}}$$
 	\end{problem}
 \end{mdframed}
 
@@ -86,7 +98,31 @@
 % PROBLEMA 6
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Incisos:
+		\begin{enumerate}[a)]
+			\item Encontrando la carga para cierto $r < R$, como se tiene simetría esférica y la carga no depende de los ángulos, entonces el diferencial de volumen se reduce a $\dd{V} = 4\pi r^2 \dd{r}$. Integrando:
+				$$Q_{enc} = \int _0 ^r \frac{A}{r} (4\pi r^2) \dd{r} = 2\pi A r^2$$
+			Aplicando la Ley de Gauss, la superficie gaussiana con el mismo radio $r$, se tiene:
+				$$\boxed{\vec{E} = \frac{A}{2\varepsilon _o} \vr}$$
+			Con esto, integrando se encuentra el potencial:
+				$$\varphi (r) = -\int_{0} ^{r} \frac{1}{2} A \vr \cdot \vr \dd{r} = \boxed{-\frac{1}{2} Ar}$$
+			Ahora, para $r\geq R$, se tiene que la carga encerrada es la carga total, con lo que, la integral se realiza desde $0$ hasta $R$:
+				$$Q_{T} = 2\pi AR^2$$
+			Con lo que el campo eléctrico es:
+				$$\boxed{E(r\geq R) = \frac{AR^2}{2\varepsilon _o r^2} \vr}$$
+			Para la región fuera de la carga, el punto de referencia del potencial esta en el infinito. Con lo que:
+				$$\varphi (r \geq R) = -\int _\infty ^r \frac{AR^2}{2\varepsilon _o r^2} \dd{r} = \boxed{\frac{AR^2}{2\varepsilon _o r}}$$
+			\item Para $\rho (r) = \rho _o$, se tiene que la carga encerrada en una superficie gaussiana de radio $r < R$ es:
+				$$Q_{enc} = \frac{4}{3} \pi r^3 \rho _o$$
+			Utilizando la ley de Gauss:
+				$$\boxed{\vec{E} = \frac{\rho _o r}{3\varepsilon _o} \vr}$$
+			Integrando, con el punto de referencia en cero, se encuentra el potencial:
+				$$\boxed{\varphi (r < R) = -\frac{\rho _o r^2}{6\varepsilon _o}}$$
+			Para $r \geq R$, la distribución se comporta como una carga puntual, por lo que el campo generado es:
+				$$\boxed{\vec{E} = \frac{\rho _o R^3}{3 \varepsilon _o r^2} \vr}$$
+			El potencial:
+				$$\boxed{\varphi = \frac{\rho _o R^3}{3\varepsilon _o r}}$$
+		\end{enumerate}
 	\end{problem}
 \end{mdframed}
 
@@ -142,7 +178,15 @@
 % PROBLEMA 10
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Incisos:
+		\begin{enumerate}[a)]
+			\item Para la región dentro del cilindro interior se tiene que el área de la superficie gaussiana es $2\pi r L$, el volumen $V = \pi r^2 L$, de modo que:
+				$$\boxed{\vec{E} (r < a) = \frac{\rho r}{2\varepsilon _o} \vr}$$
+			\item Para la región $a \leq r < b$, se utiliza la misma superficie gaussiana $E(2\pi r L)\varepsilon _o = \rho (\pi a^2 L)$, con lo que, el campo es:
+				$$\boxed{\vec{E} (a \leq r < b) = \frac{\rho a^2}{2r\varepsilon _o} \vr}$$
+			\item Como el cable en su totalidad es eléctricamente neutro, lo que implica que el campo eléctrico fuera del cable es cero:
+				$$\boxed{\vec{E} (r \geq b) = 0}$$
+		\end{enumerate}
 	\end{problem}
 \end{mdframed}
 
