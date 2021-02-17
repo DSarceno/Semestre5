@@ -326,7 +326,37 @@ Para $z\in \C$, esta es la famosa \textbf{Fórmula de Euler}.
 
 
 
+% CLASE 10
+\label{CLASE10}
+\section{Espacios Métricos}
 
+La idea principal de los espacios métricos es la posibilidad de medir distancias.
+
+\begin{definicion}
+	Una función $d:E\times E \to \R$ es una métrica si:
+		\begin{enumerate}[a)]
+			\item $d(x,y) \geq 0$, para todo $x,y \in E$.
+			\item $d(x,y) = 0 \, \Leftrightarrow \, x=y$
+			\item $d(x,y) = d(y,x)$ para todo $x,y  \in E$
+			\item $d(x,y) \leq d(x,z) + d(z,y)$ para todo $x,y,z\in E$
+		\end{enumerate}
+\end{definicion}
+
+Si $d:E\times E \to \R$ es una métrica, entonces $(E,d)$ es un espacio métrico. Por ejemplo: 
+
+\begin{itemize}
+	\item Tomando $E = \C$ con la métrica definida por el módulo $d(x,y) = \abs{x - y}$, $x,y \in \C$.
+	\item Se tiene $E = \C$, para dos elementos del espacio:
+		$$d(x,y) = \left\{\begin{array}{cc}
+			0 & \text{si } x = y \\
+			1 & \text{si } x \neq y
+		\end{array}\right.$$
+\end{itemize}
+
+\subsection{Proyección Estereográfica}
+Tomando un punto en el plano complejo y su respectivo punto en la Esfera de Riemann, la distancia entre dichos dos puntos es:
+	$$d(z,z') = \frac{2\abs{z - z'}}{\sqrt{\qty(1 + \abs{z} ^2) \qty(1 + \abs{z'}^2)}}$$
+Donde $z$ es el punto en la esfera y $z'$ es el punto sobre el plano complejo.
 
 
 
