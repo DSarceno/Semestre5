@@ -51,7 +51,16 @@
 % PROBLEMA 3
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Como el sistema de referencia se colocará de modo que haga los cálculos más simples, por lo que se coloca la carga en el eje $z$ donde su posición relativa al origen es mayor al radio de la esfera. Con esto, es claro que el campo dependerá de la distancia y del ángulo respecto a $z$. Por simetría esférica, se utiliza la solución a la ecuación de Laplace:
+			$$\varphi (r,\theta) = \sum _{n=0} ^\infty \qty(A_n r^n + B_n r^{-(n+1)}) P_n (\cos{\theta})$$
+		Por limitaciones físicas $A_2 ,\ldots = 0$ para que el potencial no diverja en el infinito; además, $B_2,\ldots \to 0$ por los términos $r^{-(n+1)}$. Con esto, se tiene:
+			$$\varphi (r,\theta) = A_o \frac{B_o}{r} + A_1 r\cos{\theta} + \frac{B_1}{r^2} \cos{\theta}$$
+		Encontrando el potencial fuera de la esfera debido a los campos eléctricos, integrando:
+			$$\varphi = -\int (E_o + E_Q)\cdot \dd{r} = -\int E_o \cos{\theta} \dd{r} - \int \frac{kQ}{r^2} \dd{r} = -E_o r\cos{\theta} + \frac{1}{4\pi \varepsilon _o} \frac{Q}{r}$$
+		Con lo que se tienen las constantes $B_o = \frac{Q}{4\pi \varepsilon _o}$ y $A_1 = -E_o$. El potencial es igual a cero, cuando se cumplan las condiciones $r\to \infty$ y $\theta = \flatfrac{(2k + 1)\pi}{2}, \, k=0,\ldots$, lo que claramente es cierto, puesto que para multiplos impares de $\flatfrac{\pi}{2}$ se elimina la contribución constante del campo externo, por lo que $\varphi (r\to \infty ,\theta = \flatfrac{(2k + 1)\pi}{2}) = A_o = 0$. Con esto, el término restante es la aportación dipolar. Utilizando la condición en la cual se tiene $r = R$ el potencial debe ser igual al de la carga puntual, entonces:
+			$$\frac{1}{4\pi \varepsilon _o} \frac{Q}{R} = \frac{1}{4\pi \varepsilon _o} \frac{Q}{R} - E_o R \cos{\theta} + \frac{B_1}{R^2} \cos{\theta}$$
+		Con lo que $B_1 = E_o R^3$; el potencial fuera de la esfera cargada sumregida en un campo eléctrico constante:
+			$$\boxed{\varphi (r,\theta) = \frac{1}{4\pi \varepsilon _o} \frac{Q}{r} - E_o \qty(r + \frac{R^3}{r^2}) \cos{\theta}}$$
 	\end{problem}
 \end{mdframed}
 
