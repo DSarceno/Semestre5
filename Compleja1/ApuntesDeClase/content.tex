@@ -328,11 +328,11 @@ Para $z\in \C$, esta es la famosa \textbf{Fórmula de Euler}.
 
 % CLASE 10
 \label{CLASE10}
-\section{Espacios Métricos}
+\section{Espacios Métricos (Topología de Números Complejos)}
 
 La idea principal de los espacios métricos es la posibilidad de medir distancias.
 
-\begin{definicion}
+\begin{definicion} \slshape
 	Una función $d:E\times E \to \R$ es una métrica si:
 		\begin{enumerate}[a)]
 			\item $d(x,y) \geq 0$, para todo $x,y \in E$.
@@ -358,6 +358,30 @@ Tomando un punto en el plano complejo y su respectivo punto en la Esfera de Riem
 	$$d(z,z') = \frac{2\abs{z - z'}}{\sqrt{\qty(1 + \abs{z} ^2) \qty(1 + \abs{z'}^2)}}$$
 Donde $z$ es el punto en la esfera y $z'$ es el punto sobre el plano complejo.
 
+
+% CLASE11
+\label{CLASE11}
+\subsection{Conjuntos Abiertos y Cerrados}
+
+Para iniciar con las definiciones asociadas a ciertos conceptos topológicos, es necesario la base de dichos conceptos, vease, la vecindad, bola, etc. La vecindad se define como:
+
+\begin{definicion} \slshape
+	Sea $(E,d)$ un espacio métrico una \textbf{vecindad} centrada en $z_o$ de radio $r>0$ es:
+		$$B_r (z_o) := \{ z\in E: d(z_o,z) < r \}$$
+	Además, $B$ es vecindad de $w$ si existe $B_r (z_o)$ tal que:
+		$$B_r (z_o) \subseteq B$$
+\end{definicion}
+
+Con esto, se define:
+\begin{definicion} \slshape
+	Un conjunto C es \textbf{abierto} si es vecindad de cada uno de sus puntos.
+\end{definicion}
+
+\begin{definicion}
+	Un conjunto $C$ es \textbf{cerrado} si $C^c$ es abierto.
+\end{definicion}
+
+La definición de conjunto cerrado aparenta ser trivial, sin embargo, la "afirmación": «Un conjunto no es abierto, entonces es cerrado». Puesto que hay conjuntos que son tanto abiertos como cerrados y conjuntos que no son, ni abiertos ni cerrados.
 
 
 
