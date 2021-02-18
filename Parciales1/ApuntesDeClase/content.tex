@@ -77,6 +77,112 @@ Estas clasificaciones son para EDPs lineales de segundo orden. \\
 
 Una solución a una EDP se refiere a una función $u(x,t)$ definida para $t > 0$ y $x\in I$, que satisface por sustitución en la EDP original.
 
+\section{Leyes de Conservación}
+
+Muchas de las EDPs estudiadas se basan en un balance o ley de conservación. Esto es una formulación matemática que estipula que la tasa de cambio de "algo" en un dominio dado es igual a la tasa de cambio en la frontera más la tasa a la cual el "algo" es creado dentro del dominio. Un ejemplo claro de esto es el flujo a travez de tubos uniformes.
+
+
+\subsection{Para tubos de área transversal}
+
+\subsubsection{Ley Macroscópica}
+Para algún instante $t$.
+
+	$$\underbrace{\dv{t} \int _a ^b u(x,t)A\dd{x}}_{\text{Cambio en la cantidad \\ de fluido respecto de } t} = \underbrace{A\phi (a,t) - A\phi (b,t)}_{\text{Cuánto fluído entra \\ menos cuanto sale}} + \underbrace{\int _a ^b f(x,t)A\dd{x}}_{\text{Cuánto fluido se produce \\ en el segmento de tubo}}$$
+
+\subsubsection{Ley Microscópica}
+
+En un diferencial transversal, para un instante $t$.
+
+	$$\underbrace{u_t (x,t) A}_{\text{Cambio en la cantidad}} + \underbrace{\phi _x (x,t) A}_{\text{Cambio en el Flujo}} = \underbrace{f(x,t) A}_{\text{Medida de "Fuentesidad"}}$$
+
+\subsection{Método de las Características}
+
+El modelo de advección es un modelo en el que el flujo es proporcional a su densidad, i.e.
+	$$\phi = cu$$
+donde $c$ es una constante. 
+
+\begin{definicion}
+	\textbf{Advección: } Es la variación de un escalar en un punto dado, por efecto de un campo vectorial.
+\end{definicion}
+
+En este caso, la ley de conservación se da en la ausencia de fuentes $f = 0$.
+
+\begin{align}
+	u_t + cu_x = 0 \label{advectionEQ}
+\end{align}
+
+A la ecuación \eqref{advectionEQ} se le llama la Ecuación de Advección. Además, es sencillo verificar que la función:
+	$$u(x,t) = F(x - ct)$$
+Es solución de \eqref{advectionEQ} para cualquier $F$ diferenciable. A las cuales se les llaman "\textbf{Right-traveling Waves}"\footnote{Vease Logan, "Applied PDEs", pp.15 Figure 1.4}. \\
+
+\subsubsection{Ejemplo: Método de Características}
+
+Tomando el problema de advección:
+	$$u_t + cu_x = 0,\, x\in \R ,\, t>0$$
+	$$u(x,0) = u_0 (x), \, x\in \R$$
+Donde $u_0$ es una densidad inicial. Se sabe, por "Right-traveling waves" que una solución al problema esta dada por:
+	$$u(x,t) = u_0 (x - ct)$$
+Físicamente, la densidad inicial de la señal se mueve a una velocidad $c$, se toma la señal de densidad como una familia de curvas paralelas llamadas \textbf{características}, constantes en el espacio tiempo. Ahora, para resolver la ecuación general de advección:
+	$$u_t + cu_x + au = f(x,t)$$
+donde $a,c$ son constantes y $f$ una función dada. Como la ecuación se propaga a una velocidad $c$, se transforma la ecuación a un sistema de coordenadas móvil. Tomando $\xi$ y $\tau$ las nuevas variables independientes, se les llaman \textbf{Coordenadas Características}, definidas como:
+	$$\xi = x - ct \quad \quad \tau = t$$
+Se denota $u$ en las nuevas coordenadas como $U (\xi ,\tau) = u(\xi + c\tau ,\tau)$, por la regla de la cadena:
+	$$u_t = U_\xi \xi _t + U_\tau \tau _t = -cU_\xi + U_\tau$$
+Y
+	$$u_x = U_\xi \xi _x + U_\tau \tau _x = U_\xi$$
+Por lo que la ecuación general de advección se reduce a:
+	$$U_\tau + U = F(\xi ,\tau)$$
+Donde $F(\xi ,\tau) = f(\xi + c\tau ,\tau)$. Además, esta ecuación diferencial solo depende de \textbf{una} de sus variables independientes, por lo que se resuleve como una ecuación diferencial ordinaria, fácilmente por el método del factor integrante. \\
+
+El operador de advección:
+	$$L = \pdv{t} + c\pdv{x}$$
+En las coordenadas características se reduce a:
+	$$L_{\xi \tau} = \pdv{\tau}$$
+Lo que resalta su importancia. \\
+En el caso en el que la velocidad de advección sea $c(x,t)$, las coordenadas características estarán dadas por $\xi = \xi (x,t)$, $\tau = t$ donde $\xi (x,t) = C$ es la solucion general de la EDO:
+	$$\dv{x}{t} = c(x,t)$$
+En estas nuevas coordenadas, es claro que la EDP es transformada a una ecuación de la forma
+	$$U_\tau = F(\xi ,\tau ,U)$$
+En teoría, esta ecuación puede ser resuelta y luego sustituir $\xi$ y $\tau$ en términos de $x$ y $t$ para obtener $u(x,t)$.
+
+
+\section{Difusión}
+
+Para modificar la nocion de la ley de conservación, se toma un gas en un tubo. Se espera que el movimiendo randomizado y las coliciones de las moleculas causará que las concentraciones de gas se extiendan, el gas pasará de grandes a pequeñas concentraciones. De este movimiento randomizado se realizan dos observaciones:
+	\begin{enumerate}[i)]
+		\item El movimiento es de mayores a menores concentraciones.
+		\item Cuanto mayor sea el gradiente de concentración, mayor será el flujo.
+	\end{enumerate}
+
+De esto, el flujo depende de la derivada posicional de la densidad, asumiendo una relacion lineal:
+	$$\phi = -Du_x$$
+con $D>0$ constante de propocionalidad, y el signo negativo es para garantizar que se cumpla la convención. A dicha ecuación se le conoce como la \textbf{Ley de Flick}, y la constante como \textbf{Constante de Difusión}. Sustituyendo esta ecuación en la Ley de Conservación, se tiene un modelo más simple:
+	$$u_t - DU_{xx} = 0$$
+Llamado \textbf{Ecuación de Difusión}.
+
+\subsection{Conducción de Calor}
+
+Considerando flujo de calor en una barra unidimensional con densidad constante $\rho$ y calor específico $C$. Aplicando la Ley de Conservación con $u$ la densidad de energía y $T$ la temperatura en $(x,t)$: 
+	$$u(x,t) = \rho C T(x,t)$$
+Entonces:	
+	$$\rho CT_t + \phi _x = 0$$
+Balance de energía cuando no hay fuentes de calor presentes, asumiendo que $\phi$ esta dado por la Ley de Flick,
+	$$\phi = -KT_x$$
+La cual es la \textbf{Ley de Fourier}. El calor fluye bajo el gradiente de temperatura. Con esto, la \textbf{Ecuación de Calor}
+	$$T_t = kT_{xx}$$
+Con $k = \flatfrac{K}{\rho C}$, llamada la constante de difusibidad.
+
+
+
+\section{Difusión y Aleatoriedad}
+
+
+
+
+
+
+
+
 
 
 

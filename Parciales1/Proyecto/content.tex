@@ -116,7 +116,7 @@ El resultado del teorema se muestra en la figura \ref{teorem1Figure}. En base al
 
 De esto se concluye que, la solución general del conjunto de ecuaciones del tipo \eqref{formaPQR} será una familia de curvas de dos parámetros.
 
-\subsection{Métodos de Solución de $\flatfrac{\dd{x}}{P} = \flatfrac{\dd{y}}{Q} = \flatfrac{\dd{z}}{R}$}
+\section{Métodos de Solución de $\flatfrac{\dd{x}}{P} = \flatfrac{\dd{y}}{Q} = \flatfrac{\dd{z}}{R}$}
 
 
 De la sección anterior se tiene:
@@ -140,22 +140,22 @@ Lo que implica que:
 	$$P' \dd{x} + Q'\dd{y} + R'\dd{z}$$
 Es una diferencial exacta de $\dd{u_1}$. Se tomará el ejemplo $2$ del libro (Sección $3$, capítulo $1$, pp. 11.)
 
-\begin{ejemplo} \slshape
-	Encuentre las curvas de integral de las ecuaciones:
-		$$\frac{\dd{x}}{y(x + y) + az} = \frac{\dd{y}}{x(x + y) - az} = \frac{\dd{z}}{z(x + y)}$$
-	En este caso se tiene:
-		$$P = y(x + y) + az \quad \quad Q = x(x + y) - az \quad \quad R = z(x + y) $$
-	Tomando
-		$$P' = \frac{1}{z} \quad \quad Q' = \frac{1}{z} \quad \quad R' = -\frac{x + y}{z^2}$$
-	La condición \eqref{PPQQRR} se satisface, entonces:
-		$$u_1 = \frac{x + y}{z}$$
-	Similarmente, si se toma:
-		$$P' = x \quad \quad Q' = -y \quad \quad R' = -a$$
-	la condición \eqref{PPQQRR} se satisface, la función correspondiente:
-		$$u_2 = \frac{1}{2} (x^2 - y^2) - az$$
-	De modo que las curvas de integral para las ecuaciones diferenciales son la familia de dos parámetros:	
-		$$x + y = c_1 z \quad \quad x^2 - y^2 - 2az = c_2$$
-\end{ejemplo}
+%\begin{ejemplo} \slshape
+%	Encuentre las curvas de integral de las ecuaciones:
+%		$$\frac{\dd{x}}{y(x + y) + az} = \frac{\dd{y}}{x(x + y) - az} = \frac{\dd{z}}{z(x + y)}$$
+%	En este caso se tiene:
+%		$$P = y(x + y) + az \quad \quad Q = x(x + y) - az \quad \quad R = z(x + y) $$
+%	Tomando
+%		$$P' = \frac{1}{z} \quad \quad Q' = \frac{1}{z} \quad \quad R' = -\frac{x + y}{z^2}$$
+%	La condición \eqref{PPQQRR} se satisface, entonces:
+%		$$u_1 = \frac{x + y}{z}$$
+%	Similarmente, si se toma:
+%		$$P' = x \quad \quad Q' = -y \quad \quad R' = -a$$
+%	la condición \eqref{PPQQRR} se satisface, la función correspondiente:
+%		$$u_2 = \frac{1}{2} (x^2 - y^2) - az$$
+%	De modo que las curvas de integral para las ecuaciones diferenciales son la familia de dos parámetros:	
+%		$$x + y = c_1 z \quad \quad x^2 - y^2 - 2az = c_2$$
+%\end{ejemplo}
 
 
 
@@ -167,20 +167,236 @@ El cual es un diferencial exacto $\dd{W''}$. De esto, se sabe que:
 	$$\dd{W'} = \dd{W''}$$
 De lo que se deriva.
 	$$W' = W'' + c_1$$
-Donde $c_1$ es una constante arbitraria.
+Donde $c_1$ es una constante arbitraria. \\
 
 
-\begin{ejemplo} \slshape
-	Utilizando el método \textit{(b)}, se resuelven las ecuaciones:
-		$$\frac{\dd{x}}{y + \alpha z} = \frac{\d{y}}{z + \beta x} = \frac{\dd{z}}{x + \gamma y}$$
-	Reescribiendo la ecuación como en el método se tiene
-		$$\frac{\lambda \dd{x} + \mu \dd{y} + \nu \dd{z}}{\lambda (y + \alpha z) + \mu (z + \beta x) + \nu (x + \gamma y)}$$
-	
-\end{ejemplo}
+%\begin{ejemplo} \slshape
+%	Utilizando el método \textit{(b)}, se resuelven las ecuaciones:
+%		$$\frac{\dd{x}}{y + \alpha z} = \frac{\d{y}}{z + \beta x} = \frac{\dd{z}}{x + \gamma y}$$
+%	Reescribiendo la ecuación como en el método se tiene
+%		$$\frac{\lambda \dd{x} + \mu \dd{y} + \nu \dd{z}}{\lambda (y + \alpha z) + \mu (z + \beta x) + \nu (x + \gamma y)}$$
+%	Con las constantes añadidas, la expresión es un diferencial exacto si es de la forma:
+%		$$\frac{1}{\rho} \frac{\lambda \dd{x} + \mu \dd{y} + \nu \dd{z}}{\lambda x + \mu y + \nu z}$$
+%	Lo que es posible solo si
+%		$$\left.\begin{array}{c}
+%			-\rho \lambda + \beta \mu + \nu = 0 \\
+%			\lambda - \rho \mu + \gamma \nu = 0 \\
+%			\alpha \lambda + \mu - \rho \nu = 0 
+%		\end{array}\right\}
+%		$$
+%	Estas ecuaciones tienen solucion solo si $\rho$ es solución de la ecuación:
+%		$$\rho ^3 + (\alpha + \beta + \gamma) \rho + \alpha \beta \gamma + 1 = 0$$
+%	Las raíces de la ecuación se denotarán como $\rho _1,  \rho _2,\rho _3$, sustituyendo $\rho _1$ en la relación 
+%\end{ejemplo}
+
+\textit{Método (c): } Cuando una de las variables es ausente de las ecuaciones iniciales, se pueden encontrar las curvas integral en una manera sencilla. 
+	$$\frac{\dd{y}}{Q} = \frac{\dd{z}}{R}$$
+Puede ser descrito en la forma
+	$$\dv{y}{z} = f(y,z)$$
+De las EDOs esta ecuación tiene solución de la forma:
+	$$\phi (y,z,c_1) = 0$$
+Resolviendo la ecuación para $z$ y sustituyendolo se obtiene
+	$$\dv{y}{x} = g(x,y,c_1)$$
+Lo que tiene solución:
+	$$\psi (x,y,c_1 ,c_2) = 0$$
+
+%\begin{ejemplo} \slshape
+%	Encuentre las curvas integral de las ecuaciones:
+%		$$\frac{\dd{x}}{x + z} = \frac{\dd{y}}{y} = \frac{\dd{z}}{z + y^2}$$
+%	Tomando las ultimas dos, se tiene:
+%		$$\dv{z}{y} - \frac{z}{y} = y \quad \quad \Rightarrow \quad \quad \dv{y} \qty(\frac{z}{y}) = 1$$
+%	Lo que tiene una solución $\boxed{z = c_1 y + y^2}$. Ahora tomando las primeras dos ecuaciones:
+%		$$\dv{x}{y} = \frac{x}{y} + \frac{z}{y}$$
+%	Sustituyendo, reduciendo y resolviendo la ED, se tiene:
+%		$$\boxed{x = c_1 y \ln{y} + c_2 y + y^2}$$
+%	Las ecuaciones encerradas son las curvas integrales de las ecuaciones propuestas.
+%\end{ejemplo}
 
 
 
-  	
+\section{Trayectorias Ortogonales de un Sistema de Curvas en una Superficie}
+
+Este problema es muy conocido, para 3 dimensiones: sea una superficie:
+	$$F(x,y,z) = 0$$
+Se considera un conjunto de curvas en las cuales la superficie se encuentra, tomando un nuevo conjuto de curvas las cuales cortan a todas las curvas del otro conjunto en un ángulo de $90$ grados. Este nuevo sistema de curvas es llamado el sistema de \textit{trayectorias ortogonales} del conjunto de curvas dado. \\
+
+En general, el sistema de curvas se puede representar como las intersecciones de la familia de superficies
+	$$G(x,y,z) = c_1$$
+Con la superficie dada. \\
+
+En caso general, la dirección tangencial $(\dd{x} ,\dd{y} \dd{z})$ a la curva dada en el punto $(x,y,z)$ en la superficie $F$, satisface las ecuaciones:
+	$$\pdv{F}{x} \dd{x} + \pdv{F}{y} \dd{y} + \pdv{F}{z} \dd{z} = 0$$
+y
+	$$\pdv{G}{x} \dd{x} + \pdv{G}{y} \dd{y} + \pdv{G}{z} \dd{z} = 0$$
+Los trios deben cumplir:
+	$$\frac{\dd{x}}{P} = \frac{\dd{y}}{Q} = \frac{\dd{z}}{R}$$
+Donde
+	$$(P,Q,R) = \qty(\pdv{(F,G)}{(y,z)} , \pdv{(F,G)}{(z,x)} , \pdv{(F,G)}{(x,y)})$$
+Para el sistema ortogonal se tienen las siguiente dirección tangencial $(\dd{x'} ,\dd{y'} ,\dd{z'})$ que estan en la superficie $F$, tal que:
+	$$\pdv{F}{x} \dd{x'} + \pdv{F}{y} \dd{y'} + \pdv{F}{z} \dd{z'} = 0$$
+
+El cual es perpendicular al sistema de curvas original, de la relación anterior se tiene:
+	$$P\dd{x'} + Q\dd{y'} + R\dd{z'} = 0$$
+Y de las últimas dos ecuaciones se tiene
+	$$\frac{\dd{x'}}{P'} = \frac{\dd{y'}}{Q'} = \frac{\dd{z'}}{R'}$$
+Donde:
+	$$P' = R\pdv{F}{y} - Q\pdv{F}{z}$$
+	$$P' = P\pdv{F}{z} - R\pdv{F}{x}$$
+	$$P' = Q\pdv{F}{x} - P\pdv{F}{y}$$
+
+La solucion del sistema primado y la relación $F$ da el sistema de trayectorias ortogonales.
+
+\section{Formas Diferenciales y Ecuaciones Pfaffianas}
+
+\begin{definicion}
+	Sea $F_i$ ($i = 1,\ldots ,n$) son funciones de una o todas las $n$ variables independientes, la relación:
+		$$\sum _{i=1} ^{n} F_i \dd{x_i} = 0$$
+	Es llamada \textbf{Ecuación Diferencial Pfaffiana}.
+\end{definicion}
+
+Para una ecuación Pfaffiana de dos variables $P\dd{x} + Q\dd{y} = 0$, puede ser descrita en una forma como $\dd{\phi}$ con $\phi = c$, en este caso se dice que la ecuación es \textit{exacta} o \textit{integrable.} Incluso sino es exacta se escribe la ecuación de la forma:
+	$$\pdv{\phi}{x} \dd{x} + \pdv{\phi}{y} \dd{y} = 0$$
+Existen $\phi$ y $\mu$ tales que:
+	$$\frac{1}{P} \pdv{\phi}{x} = \frac{1}{Q} \pdv{\phi}{y} = \mu$$
+A $\mu$ se le conoce como el factor integrante de la ecuación diferencial Pfaffiana.
+
+\begin{teorema} \tt
+	Una ecuación diferencial Pfaffiana en dos variables siempre posee un factor integrante.
+\end{teorema}
+
+
+
+\begin{teorema} \tt
+	Una condición necesaria y suficiente que existen entre dos funciones $u(x,y)$ y $v(x,y)$ una relación $F(u,v) = 0$, que no envuelve $x$ o $y$ es que:
+		$$\frac{\partial (u,v)}{\partial (x,y)} = 0$$
+\end{teorema}
+
+
+
+\begin{teorema} \tt
+	Si $\vb{X}$ es un vectortal que $\vb{X} \cdot \curl{\vb{X}}$ y $\mu$ es una función arbitraria de $x,y,z$, entonces $(\mu \vb{X})\cdot \curl{(\mu \vb{X})} = 0$.
+\end{teorema}
+
+Como no todas las funciones de esta forma poseen integrales de la forma $\mu (x,y,z)$.
+
+\begin{teorema} \tt
+	Una condicion suficiente y necesaria para que la ecuación Pfaffiana $\vb{X} \cdot \dd{\vb{r}} = 0$ sea integrable es que $\vb{X} \cdot \curl{\vb{X}} = 0$.
+\end{teorema}
+
+\dsnote{En la siguiente sección se estudiarán los métodos de solución de ecuaciones Pfaffianas.}
+
+\begin{teorema} \tt
+	Dado un factor integrante de la ED Pfaffiana:
+		$$X_1 \dd{x_1} + X_2 \dd{x_2} + \cdots + X_n \dd{x_n} = 0$$
+	Se pueden encontrar un número infinito de ellos.
+\end{teorema}
+
+
+
+
+
+\section{Solución a Ecuaciones Diferenciales Pfaffianas en Tres Variables}
+
+\section{Teorema de Carathéodory}
+
+\section{Aplicaciones a Termodinámica}
+
+
+\newpage
+% CAPITULO 2
+\part{Ecuaciones Diferenciales Parciales de Primer Orden}
+
+\section{Ecuaciones Diferenciales Parciales}
+
+\section{Origenes de las Ecuaciones Diferenciales Parciales de Primer Orden}
+
+\section{Problema de Cauchy para Ecuaciones de Primer Orden}
+
+\section{Ecuaciones Lineales de Primer Orden}
+
+\section{Superficies Integrales}
+
+\section{Superficies Ortogonales a un Sistema de Superficies}
+
+\section{Ecuaciones Diferenciales Parciales No Lineales}
+
+\section{Método de Características de Cauchy}
+
+\section{Sistemas Compatibles de Ecuaciones de Primer Orden}
+
+\section{Método de Charpit}
+
+\section{Tipos Especiales de Ecuaciones de Primer Orden}
+
+\section{Soluciones Satisfactorias a Condiciones}
+
+\section{Método de Jacobi}
+
+\section{Aplicaciones}
+
+
+
+\newpage
+% CAPITULO 3
+\part{Ecuaciones Diferenciales Parciales de Segundo Orden}
+
+
+\section{Origen de Ecuaciones de Segundo Orden}
+
+\section{Ecuaciones de Segundo Orden en Física}
+
+\section{Ecuaciones de Orden Superior en Física}
+
+\section{Ecuaciones Diferenciales Parciales Lineales con Coeficientes Constantes}
+
+\section{Ecuaciones con Coeficientes Variables}
+
+\section{Curvas Características de Ecuaciones de Segundo Orden}
+
+\section{Características de Ecuaciones en Tres Variables}
+
+\section{Solución de Ecuaciones Hiperbólicas Lineales}
+
+\section{Separación de Variables}
+
+\section{Método de Transformaciones Integrales}
+
+\section{Ecuaciones No Lineales de Segundo Orden}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
