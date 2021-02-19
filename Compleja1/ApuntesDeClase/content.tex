@@ -385,8 +385,48 @@ La definición de conjunto cerrado aparenta ser trivial, sin embargo, la "afirma
 
 
 
+% CLASE12
+\label{CLASE12}
+\subsection{Sucesiones}
 
+\begin{definicion} \slshape
+	Una \textbf{sucesión} de números complejos es una función $f:\N \to \C$. Generalmente representadas como $x_n,(x_n),\ldots$.
+\end{definicion}
 
+Ya que se definieron las sucesiones, es lógico pensar en que ciertas sucesiones tienden a ciertos valores, a esto le llamaremos convergencia.
+
+\begin{definicion} \slshape
+	Una sucesión $x_n$ \textbf{converge} a un punto $p$ si para cada $\varepsilon > 0$ existe un $N \in \N$ tal que:
+		$$d(x_m ,p) < \varepsilon$$
+	Si $m > N$.
+\end{definicion}
+
+Esta idea induce el siguiente teorema:
+
+\begin{teorema} \it
+	Si $x_n$ es convergente, entonces su límite es único
+\end{teorema}
+
+\begin{proof}
+	Supongamos que $x_n \to p$ y $x_n \to q$. Como $x_n$ convergue a $p$, entonces $\forall \, \varepsilon > 0$ existe $N_1$ tal que:
+		$$d(x_m,p) < \frac{\varepsilon}{2} \quad \quad m > N_1$$
+	De igual forma, como $x_n \to q$, entonces para todo $\varepsilon > 0$ existe $N_2$ tal que:
+		$$d(x_m,q) < \frac{\varepsilon}{2} \quad \quad m > N_2$$
+	Por desigualdad triangular
+		$$d(p,q) \leq d(x_m ,p) + d(x_m ,q) < \varepsilon \quad \quad \text{si } m > \text{max} \{N_1,n_2 \}$$
+	Como se debe de cumplir para todo $\varepsilon > 0$, entonces se tiene $d(p ,q) = 0$ y por definición de métrica se concluye que $p = q$.
+\end{proof}
+
+Un teorema más específico para el espacio de los complejos:	
+
+\begin{teorema} \slshape
+	Una sucesión $z_n$ converge a $z = a + bi$ si y solo si
+		$$\Re{z_n} \to a$$
+	Y
+		$$\Im{z_n} \to b$$
+\end{teorema}
+
+\dsnote{Se convierte una sucesión de complejos a dos sucesiones independientes de núneros reales.}
 
 
 
