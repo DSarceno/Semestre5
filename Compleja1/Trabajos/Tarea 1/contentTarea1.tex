@@ -262,6 +262,19 @@
 				Con esto se tiene que:
 					$$\abs{z} \leq 2$$
 				$(\Leftarrow)$ Es claro que existen $\alpha ,\beta \in \C$ tales que $\abs{\alpha} = \abs{\beta} = 1$, puesto que son números complejos pertenecientes al circulo unitario. Además, por la desigualdad triangular se tiene que $\abs{\alpha} + \abs{\beta} \geq \abs{\alpha + \beta}$. Con esto $\alpha + \beta$ es un vector dentro de la circunferencia de radio $2$. Como $\abs{z} \leq 2$, es un vector dentro del circulo de radio $2$. Como ambos son arbitrarios, sin pérdida de generalidad, $z = \alpha + \beta \QED$
+			\item $(\Rightarrow)$ Sabiendo que existen $\alpha ,\beta ,\gamma \in \C$ con $\abs{\alpha} = \abs{\beta} = \abs{\gamma} = 1$ tales que $z = \alpha + \beta + \gamma$. Tomando el módulo de $z$ se tiene:
+				$$\abs{z} = \abs{\alpha + \beta + \gamma}$$
+			Por desigualdad triangular se tiene:
+				$$\abs{z} \leq \abs{\alpha} + \abs{\beta + \gamma}$$
+			Por la desigualdad triangular $\abs{\beta + \gamma} \leq \abs{\beta} + \abs{\gamma}$, sumando $\abs{\alpha}$ en ambos lados:
+				$$\abs{z} \leq \abs{\alpha} + \abs{\beta} + \abs{\gamma}$$
+			Sumando los $3$ módulos:
+				$$\boxed{\abs{z} \leq 3}$$
+			$(\Leftarrow)$ Tomando $\abs{z} \leq 3$ se tienen dos casos:
+			\begin{description}
+				\item[Igualdad: ] Tomando tres complejos del circulo unitario con el mismo argumento principal (es decir, tres complejos iguales) la suma de ellos es igual a otro complejo, al que se llamará $z$ cuyo módulo es $3$, i.e. $z$ es múltiplo de $\alpha$ ($\beta$ o $\gamma$). Concluyendo el caso de igualdad.
+				\item[Desigualdad estricta: ] Es trivial, puesto que tomando tres complejos con módulo $1$, cuyos argumentos sean distintos, es decir, no sean iguales, se tiene que la suma de dichos tres tiene un módulo menor a la suma de los módulos. Concluyendo la prueba. $\QED$
+			\end{description}
 		\end{enumerate}
 	\end{problem}
 \end{mdframed}
