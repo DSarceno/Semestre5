@@ -12,7 +12,8 @@
 			$$b\qty[(a + 1)^2 - b^2] - 2ab(a + 1) = -2a^2 b - 2ab - b^3 + 2ab + b = -b(a^2 + b^2 - 1) = 0$$
 		Lo que demuestra:
 			$$\Im{\frac{z}{(z + 1)^2}} = 0$$
-		$\QED$
+		$\QED$ \\
+		Con el término $a^2 + b^2 - 1$ de la última igualdad, es claro que solo los puntos del círculo unitario y los reales cumplen la relación propuesta.
 	\end{problem}
 \end{mdframed}
 
@@ -333,7 +334,11 @@
 			\item[$\alpha + \beta = 0$] Como $\alpha ,\beta \geq 0$, entonces $\alpha = -\beta = 0$. Dado esto, se tiene que:
 				$$(a \pm 1) ^2 + b^2 = 0$$
 			Con esto, se concluye que $\boxed{\Im{z} = 0}$ y $\boxed{\Re{z} = \pm 1}$.
-			\item[$(\alpha - \beta) = 2a$] Considerando $\Re{z} = 0$, la parte imaginaria queda libre, por lo que, la otra solución a la ecuación propuesta es: $\boxed{\Re{z} = 0}$ y por lo tanto $\boxed{\Im{z} = \text{libre}}$.
+		\item[$(\alpha - \beta) = 2a$] Considerando $\Re{z} = 0$, la parte imaginaria queda libre, por lo que, la otra solución a la ecuación propuesta es: $\boxed{\Re{z} = 0}$ y por lo tanto $\boxed{\Im{z} = \text{libre}}$. Para esta misma condición, si $\boxed{\Im{z} = 0}$, se tiene la siguiente igualdad:
+				$$\abs{a + 1} - \abs{a - 1} = 2\abs{a}$$
+			Por propiedades de los números reales, se tiene que:
+				$$2\abs{a} = \abs{\abs{a + 1} - \abs{a - 1}} \leq \abs{a + 1 - a + 1} = 2$$
+			Lo que implica que $\abs{a} \leq 1$, por lo que son los valores aceptados de la parte real son $\boxed{-1 \leq \Re{z} \leq 1}$.
 		\end{description}
 	$\QED$
 	\end{problem}
