@@ -216,11 +216,11 @@
 \begin{mdframed}[style = warning]
 	\begin{problem}
 		Para las trayectorias dadas se tienen las siguientes series: (representadas como un número complejo)
-			$$z = \qty(1 - \frac{1}{2} + \frac{1}{4} + \cdots) + \qty(1 - \frac{1}{3} + \frac{1}{5} - \cdots)i$$
-		Representandolo en forma de sumatoria
-			$$z = \qty[1 - \frac{1}{2}  \sum _{n = 1} ^{\infty} \frac{(-1)^{n + 1}}{n}] + i\qty[\sum _{n = 0} ^{\infty} \frac{(-1)^n}{2n + 1}]$$
-		De las cuales, la parte real es la serie de taylor (alrededor de cero) de la función $\ln{(1 + x)}$ valuada en $x = 1$; similarmente, la parte imaginaria es la serie de Taylor alrededor de cero asociada a $\arctan{x}$ valuada en $x = 1$, de modo que las coordenadas del punto al cual convergen las dos series es:
-			$$\boxed{1 - \qty(\frac{1}{2} \ln{2} , \frac{\pi}{4})}$$
+			$$z = \qty(1 - \frac{1}{2} + \frac{1}{2 \cdot 3 \cdot 4} - \frac{1}{2\cdot 3\cdot 4 \cdot 5 \cdot 6}  + \cdots) + \qty(1 - \frac{1}{2\cdot 3} + \frac{1}{2 \cdot 3 \cdot 4 \cdot 5} - \cdots)i$$
+		Representandolo en forma de sumatoria:
+			$$z = \qty[\sum _{n = 0} ^{\infty} \frac{(-1)^{n}}{(2n)!}] + i\qty[\sum _{n = 0} ^{\infty} \frac{(-1)^n}{(2n + 1)!}]$$
+		De las cuales, la parte real es la serie de taylor (alrededor de cero) de la función $\cos{x}$ valuada en $x = 1$; similarmente, la parte imaginaria es la serie de Taylor alrededor de cero asociada a $\sin{x}$ valuada en $x = 1$, de modo que las coordenadas del punto al cual convergen las dos series es:
+			$$\boxed{\qty(\cos{1} , \sin{1})}$$
 	\end{problem}
 \end{mdframed}
 
@@ -335,7 +335,7 @@
 				$$(a \pm 1) ^2 + b^2 = 0$$
 			Con esto, se concluye que $\boxed{\Im{z} = 0}$ y $\boxed{\Re{z} = \pm 1}$.
 		\item[$(\alpha - \beta) = 2a$] Considerando $\Re{z} = 0$, la parte imaginaria queda libre, por lo que, la otra solución a la ecuación propuesta es: $\boxed{\Re{z} = 0}$ y por lo tanto $\boxed{\Im{z} = \text{libre}}$. Para esta misma condición, si $\boxed{\Im{z} = 0}$, se tiene la siguiente igualdad:
-				$$\abs{a + 1} - \abs{a - 1} = 2\abs{a}$$
+				$$\abs{a + 1} - \abs{a - 1} \leq 2\abs{a}$$
 			Por propiedades de los números reales, se tiene que:
 				$$2\abs{a} = \abs{\abs{a + 1} - \abs{a - 1}} \leq \abs{a + 1 - a + 1} = 2$$
 			Lo que implica que $\abs{a} \leq 1$, por lo que son los valores aceptados de la parte real son $\boxed{-1 \leq \Re{z} \leq 1}$.
