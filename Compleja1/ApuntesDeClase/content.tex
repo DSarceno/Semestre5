@@ -419,7 +419,7 @@ Esta idea induce el siguiente teorema:
 
 Un teorema más específico para el espacio de los complejos:	
 
-\begin{teorema} \slshape
+\begin{teorema} \it
 	Una sucesión $z_n$ converge a $z = a + bi$ si y solo si
 		$$\Re{z_n} \to a$$
 	Y
@@ -427,6 +427,159 @@ Un teorema más específico para el espacio de los complejos:
 \end{teorema}
 
 \dsnote{Se convierte una sucesión de complejos a dos sucesiones independientes de números reales.}
+
+
+% CLASE 13
+\label{CLASE13}
+\section{Analiticidad}
+
+\begin{definicion} \slshape
+	Una función $f$ es \textbf{derivable} en $z_o \in \C$ si:
+		$$\lim _{z\to z_o} \frac{f(z) - f(z_o)}{z - z_o}$$
+	existe.
+\end{definicion}
+
+
+\begin{definicion} \slshape
+	Una función es \textbf{holomorfa} (analítica) en $z_o$ si es derivable en un abierto que contiene a $z_o$.
+\end{definicion}
+
+Al hablar de funciones analíticas recuerda a la definción asociada a series de Taylor, sin embargo, el hecho de que una función compleja es holomorfa, implica directamente que la función sea analítica.
+
+\begin{teorema} \it
+	\textbf{Teorema de Cauchy$-$Riemann} \\
+	Sea $f:\C \to \C$, tal que $f(z) = u(x,y) + iv(x,y)$, donde $z = x + iy$. Entonces si $f$ es holomorfa en $z_o = x_o + iy_o$, entonces
+		$$\pdv{x} u(x_o ,y_o) = \pdv{y} v(x_o ,y_o)$$
+		$$\pdv{y} u(x_o, y_o) = -\pdv{x} v(x_o ,y_o)$$
+	además, $f'(z_o) = u_x (x_o ,y_o) + iv_x (x_o ,y_o)$.
+\end{teorema}
+
+Para el converso, si se cumplen las ecuaciones de Cauchy$-$Riemann y las derivadas parciales son continuas, entonces $f$ es holomorfa.
+
+\dsnote{La demostración viene después.}
+
+\begin{ejemplo} \tt
+	Demostrar que $f(z) = z^2$ es holomorfa en todos lados y calcular su derivada. \\
+	Tomando la función y sustiuyendo $z = x + iy$,
+		$$f(z) = (x + iy)^2 = \underbrace{x^2 - y^2}_{u(x,y)} + \underbrace{2xy}_{v(x,y)} i$$
+	Es claro que se cumplen las ecuaciones de Cauchy$-$Riemann, además, como las derivadas parciales son continuas para todo $x,y \in \R$, entonces, por el converso del teorema de Cauchy$-$Riemann, la función $f$ es holomorfa. Y la derivada es:
+		$$f'(z) = 2x + 2yi = 2z$$
+\end{ejemplo}
+
+\begin{definicion} \slshape
+	Una función que es holomorfa en todo $\C$ se dice que es \textbf{entera}.
+\end{definicion}
+
+\begin{ejemplo} \tt
+	Demostrar que $f(z) = e^z$ es entera y calcular su derivada. \\
+	
+	Separando en parte imaginaria y real:	
+		$$f(z) = e^x (\cos{y} + i\sin{y})$$
+	En lo que claramente se cumple Cauchy$-$Riemann, y como dichas funciones son continuas en todos los puntos, por lo que, la función es entera. Entonces, la derivada es:
+		$$f'(z) = e^x (\cos{y} + i\sin{y}) = e^z$$
+\end{ejemplo}
+
+\begin{ejemplo} \tt
+	Demostrar que $f(z) = \bar{z}$ no es holomorfa en ningún lado. \\
+	Realizando Cauchy$-$Riemann, no se cumple la primera encuación $C-R$. Entonces no es holomorfa en ningún lado. Por lo que dicha función no es derivable.
+\end{ejemplo}
+
+
+
+% CLASE 14
+\label{CLASE14}
+\section{Límites en Funciones Complejas}
+
+Se define límite para una función definida de $f:\C \to \C$:
+
+\begin{definicion} \slshape
+	Sea $f$ definida en un conjunto que contiene alguna vecindad de radio $r$ centrada en $z_o$. Se dice que el límite cuando $z$ tiende a $z_o$ de $f(z)$ es $w$, el cual se denota por:
+		$$\lim _{z\to z_o} f(z) = w$$
+	si para cada $\varepsilon > 0$, existe $\delta > 0$ tal que para todo $z\neq z_o$ en $V_r (z_o)$, se cumple que
+		$$\abs{f(z) - w} < \varepsilon$$
+	Siempre que $\abs{z - z_o} < \delta$.
+\end{definicion}
+
+\begin{teorema} \it
+	El límite de una función compleja es \textbf{único}, si es que existe.
+\end{teorema}
+
+\begin{proof}
+	Supongamos que:
+		$$\lim _{z\to z_o} f(z) = a$$
+	Y 
+		$$\lim _{z\to z_o} f(z) = b$$
+	con $a\neq b$ y, sea $\varepsilon = \flatfrac{\abs{a - b}}{2} > 0$. Por definición de límite, sea $\delta > 0$ tal que $\abs{z - z_o} <\delta$ implica que $\abs{f(z) - a} < \varepsilon$ y $\abs{f(z) - b} < \varepsilon$.
+	Entonces:
+		$$\abs{a - b} \leq \abs{a - f(z)} + \abs{f(z) - b} < 2\varepsilon$$
+	Lo que claramente es una contradicción, entonces $a\neq b$.
+\end{proof}
+
+Lo interesante es que para funciones de variable compleja, las propiedades de los límites (álgebra de los límites) sigue siendo igual, por lo que no se ahondará en ello.
+
+\begin{ejemplo} \tt
+	Determinar si el límite existe:
+		$$\lim _{z\to 0} \qty(\frac{z}{\bar{z}}) ^2$$
+	Como en varias variables, para que un límite exista, es necesario que de el mismo valor desde todas sus trayectorias, por lo que, es más sencillo determinar la no existencia del límite; de modo que, acercandolos por la trayectoria sobre el eje real:
+		$$\lim _{z\to 0} \qty(\frac{x}{x})^2 = 1$$
+	Y por la recta $y=x$:
+		$$\lim _{z\to 0} \qty(\frac{x + xi}{x - xi}) ^2$$
+	Luego de un poco de desarrollo algebraico, se tiene que dicho límite es igual a:
+		$$\lim _{z\to 0} \qty(\frac{x + xi}{x - xi}) ^2 = e^{i\pi} = -1$$
+	Por lo que el límite no existe.
+\end{ejemplo}
+
+\subsection{Continuidad}
+
+\begin{definicion} \slshape
+	Una funcion compleja $f$ es continua en $z_o$ si su límite existe y:
+		$$\lim _{z\to z_o} f(z) = f(z_o)$$
+\end{definicion}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
