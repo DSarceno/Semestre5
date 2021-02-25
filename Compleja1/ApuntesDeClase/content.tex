@@ -485,6 +485,42 @@ Para el converso, si se cumplen las ecuaciones de Cauchy$-$Riemann y las derivad
 \end{ejemplo}
 
 
+% CLASE 15
+\label{CLASE15}
+
+\begin{teorema} \it
+	\textbf{Teorema de la Función Inversa Versión Compleja} \\
+	
+	Si $f$ es holomorfa y $f'(z_o) \neq 0$, entonces existe un abierto que contiene a $z_o$ tal que
+		$$\dv{w} f^{-1} (w) = \frac{1}{f'(z)}$$
+	en donde $w=f(z)$, para $z$ en el abierto.
+\end{teorema}
+
+\begin{ejemplo} \tt
+	Si $f$ es una función holomorfa, entonces las curvas de nivel de sus partes real e imaginaria son perpendiculares entre si. \\
+	Por definición de gradiente, se tiene que:
+		$$\langle \grad{u} ,\grad{v} \rangle = u_x v_x + u_y v_y$$
+	Por Cauchy$-$Riemann, entonces:
+		$$\langle \grad{u} ,\grad{v} \rangle = 0$$
+	Lo que los gradientes, se intersectan perpendicularmente, entonces las curvas de nivel se intersectan perpendicularmente. $\QED$
+\end{ejemplo}
+
+
+\subsection{Demostración Teorema Cauchy$-$Riemann}
+Tomando la definición compleja de derivada:
+	$$f'(z_o) = \lim_{\Delta z \to 0} \frac{f(z_o + \Delta z) - f(z_o)}{\Delta z}$$
+Sabiendo que para determinar la existencia de un límite de una función compleja (siguiendo la idea del calculo multivariable), es necesario que desde cualquier trayectoria, hacia el punto en concreto el límite tenga el mismo valor. Por lo que, reescribiendo el límite:
+	$$ = \lim _{\Delta z \to 0} = \frac{u(x_o + \Delta x, y_o + \Delta y) + iv(x_o + \Delta x, y_o + \Delta y) - u(x_o,y_o) - v(x_o,y_o)}{\Delta x +i\Delta y}$$
+	
+Tomando dos formas para aproximarse al cero, de este nuevo límite, es, primero, aproximando por el eje real.
+	
+	$$ = \lim _{\Delta x \to 0} \frac{u(x_o + \Delta x, y_o) - u(x_o,y_o)}{\Delta x} + i\lim _{\Delta x \to 0} \frac{v(x_o + \Delta x, y_o) - v(x_o,y_o)}{\Delta x} = \pdv{u}{x} (x_o,y_o) + i\pdv{v}{x} (x_o,y_o)$$
+La segunda forma, es por medio del eje imaginario:
+	$$\lim _{\Delta y \to 0} \frac{u(x_o, y_o + \Delta y) - u(x_o,y_o)}{i\Delta y} + i\lim _{\Delta x \to 0} \frac{v(x_o, y_o + \Delta y) - v(x_o,y_o)}{i\Delta y} = -i\pdv{u}{y} (x_o,y_o) + \pdv{v}{y} (x_o,y_o)$$
+
+Como $f'(z_o)$ existe, se sabe que todoslos caminos diferentes para aproximar $\Delta z\to 0$ deben ser iguales; de modo que, igualando parte real y parte imaginaria se tiene:
+	$$\pdv{u}{x} = \pdv{v}{y} \quad \quad \pdv{u}{y} = -\pdv{v}{x}$$
+$\QED$
 
 % CLASE 14
 \label{CLASE14}
