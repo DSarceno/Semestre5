@@ -446,8 +446,9 @@ Un teorema más específico para el espacio de los complejos:
 
 Al hablar de funciones analíticas recuerda a la definción asociada a series de Taylor, sin embargo, el hecho de que una función compleja es holomorfa, implica directamente que la función sea analítica.
 
+\subsection{Propiedades de las Funciones Holomorfas}
+\subsubsection{Teorema de Cauchy$-$Riemann}
 \begin{teorema} \it
-	\textbf{Teorema de Cauchy$-$Riemann} \\
 	Sea $f:\C \to \C$, tal que $f(z) = u(x,y) + iv(x,y)$, donde $z = x + iy$. Entonces si $f$ es holomorfa en $z_o = x_o + iy_o$, entonces
 		$$\pdv{x} u(x_o ,y_o) = \pdv{y} v(x_o ,y_o)$$
 		$$\pdv{y} u(x_o, y_o) = -\pdv{x} v(x_o ,y_o)$$
@@ -487,10 +488,8 @@ Para el converso, si se cumplen las ecuaciones de Cauchy$-$Riemann y las derivad
 
 % CLASE 15
 \label{CLASE15}
-
+\subsubsection{Teorema de la Función Inversa Versión Compleja}
 \begin{teorema} \it
-	\textbf{Teorema de la Función Inversa Versión Compleja} \\
-	
 	Si $f$ es holomorfa y $f'(z_o) \neq 0$, entonces existe un abierto que contiene a $z_o$ tal que
 		$$\dv{w} f^{-1} (w) = \frac{1}{f'(z)}$$
 	en donde $w=f(z)$, para $z$ en el abierto.
@@ -504,6 +503,38 @@ Para el converso, si se cumplen las ecuaciones de Cauchy$-$Riemann y las derivad
 		$$\langle \grad{u} ,\grad{v} \rangle = 0$$
 	Lo que los gradientes, se intersectan perpendicularmente, entonces las curvas de nivel se intersectan perpendicularmente. $\QED$
 \end{ejemplo}
+
+
+% CLASE 16
+\label{CLASE16}
+\subsubsection{Funciones Armónicas}
+
+\begin{definicion} \slshape
+	Una función $\phi :\R ^2 \to \R$ es \textbf{armónica} si
+		$$\nabla ^2 \phi = 0$$
+\end{definicion}
+
+
+
+\begin{teorema} \it
+	Las partes real e imaginaria de una función holomorfa son armónicas.
+\end{teorema}
+
+\begin{proof}
+	Sean $f(z) = u(x,y) + iv(x,y)$ una función holomorfa. Entonces, satisface las ecuaciones de Cauchu$-$Riemann:
+		$$u_x = v_y \quad \quad u_y = - v_x$$
+	Derivando otra vez las ecuaciones de C$-$R y, utilizando el teorema de Cairaut, derivando respecto a $x$, se tiene:
+		$$u_{xx} + u_{yy} = v_{xy} - v_{yx} = 0$$
+	Similarmente, $v$ es armónica.
+\end{proof}
+
+
+\begin{definicion} \slshape
+	Sea $u$ una función armónica. Una función $v: \R^2 \to \R$ que hace que la función:
+		$$f(z) = u + iv$$
+	sea holomorfa, se le llama \textbf{Conjugado Armónico} de $u$.
+\end{definicion}
+
 
 
 \subsection{Demostración Teorema Cauchy$-$Riemann}
@@ -576,12 +607,30 @@ Lo interesante es que para funciones de variable compleja, las propiedades de lo
 
 
 
+\begin{definicion}
+	Una función $\phi :\R ^2 \to \R$ es \textbf{armónica} si
+		$$\nabla ^2 \phi = 0$$
+\end{definicion}
 
 
 
+\begin{teorema}
+	Las partes real e imaginaria de una función holomorfa son armónicas.
+\end{teorema}
+
+\begin{proof}
+	Sean $f(z) = u(x,y) + iv(x,y)$ una función holomorfa. Entonces, satisface las ecuaciones de Cauchu$-$Riemann:
+		$$u_x = v_y \quad \quad u_y = - v_x$$
+	Derivando otra vez las ecuaciones de C$-$R y, utilizando el teorema de Cairaut, derivando respecto a $x$, se tiene:
+		$$u_{xx} + u_{yy} = v_{xy} - v_{yx} = 0$$
+	Similarmente, $v$ es armónica.
+\end{proof}
 
 
 
+\begin{lema} \it
+	Si $f$ es una función diferenciable en $z_o$, entonces $f$ es continua en $z_o$.
+\end{lema}
 
 
 
