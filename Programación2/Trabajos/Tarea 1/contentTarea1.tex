@@ -8,7 +8,25 @@
 % PROBLEMA 2.1
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Tomando el alfabeto $\Sigma = \{ a,b \}$, entonces:
+			\begin{enumerate}[a)]
+				\item Para los lenguajes $A = \{ a \}$ y $B = \{ b \}$, el lenguaje $A^n B$, la única palabra existente es:
+					$$\boxed{a\ldots _n ab}$$
+				\item Para los lenguajes $A = \{ a \}$ y $B = \{ b,\lambda \}$, el lenguaje $A^n B$, existen dos palabras, estas dadas por las dos palabras dadas en el lenguaje $B$
+					$$\boxed{a\ldots _n ab \quad \quad \text{y} \quad \quad a\ldots _n a}$$
+				\item Para los lenguajes $A = \{ a,\lambda \}$ y $B = \{ b \}$, el lenguaje $A^n B$, existen dos palabras, estas dadas por las dos palabras dadas en el lenguaje $A$
+					$$\boxed{a\ldots _n ab \quad \quad \text{y} \quad \quad b}$$
+				\item Para los lenguajes $A = \{ a,\lambda \}$ y $B = \{ b,\lambda \}$, el lenguaje $A^n B$, existen $4$ palabras
+					$$
+					A^n B = 
+					\left\{ \begin{array}{c}
+						a\ldots _n a b\\
+						a\ldots _n a \\
+						b \\
+						\lambda
+					\end{array}\right.										
+					$$
+			\end{enumerate}
 	\end{problem}
 \end{mdframed}
 
@@ -23,7 +41,9 @@
 % PROBLEMA 2.3
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Sabiendo que la clausula Positiva y de Klene cumplen que:
+			$$L^* L = L^+$$
+		Con lo que, para que se cumpla $L^* = L^+$, es necesario que $\boxed{L_\lambda = L}$.
 	\end{problem}
 \end{mdframed}
 
@@ -39,7 +59,13 @@
 % PROBLEMA 2.4
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Incisos:
+			\begin{enumerate}[a)]
+				\item Esta gramática es de tipo $2$, idependiente del contexto, puesto que no se genera la cadena vacía de ninguna forma, entonces solo llega a ser de tipo $2$.
+				\item Esta gramática es de tipo $3$, gramática regular.
+				\item Por sus claras similitudes con el inciso anterior, la gramática es de tipo $3$, puesto que igual, cumple las condiciones propuestas.
+				\item Esta no llega a ser una gramática de tipo $3$ por una de las producciones de $A$, por ende, es gramática de tipo $2$, independiente del contexto. 
+			\end{enumerate}
 	\end{problem}
 \end{mdframed}
 
@@ -55,7 +81,48 @@
 % PROBLEMA 2.5
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Para los lenguajes se diseño una gramática que los genera:
+			\begin{enumerate}[a)]
+				\item Para el lenguaje $L_1 = \{ ab^n a:n\in \N \}$, entonces, la cuartupla, se toman $\Sigma _T = \{ a,b \}$, $\Sigma _N = \{ <palabra>,<cadena>,<caracter> \}$, $S = \{ <palabra> \}$, y el conjunto de producciones:
+					$$
+					P = \left\{\begin{array}{ccc}
+					a<palabra>a & ::= & a<cadena>a \\
+					<cadena> & ::= & <caracter><cadena> \\
+					& | & <caracter> \\
+					<caracter> & ::= & b					
+					\end{array}\right.
+					$$
+				\item Para el lenguaje $L_2 = \{ a^m b^n:m\geq n\geq 0 \}$, entonces, la cuartupla, se toman $\Sigma _T = \{ a,b,\lambda \}$, $\Sigma _N = \{ <palabra>,<cadena>,<caracterI>,<caracterF> \}$, $S = \{ <palabra> \}$, y el conjunto de producciones:
+					$$
+					P = \left\{\begin{array}{ccc}
+					<palabra> & ::= & <caracterI><cadena> \\
+					<cadena> & ::= & <caracterI><cadena><caracterF> \\
+					& | & <caracterI> \\
+					<caracterI> & ::= & a,\lambda \\
+					<caracterF> & ::= & b,\lambda \\
+					\end{array}\right.
+					$$
+				\item Para el lenguaje $L_3 = \{ a^k b^m a^n: n = k + m \}$, entonces, la cuartupla, se toman $\Sigma _T = \{ a,b,\lambda \}$, $\Sigma _N = \{ <palabra>,<cadena1>,<cadena2>,<car1>,<car2> \}$, $S = \{ <palabra> \}$, y el conjunto de producciones:
+					$$
+					P = \left\{\begin{array}{ccc}
+					<palabra> & ::= & <cadena2> \\
+					<cadena1> & ::= & <car2><cadena1><car1> \\
+					& | & \lambda \\
+					<cadena2> & ::= & <car1><cadena1><car1> \\
+					& | & <car1><cadena2><car1> \\
+					<car1> & ::= & a \\
+					<car2> & ::= & b \\
+					\end{array}\right.
+					$$
+				\item Para el lenguaje $L_4 = \{ waw^{-1}: w\in \Sigma ^* \}$, entonces, la cuartupla, se toman $\Sigma _T = \{ w,a \}$, $\Sigma _N = \{ <palabra>,,x,y \}$, $S = \{ <palabra> \}$, y el conjunto de producciones:
+					$$
+					P = \left\{\begin{array}{ccc}
+					x<palabra>y & ::= & xay \\
+					x & ::= & w \\
+					y & ::= & w^{-1} \\
+					\end{array}\right.
+					$$
+			\end{enumerate}
 	\end{problem}
 \end{mdframed}
 
