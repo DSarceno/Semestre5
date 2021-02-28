@@ -92,7 +92,75 @@
 % PROBLEMA 5
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Para encontrar los puntos en los cuales el campo es cero, se encuentra el potencial en cualquier punto por contribución de las $n$ cargas puntuales colocadas en los vértices del poligono regular.
+		\begin{description}
+			\item[Para $n = 3$: ] Se tiene que el potencial si se toma la figura como en la figura \ref{TP5}.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{Images/TriangleP5.pdf}
+				\caption{Triángulo Inscrito en una Circunferecia, creado con \textit{Mathematica}.}
+				\label{TP5}
+			\end{figure}
+			De modo que, el potencial debido a dichas cargas, en cualquier punto del espacio es:
+				$$\phi (x,y) = \frac{q}{4\pi \varepsilon _o} \qty[\frac{1}{\sqrt{(y-a)^2+x^2}}+\frac{1}{\sqrt{\left(x-\frac{\sqrt{3} a}{2}\right)^2+\left(\frac{a}{2}+y\right)^2}}+\frac{1}{\sqrt{\left(\frac{\sqrt{3} a}{2}+x\right)^2+\left(\frac{a}{2}+y\right)^2}}]$$
+			Con esto, se aplica la relación entre el campo eléctrico y el potencial $\vec{E} = -\grad{\phi}$, de modo que, el campo es:
+				$$ \vec{E} = \frac{-q}{4\pi \varepsilon _o} \left(-\frac{x}{\left((a-y)^2+x^2\right)^{3/2}}-\frac{\frac{\sqrt{3} a}{2}+x}{\left(\left(\frac{\sqrt{3} a}{2}+x\right)^2+\left(\frac{a}{2}+y\right)^2\right)^{3/2}}-\frac{x-\frac{\sqrt{3} a}{2}}{\left(\left(x-\frac{\sqrt{3} a}{2}\right)^2+\left(\frac{a}{2}+y\right)^2\right)^{3/2}}\right)\vx$$
+				
+				$$\left(\frac{a-y}{\left((a-y)^2+x^2\right)^{3/2}}-\frac{\frac{a}{2}+y}{\left(\left(\frac{\sqrt{3} a}{2}+x\right)^2+\left(\frac{a}{2}+y\right)^2\right)^{3/2}}-\frac{\frac{a}{2}+y}{\left(\left(x-\frac{\sqrt{3} a}{2}\right)^2+\left(\frac{a}{2}+y\right)^2\right)^{3/2}}\right)\vy$$
+			Resolviendo estos polinomios por métodos numéricos, utilizando la función \texttt{NSolve[]} de mathemática, se encuentran los siguientes puntos en los cuales el campo es cero son:
+				$$\left\{\begin{array}{c}
+				\{y\to 0.142359,x\to -0.246573\} \\
+				\{y\to 0.142359,x\to 0.246573\} \\
+				\{y\to -0.284718,x\to 0\} \\ 
+				\{y\to 0,x\to 0\}
+				\end{array}\right\}$$
+			\item[Para $n = 4$: ] Se tiene que el potencial si se toma la figura como en la figura \ref{SP5}.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{Images/SquareP5.pdf}
+				\caption{Cuadrado Inscrito en una Circunferecia, creado con \textit{Mathematica}.}
+				\label{SP5}
+			\end{figure}
+			De modo que, el potencial debido a dichas cargas, en cualquier punto del espacio es:
+			\begin{align*}
+				\phi (x,y) &= \frac{1}{\sqrt{\left(x-\frac{a}{\sqrt{2}}\right)^2+\left(y+\frac{a}{\sqrt{2}}\right)^2}}+\frac{1}{\sqrt{\left(x+\frac{a}{\sqrt{2}}\right)^2+\left(y-\frac{a}{\sqrt{2}}\right)^2}} \\
+				&+\frac{1}{\sqrt{\left(x-\frac{a}{\sqrt{2}}\right)^2+\left(y-\frac{a}{\sqrt{2}}\right)^2}}+\frac{1}{\sqrt{\left(x+\frac{a}{\sqrt{2}}\right)^2+\left(y+\frac{a}{\sqrt{2}}\right)^2}}
+			\end{align*}
+			Encontrando el campo eléctrico tomando el gradiente del potencial
+			\begin{align*}
+				\vec{E} &= \Bigg\{ \frac{x+\frac{a}{\sqrt{2}}}{\left(\left(x+\frac{a}{\sqrt{2}}\right)^2+\left(y+\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}}+\frac{x+\frac{a}{\sqrt{2}}}{\left(\left(x+\frac{a}{\sqrt{2}}\right)^2+\left(y-\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}} \\
+				&+\frac{x-\frac{a}{\sqrt{2}}}{\left(\left(x-\frac{a}{\sqrt{2}}\right)^2+\left(y+\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}}+\frac{x-\frac{a}{\sqrt{2}}}{\left(\left(x-\frac{a}{\sqrt{2}}\right)^2+\left(y-\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}} \Bigg\} \vx \\
+				&+\Bigg\{ \frac{y+\frac{a}{\sqrt{2}}}{\left(\left(x+\frac{a}{\sqrt{2}}\right)^2+\left(y+\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}}+\frac{y+\frac{a}{\sqrt{2}}}{\left(\left(x-\frac{a}{\sqrt{2}}\right)^2+\left(y+\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}} \\
+				&+\frac{y-\frac{a}{\sqrt{2}}}{\left(\left(x+\frac{a}{\sqrt{2}}\right)^2+\left(y-\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}}+\frac{y-\frac{a}{\sqrt{2}}}{\left(\left(x-\frac{a}{\sqrt{2}}\right)^2+\left(y-\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}} \Bigg\} \vy
+			\end{align*}
+			Resolviendo por métodos numéricos:
+			
+			\item[Para $n = 5$: ] Se tiene que el potencial si se toma la figura como en la figura \ref{PP5}.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{Images/PentagonP5.pdf}
+				\caption{Pentágono Inscrito en una Circunferecia, creado con \textit{Mathematica}.}
+				\label{PP5}
+			\end{figure}
+			De modo que, el potencial debido a dichas cargas, en cualquier punto del espacio es:
+				\begin{align*}
+					\phi (x,y) &= \frac{q}{4\pi \varepsilon _o} \Bigg\{ \frac{1}{\sqrt{(y-a)^2+x^2}}+\frac{1}{\sqrt{(x-0.951 a)^2+(y-0.309 a)^2}} \\ 
+					&+\frac{1}{\sqrt{(0.951 a+x)^2+(y-0.309 a)^2}}+\frac{1}{\sqrt{(x-0.588 a)^2+(0.809 a+y)^2}} \\ 
+					&+\frac{1}{\sqrt{(0.588 a+x)^2+(0.809 a+y)^2}} \Bigg\}
+				\end{align*}
+			Con esto, se encuentra el campo:
+				\begin{align*}
+					\vec{E} &= \frac{q}{4\pi \varepsilon _o} \Bigg\{ \frac{x}{\left((y-a)^2+x^2\right)^{3/2}}+\frac{x-0.951 a}{\left((x-0.951 a)^2+(y-0.309 a)^2\right)^{3/2}} \\
+					&+\frac{0.951 a+x}{\left((0.951 a+x)^2+(y-0.309 a)^2\right)^{3/2}}+\frac{x-0.588 a}{\left((x-0.588 a)^2+(0.809 a+y)^2\right)^{3/2}} \\ 
+					&+\frac{0.588 a+x}{\left((0.588 a+x)^2+(0.809 a+y)^2\right)^{3/2}} \Bigg\} \vx \\
+					& + \frac{q}{4\pi \varepsilon _o} \Bigg\{ \frac{y-a}{\left((y-a)^2+x^2\right)^{3/2}}+\frac{y-0.309 a}{\left((x-0.951 a)^2+(y-0.309 a)^2\right)^{3/2}} \\ 
+					&+\frac{y-0.309 a}{\left((0.951 a+x)^2+(y-0.309 a)^2\right)^{3/2}}+\frac{0.809 a+y}{\left((x-0.588 a)^2+(0.809 a+y)^2\right)^{3/2}} \\ 
+					&+\frac{0.809 a+y}{\left((0.588 a+x)^2+(0.809 a+y)^2\right)^{3/2}} \Bigg\} \vy
+				\end{align*}
+				
+				Resolviendo por métodos numéricos:
+		\end{description}
+		Para un $n\to \infty$ es claro que todos los puntos tienden a la solución trivial, el centro del círculo en el cual esta inscrito el poligono.
 	\end{problem}
 \end{mdframed}
 
@@ -121,6 +189,24 @@
 				$$\boxed{E(r\geq R) = \frac{AR^2}{2\varepsilon _o r^2} \vr}$$
 			Para la región fuera de la carga, el punto de referencia del potencial esta en el infinito. Con lo que:
 				$$\varphi (r \geq R) = -\int _\infty ^r \frac{AR^2}{2\varepsilon _o r^2} \dd{r} = \boxed{\frac{AR^2}{2\varepsilon _o r}}$$
+			Con esta información, se puede encontrar el comportamiento del campo y potencial en ambas regiones, dados por las siguientes gráficas
+				\begin{multicols}{2}
+					\textbf{Campo Eléctrico:}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[scale=0.55]{Images/CampoP6a.pdf}
+						\caption{Campo Eléctrico dentro y fuera de una esfera con densidad volumétrica de carga dada por $\flatfrac{A}{r}$.}
+						\label{PP6a}
+					\end{figure}
+				\columnbreak
+					\textbf{Potencial:}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[scale=0.5]{Images/PotencialP6a.pdf}
+						\caption{Potencial Eléctrico dentro y fuera de una esfera con densidad volumétrica de carga dada por $\flatfrac{A}{r}$.}
+						\label{PP6a}
+					\end{figure}
+				\end{multicols}
 			\item Para $\rho (r) = \rho _o$, se tiene que la carga encerrada en una superficie gaussiana de radio $r < R$ es:
 				$$Q_{enc} = \frac{4}{3} \pi r^3 \rho _o$$
 			Utilizando la ley de Gauss:
@@ -131,6 +217,24 @@
 				$$\boxed{\vec{E} = \frac{\rho _o R^3}{3 \varepsilon _o r^2} \vr}$$
 			El potencial:
 				$$\boxed{\varphi = \frac{\rho _o R^3}{3\varepsilon _o r}}$$
+			Similarmente con el inciso anterior, se crean las gráficas para visualizar el comportamiento del campo y potencial entre regiones
+				\begin{multicols}{2}
+					\textbf{Campo Eléctrico:}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[scale=0.55]{Images/CampoP6b.pdf}
+						\caption{Campo Eléctrico dentro y fuera de una esfera con densidad volumétrica de carga constante.}
+						\label{PP6a}
+					\end{figure}
+				\columnbreak
+					\textbf{Potencial:}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[scale=0.5]{Images/PotencialP6b.pdf}
+						\caption{Potencial Eléctrico dentro y fuera de una esfera con densidad volumétrica de carga constante.}
+						\label{PP6a}
+					\end{figure}
+				\end{multicols}
 		\end{enumerate}
 	\end{problem}
 \end{mdframed}
@@ -201,6 +305,13 @@
 			\item Como el cable en su totalidad es eléctricamente neutro, lo que implica que el campo eléctrico fuera del cable es cero:
 				$$\boxed{\vec{E} (r \geq b) = 0}$$
 		\end{enumerate}
+		Con esta información, el campo eléctrico tiene un comportamiendo dado por la gráfica \ref{CP10}.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Images/CampoP10.pdf}
+			\caption{Campo Eléctrico definido por Regiones entre Cables Coaxiales}
+			\label{CP10}
+		\end{figure}
 	\end{problem}
 \end{mdframed}
 
