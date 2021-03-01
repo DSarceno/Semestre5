@@ -107,7 +107,7 @@
 				$$ \vec{E} = \frac{-q}{4\pi \varepsilon _o} \left(-\frac{x}{\left((a-y)^2+x^2\right)^{3/2}}-\frac{\frac{\sqrt{3} a}{2}+x}{\left(\left(\frac{\sqrt{3} a}{2}+x\right)^2+\left(\frac{a}{2}+y\right)^2\right)^{3/2}}-\frac{x-\frac{\sqrt{3} a}{2}}{\left(\left(x-\frac{\sqrt{3} a}{2}\right)^2+\left(\frac{a}{2}+y\right)^2\right)^{3/2}}\right)\vx$$
 				
 				$$\left(\frac{a-y}{\left((a-y)^2+x^2\right)^{3/2}}-\frac{\frac{a}{2}+y}{\left(\left(\frac{\sqrt{3} a}{2}+x\right)^2+\left(\frac{a}{2}+y\right)^2\right)^{3/2}}-\frac{\frac{a}{2}+y}{\left(\left(x-\frac{\sqrt{3} a}{2}\right)^2+\left(\frac{a}{2}+y\right)^2\right)^{3/2}}\right)\vy$$
-			Resolviendo estos polinomios por métodos numéricos, utilizando la función \texttt{NSolve[]} de mathemática, se encuentran los siguientes puntos en los cuales el campo es cero son:
+			Resolviendo estos polinomios por métodos numéricos, utilizando la función \texttt{NSolve[]} de mathemática, se encuentran los siguientes puntos en los cuales el campo es cero son: (igualando las componentes a cero)
 				$$\left\{\begin{array}{c}
 				\{y\to 0.142359,x\to -0.246573\} \\
 				\{y\to 0.142359,x\to 0.246573\} \\
@@ -133,7 +133,7 @@
 				&+\Bigg\{ \frac{y+\frac{a}{\sqrt{2}}}{\left(\left(x+\frac{a}{\sqrt{2}}\right)^2+\left(y+\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}}+\frac{y+\frac{a}{\sqrt{2}}}{\left(\left(x-\frac{a}{\sqrt{2}}\right)^2+\left(y+\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}} \\
 				&+\frac{y-\frac{a}{\sqrt{2}}}{\left(\left(x+\frac{a}{\sqrt{2}}\right)^2+\left(y-\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}}+\frac{y-\frac{a}{\sqrt{2}}}{\left(\left(x-\frac{a}{\sqrt{2}}\right)^2+\left(y-\frac{a}{\sqrt{2}}\right)^2\right)^{3/2}} \Bigg\} \vy
 			\end{align*}
-			Resolviendo por métodos numéricos:
+			Resolviendo por métodos numéricos se encontrarán $5$ soluciones, sin embargo este proceso ya es pesado y no se logró ejecutar completamente. Sin embargo, los puntos de campo cero convergen en la solución trivial $x,y= 0,0$.
 			
 			\item[Para $n = 5$: ] Se tiene que el potencial si se toma la figura como en la figura \ref{PP5}.
 			\begin{figure}[H]
@@ -158,7 +158,7 @@
 					&+\frac{0.809 a+y}{\left((0.588 a+x)^2+(0.809 a+y)^2\right)^{3/2}} \Bigg\} \vy
 				\end{align*}
 				
-				Resolviendo por métodos numéricos:
+				Resolviendo por métodos numéricos: nos dará un conjunto de $6$ puntos, sin embargo, este es un proceso bastante pesado para las laptop, entonces ya no se logro ejecutar. Similar al poligono de cuatro vertices, los puntos convergen a $0,0$.
 		\end{description}
 		Para un $n\to \infty$ es claro que todos los puntos tienden a la solución trivial, el centro del círculo en el cual esta inscrito el poligono.
 	\end{problem}
@@ -249,7 +249,12 @@
 % PROBLEMA 7
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Utilizando la ley de Gauss (por siemtría en la distribución), se toma una superficie de un cilindro coaxial de radio $r < R$. Encontrando la carga encerrada por dicho cilindro es: ($\dd{V} = \pi r^2 \dd{z}$)
+			$$Q_{enc} = \int _{\flatfrac{-l}{2}} ^{\flatfrac{l}{2}}\pi r^2 (\rho _o + \beta z) \dd{z}$$
+		De modo que:
+			$$Q_{enc} = \frac{\pi r^2 l}{\varepsilon _o} \rho _o$$
+		El área de la superficie gaussiana es $A = 2\pi r l$
+			$$\boxed{E(r<R) = \frac{\rho _o r}{2\varepsilon _o}}$$
 	\end{problem}
 \end{mdframed}
 
@@ -281,7 +286,22 @@
 % PROBLEMA 9
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Para la configuración dada, se utiliza el método de las imagenes, de modo que:
+		\begin{enumerate}[a)]
+			\item La posición ideal del cilindro imagen es con un eje paralelo al cilindro original colocado en $-x_o$ y la carga de dicho cilindro igual a $-\lambda$.
+			\item Realizando el procedimiento para dos cables paralelos ambos separados del centro del sistema de coordenadas una distancia $x_o$, con esto, se encuentra el campo eléctrico en cada punto, el cual se encontró en clase y se tiene:
+				$$\vec{E} _\lambda = \frac{\lambda}{2\pi \varepsilon _o} \frac{\vec{r_1}}{r_1 ^2}$$
+			De manera similar para la carga $-\lambda$ con $r_2$. De modo que, integrando se tiene que el potencial superpuesto es:
+				$$\varphi _T = \frac{-\lambda}{2\pi \varepsilon _o} \ln{\frac{r_1}{r_2}}$$
+			De modo que se toma a $M$ como:
+				$$M = \frac{r_1}{r_2} = \frac{\sqrt{(x - x_o - a)^2 + y^2}}{\sqrt{(x + x_o + a)^2 + y^2}}$$
+			Esto solo es válido para el lado de $+x_o$ y fuera del cilindro cargado. Con esto se tiene que, tomando a $M$ constante, se llega a la ecuación de un cilindro (cilindros equipotenciales), con esto y el desarrollo realizado en clase se tiene que el radio de dicho cilindro es:
+				$$R_c = \frac{2Mx_o}{1 - M^2} = a$$
+			Despejando	
+				$$aM^2 + 2Mx_o - a = 0$$
+			Resolviendo la ecuación cuadrática se tiene que $M$ tiene que valer:
+				$$\boxed{M = \frac{-x_o \pm \sqrt{x_o ^2 - a^2}}{a}}$$
+		\end{enumerate}
 	\end{problem}
 \end{mdframed}
 
