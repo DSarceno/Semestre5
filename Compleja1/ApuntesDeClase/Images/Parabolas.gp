@@ -1,14 +1,17 @@
 # Creando las gráficas de la clase 15 en Gnuplot
 # Se toman las ecuaciones paramétricas en contradas en el plano v-u
-set output "Parabolas.png"
-set title "Ejemplo Clase 15"
-set xrange [-2:2]
+set terminal pdf
+set output "Parabolas.pdf"
+set title "Ejemplo Clase 16"
+set grid
+set autoscale
+set xrange [-4:4]
 set yrange [-2:2]
 set xlabel "v"
-set ylabel "y"
+set ylabel "u"
 
 
 ## Ploteando las ecuaciones (estan respecto de x pero se sabe que es v)
-plot [-2:2] (1-x**2)/2 lc black, (x**2 - 1)/2 lc "red"
+plot [-4:4] (1-x**2)/2 lc black, (x**2 - 1)/2 lc "red"
 
 show plot
