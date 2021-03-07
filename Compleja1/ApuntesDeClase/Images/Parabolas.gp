@@ -1,9 +1,10 @@
-# Creando las gráficas de la clase 15 en Gnuplot
+# Creando las gráficas de la clase 16 en Gnuplot
 # Se toman las ecuaciones paramétricas en contradas en el plano v-u
 set terminal pdf
 set output "Parabolas.pdf"
 set title "Ejemplo Clase 16"
 set grid
+set zeroaxis
 set autoscale
 set xrange [-4:4]
 set yrange [-2:2]
