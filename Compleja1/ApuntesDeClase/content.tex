@@ -617,7 +617,7 @@ Lo interesante es que para funciones de variable compleja, las propiedades de lo
 
 
 
-\begin{teorema}
+\begin{teorema} \it
 	Las partes real e imaginaria de una función holomorfa son armónicas.
 \end{teorema}
 
@@ -699,6 +699,38 @@ Luego de esto es lógico preguntarse como determinar si una curva es singular en
 	Sea $w = f(w)$ un mapeo coplejo definido en un abierto conexo $D$ y sea $z_o \in D$. Entonces decimos que $w=f(z)$ es \textbf{conforme} en $z_o$ si para todo par de curvas suaves $C_1$ y $C_2$ que se interesectan en $z_o$ el ángulo entre $C_1$ y $C_2$ es igual al ángulo entre $f(C_1)$ y $f(C_2)$ en magnitud y sentido.
 \end{definicion}
 
+% CLASE 18
+\label{CLASE18}
+
+Una forma más directa para determinar si un mapeo es conforme es por medio del siguiente teorema, el cual enlaza con el concepto de función holomorfa
+
+\begin{teorema} \it
+	Si $f$ es holomorfa en un abierto conexo $D$ que contiene a $z_o$, y si $f' (z_o) \neq 0$, entonces $w = f(z)$ es conforme en $z_o$.
+\end{teorema}
+
+Esto se puede ver claramente con el ejemplo del mapeo $f(z) = e^z$.
+
+\begin{proof}
+	Tomando dos curvas suaves $z_1$ y $z_2$ que se intersectan en $z_o$ se tiene que el ángulo entre dichas curvas en $z_o$ está dado por
+		$$\theta = arg(z' _1 (z_o)) - arg(z' _2 (z_o))$$
+	Con esta idea, se toma el mapeo $f$ de modo que
+		$$w_1 = f(z_1)$$
+		$$w_2 = f(z_2)$$
+	El ángulo $\hat{\theta}$ entre $w_1$ y $w_2$ en $f(z_o)$ es:
+		$$\hat{\theta} = arg\qty(w' _1 (f(z_o))) - arg\qty(w' _2 (f(z_o)))$$
+	Por regla de la cadena
+		$$ = arg\qty(f'(z_o) z' _1 (z_o)) - arg\qty(f'(z_o) z' _2 (z_o))$$
+	Sabiendo que el argumento del producto es la suma de los argumentos (esto se puede ver claramente con la notación Euleriana de los complejos), se tiene
+		$$\hat{\theta} = arg(z' _1 (z_o)) - arg(z' _2 (z_o)) = \theta$$
+\end{proof}
+
+Para introducir mejor el siguiente teorema, se puede tomar el mapeo $f(z) = z^2$ el cual es una función holomorfa y, conforme en $z \neq 0$. Aplicando el mapeo a $z_1 = x$ y $z_2 = yi$, se tiene que las imagenes de ambas curvas son los reales positivos y negativos, respectivamente. Con lo que es claro que el ángulo se duplica, con esta idea, el siguiente teorema es más claro: \\
+
+\begin{teorema} \it
+	Sea $f$ una función holomorfa en un abierto conexo $D$ que contiene a $z_o$ y $f'(z_o) = 0$. Si $n > 1$ es un entero tal que
+		$$f'(z_o) = f''(z_o) = f'''(z_o) = \cdots = f^{(n - 1)} (z_o) = 0$$
+	Pero $f^{(n)} (z_o) \neq 0$ entonces el ángulo entre cualesquiera dos curvas suaves que se intersectan en $z_o$ aumenta en un factor de $n$, por el mapeo $w = f(z)$.
+\end{teorema}
 
 
 
