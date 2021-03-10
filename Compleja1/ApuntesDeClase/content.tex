@@ -736,18 +736,50 @@ Para introducir mejor el siguiente teorema, se puede tomar el mapeo $f(z) = z^2$
 
 
 
+% CLASE 19
+\label{CLASE19}
+\section{Integración Compleja}
+
+Muy parecido a como se realiza en el campo $\R$, se realizan las integrales en los complejos. Sea $h: [a,b] \subset \R \to \C$ una función compleja con $u$ y $v$ como su parte real y parte imaginaria, respectivamente. Se define la integral sobre $[a,b]$ como: $t\in \R$
+	$$\int _a ^b h(t) \dd{t} = \int _a ^b u(t) \dd{t} + i\int _a ^b v(t) \dd{t}$$ 
+	
+\subsection{Integrales sobre Curvas}
+
+Sea $\alpha (t)$ una curva parametrizada como $z(t) = x(t) + iy(t)$ con $a\leq t \leq b$, entonces
+	$$\int _\alpha f(z) \dd{z} = \int _a ^b f(z(t)) z'(t) \dd{t}$$
+
+\begin{ejemplo} \tt
+	Calcular $\int_\alpha \frac{1}{z} \dd{z}$, donde $\alpha$ es la curva $\abs{z} = 1$. \\
+	Sabiendo que la curva $\abs{z} = 1$ es el circulo unitario, es claro que $z(t) = e^{it}$ con $0 \leq t 2\pi$. Derivando $z'(t) = ie^{it}$. Sustituyendo en la definición se tiene que
+		$$\int _{\abs{z} = 1} \frac{1}{z} \dd{z} = 2\pi i$$
+\end{ejemplo}
 
 
 
 
+\subsection{Teorema Fundamental}
+
+Suponiendo que $\alpha : [a,b] \to \C$ es una curva suave a trozos que $F$ es una función analítica en un conjunto abierto $G$ que contiene a $\alpha$. Entonces,
+	$$\int _\alpha F'(z) \dd{z} = F(\alpha (b)) - F(\alpha (a))$$
+
+
+\begin{ejemplo} \tt
+	Calcular $\int _\alpha z^3 \dd{z}$, donde $\alpha$ es la parte de la elipse $x^2 + 4y^2 = 1$ que una a los puntos $z = 1$ y $z = \frac{i}{2}$. \\
+	Sabiendo que
+		$$z^3 = \dv{z} \qty(\frac{1}{4} z^4)$$
+	Con esto se tiene, por el teorema fundamental
+		$$\int _\alpha z^3 \dd{z} = \eval[\frac{1}{4} z^4|_1 ^{\flatfrac{i}{2}} = -\frac{15}{61}$$
+\end{ejemplo}
 
 
 
+\subsubsection{Teorema de Cauchy}
 
 
-
-
-
+\begin{teorema} \it
+	Sea $f$ una función analítica en un dominio simplemente conexo $A$, entonces para toda curva cerrada simple $\alpha$ en $A$.
+		$$\int _\alpha f(z) \dd{z} = 0$$
+\end{teorema}
 
 
 
