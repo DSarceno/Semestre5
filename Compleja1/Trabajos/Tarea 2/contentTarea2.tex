@@ -6,16 +6,10 @@
 % PROBLEMA 1
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Tomando a $z = a + bi$, se tiene:
-			$$\frac{a + bi}{\qty[(a + 1)^2 + bi]} = \frac{a + bi}{(a + 1)^2 - b^2 + 2bi(a + 1)} \qty(\frac{(a + 1)^2 - b^2 - 2bi(a + 1)}{(a + 1)^2 - b^2 - 2bi(a + 1)})$$
-		Tomando únicamente la parte imaginaria, se tiene:
-			$$b\qty[(a + 1)^2 - b^2] - 2ab(a + 1) = -2a^2 b - 2ab - b^3 + 2ab + b = -b(a^2 + b^2 - 1) = 0$$
-		Lo que demuestra:
-			$$\Im{\frac{z}{(z + 1)^2}} = 0$$
-		$\QED$ \\
-		Con el término $a^2 + b^2 - 1$ de la última igualdad, es claro que solo los puntos del círculo unitario y los reales cumplen la relación propuesta.
+		
 	\end{problem}
 \end{mdframed}
+
 
 
 
@@ -27,25 +21,20 @@
 % PROBLEMA 2
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Tomando la propiedad $z\bar{z} = \abs{z} ^2$, se tiene:
-			$$\abs{\frac{z + \alpha}{1 + \bar{\alpha} z}} ^2 = \qty(\frac{z + \alpha}{1 + \bar{\alpha} z}) \qty(\overline{\frac{z + \alpha}{1 + \bar{\alpha} z}})$$
-		Desrrollando se tiene:
-			$$ = \frac{\abs{z} ^2 + \abs{\alpha} ^2 + \bar{z}\alpha + \overline{\bar{z} \alpha}}{1 + \bar{\alpha} z + \overline{\bar{\alpha} z} + \abs{\bar{\alpha} z}} = \frac{\abs{z} ^2 + \abs{\alpha} ^2 + 2\Re{\bar{z} \alpha}}{1 + 2\Re{\bar{\alpha} z} + \abs{\bar{\alpha} z } ^2}$$
-		Por las condiciones del problema se tiene que $\abs{z} ^2 \abs{\alpha} ^2 < 2$ y $\abs{\alpha z} ^2 < 1$, con lo que:
-			$$< \frac{2 + 2\Re{\bar{z} \alpha}}{2 + 2\Re{\bar{\alpha} z}} = 1$$
-		Asumiendo que existe caso de igualdad, se toma:
-			$$\abs{z + \alpha} = \abs{1 + \bar{\alpha} z}$$
-		Siguiendo la idea del inicio:
-			$$(z + \alpha)(\bar{z} + \bar{\alpha}) = (1 + \bar{\alpha} z)(1 + \alpha \bar{z})$$
-		Desarrollando se llega a:
-			$$\abs{z} ^2 + \abs{\alpha} ^2 = 1 + \abs{z} ^2 \abs{\alpha} ^2$$
-		De modo que:
-			$$(1 - \abs{z} ^2)(1 - \abs{\alpha} ^2) = 0$$
-		Como $\abs{\alpha} < 1$, entonces es necesario que $\abs{z} = 1$. Con esto se concluye que:
-			$$\abs{\frac{z + \alpha}{1 + \bar{\alpha} z}} \leq 1$$
-		Con el caso de igualdad cuando $z$ esta en el circulo unitario. $\QED$
+		
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -53,18 +42,21 @@
 % PROBLEMA 3
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Es claro que el módulo de $z$ es $1$, con lo que, la forma polar esta dada por:
-			$$z = \cis {\flatfrac{\pi}{4}}$$
-		Sabiendo el Teorema de Moivre, se tiene que:
-			$$\cis{1^2 \flatfrac{\pi}{4}} + \cis{2^2 \flatfrac{\pi}{4}} + \cdots + \cis{12^2 \flatfrac{\pi}{4}}$$
-		Con esto, para los impares se tiene que $\flatfrac{1 + i}{\sqrt{2}}$. Multiplos de $4$, el resultado es $1$ y pares no multiplos de $4$ se tiene $-1$. De modo que:
-		$$z^{1^2} + z^{2^2} + \cdots + z^{12^2} = 6\frac{1+i}{\sqrt{2}}$$
-		Para el lado derecho, se tiene que el inverso de $\qty(\flatfrac{1+i}{\sqrt{2}})^{-1} = \flatfrac{1-i}{\sqrt{2}}$, con esto el lado derecho de la expresión:
-			$$\frac{1}{z^{1^2}} + \frac{1}{z^{2^2}} + \cdots + \frac{1}{z^{12^2}} = 6\frac{1-i}{\sqrt{2}}$$
-		Multiplicando ambos resultados se tiene que: (usando $\bar{z} z = \abs{z} ^2$)
-			$$\qty(z^{1^2} + z^{2^2} + \cdots + z^{12^2}) \qty(\frac{1}{z^{1^2}} + \frac{1}{z^{2^2}} + \cdots + \frac{1}{z^{12^2}}) = \boxed{36}$$
+		Para la función $f(z) = \abs{z}$, si la función es entera, implica directamente que es holomorfa. Por contradicción se asumirá la función holomorfa; entonces, la parte real e imaginaria son armónicas, de modo que:
+			$$\nabla ^2 f = 0$$
+		Aplicando el laplaciano:	
+			$$\frac{y^2}{\qty(x^2 + y^2)^{\flatfrac{3}{2}}} + \frac{x^2}{\qty(x^2 + y^2)^{\flatfrac{3}{2}}} = 0$$
+		Lo que contradice el hecho de que sea holomorfa, puesto que la igualdad no se cumple en ningún $z\in \C$, por lo tanto $f$ no es entera. $\QED$
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+
+
 
 
 
@@ -83,17 +75,44 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 % PROBLEMA 5
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Sabiendo la relación de las medianas y el gravicentro, entonces tomando los segmentos de recta, simplemente se realiza dicho procedimiento. Tomando cualquier lado (en este caso se tomará $ac$) se tiene que el punto medio entre dichos vértices es:
-			$$\frac{a + c}{2}$$
-		Ahora, para el segmento entre este nuevo punto y el vértice restante es:
-			$$b + t\qty(\frac{a + c}{2} - b)$$
-		Por la relación se tiene que $t = \flatfrac{2}{3}$, con esto y desarrollando se tiene:
-			$$\boxed{G = \frac{a + b + c}{3}}$$
+		
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -103,18 +122,38 @@
 % PROBLEMA 6
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Por inducción, el caso base se cumple claramente. La hipotesis inductiva: $n = k$
-			$$\cos{\theta} + \cos{3\theta} + \cdots + \cos{(2k - 1)\theta} = \frac{\sin{2k\theta}}{2\sin{\theta}}$$
-		Paso inductivo $k + 1$:
-			$$\cos{\theta} + \cos{3\theta} + \cdots + \cos{(2k + 1)\theta} = \frac{\sin{2k\theta}}{2\sin{\theta}} + \cos{(2k + 1)\theta}$$
-		Tomando el lado derecho de la ecuación, se tiene que:
-			$$ = \frac{1}{2\sin{\theta}} \qty[\sin{2k\theta} + \underbrace{2\cos{\theta} \sin{\theta}}_{\sin{2\theta}} \cos{2k\theta} - 2\sin ^2 {\theta} \sin{2k\theta}]$$
-			$$ = \frac{1}{2\sin{\theta}} \qty[\sin{2k\theta} \cos{2\theta} + \sin{2\theta} \cos{2k\theta}]$$
-		Con lo que, utilizando identidades trigonométricas, se tiene que:
-			$$\cos{\theta} + \cos{3\theta} + \cdots + \cos{(2k + 1)\theta} = \frac{\sin{2(k + 1)\theta}}{2\sin{\theta}}$$
-		$\QED$
+		Incisos:
+		\begin{enumerate}[a)]
+			\item 
+			\item Tomando la forma exponencial del seno, se tiene que:
+				$$\sin{\sqrt{z}} = \frac{e^{i\sqrt{z}} - e^{-i\sqrt{z}}}{2i}$$
+			Utilizando el teorema de DeMoivre se puede descomponer $\sqrt{z} = \abs{z}^{\flatfrac{1}{2}} \qty(\cos{\flatfrac{\theta}{2}} + i\sin{\flatfrac{\theta}{2}})$. Por simplicidad se tomará a $a = \abs{z}^{\flatfrac{1}{2}}$. 
+				$$ = \frac{ e^{ai\coss} e^{-a\sins} - e^{-ai\coss} e^{a\sins} }{ 2i }$$			
+			Sumando y restando el primer término pero con la segunda exponencial en signo positivo; de modo que:
+				$$ = \frac{1}{i} e^{ai\coss} \underbrace{\qty[\frac{ e^{a\sins} + e^{-a\sins} }{ 2 }]}_{\cosh{\qty(a\sins)}} - \frac{ e^{-ai\coss} e^{a\sins} }{ 2i } - \frac{ e^{ai\coss} e^{a\sins} }{ 2i }$$
+			Volviendo a sumar y restar el mismo término se tiene que:
+				$$ = \cosh{\qty(a\sins)} \sin{\qty(a\coss)} -i \qty(\underbrace{\frac{ e^{ai\coss} + e^{-ai\coss} }{ 2 }}_{\cos{\qty(a\coss)}}) \cosh{\qty(a\sins)} $$
+				$$ + ie^{a\sins} \qty[\underbrace{\frac{ e^{ai\coss} + e^{-ai\coss} }{ 2 }}_{\cos{\qty(a\coss)}}]$$
+			Reduciendo y simplificando:
+				$$ = \cosh{\qty(a\sins)} \sin{\qty(a\coss)} + i\cos{\qty(a\coss)} \qty(\underbrace{\frac{ -e^{a\sins} - e^{-a\sins} }{ 2 } + e^{a\sins}}_{\sinh{\qty(a\sins)}})$$
+			El resultado de la expansión es:
+				$$\sin{\sqrt{z}} = \cosh{\qty(\zsq \sins)} \sin{\qty(\zsq \coss)} + i\sinh{\qty(\zsq \sins)} \cos{\qty(\zsq \coss)}$$
+		\end{enumerate}
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -123,11 +162,23 @@
 % PROBLEMA 7
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Tomando a dos complejos $z_1$ y $z_2$, con parte real y compleja pertenecientes a los naturales; lo que implica que, $\abs{z_1} ^2 = \Re{z_1} ^2 + \Im{z_1} ^2$ y $\abs{z_2} ^2 = \Re{z_2} ^2 + \Im{z_2} ^2$. Por lo que $\abs{z_1} ^2 ,\abs{z_2} ^2 \in C$, realizando el producto de los dos módulos $\abs{z_1} ^2 \abs{z_2} ^2 = z_1 \bar{z_1} z_2 \bar{z_2} = z_1 z_2 \overline{z_1 z_2} = \abs{z_1 z_2} ^2$. Ahora, verificando que las componentes sean enteros:
-			$$\abs{z_1 z_2} ^2 = \qty(\underbrace{\Re{z_1} \Re{z_2} - \Im{z_1} \Im{z_2}}_{\in \Z})^2 + \qty(\underbrace{\Re{z_1} \Im{z_2} + \Re{z_2} \Im{z_1}}_{\in \Z})^2$$
-		Por lo que $\abs{z_1 z_2} ^2 \in C$. $\QED$
+		
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -137,16 +188,24 @@
 % PROBLEMA 8
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Como se tiene que $\xi = \exp{\frac{2\pi i}{n}}$, de modo que el polinomio se puede representar de dos formas distintas:
-			$$\frac{z^n - 1}{z - 1} = 1 + z + \cdots + z^{n - 1}$$
-			$$(z - 1)\prod _{k=1} ^{n - 1} (z - \xi ^k) = z^n - 1$$
-		Sustituyendo la segunda representación en la primera, con lo que se tiene:	
-			$$\prod _{k = 1} ^{n - 1} (z - \xi ^k) = 1 + z + z^2 + \cdots + z^{n - 1}$$
-		La productoria es representa la serie de multiplicandos dada en el problema, por lo que, sustituyendo $z = 1$ en la ecuación dada, con esto se tiene que el resultado es:
-			$$\boxed{\prod _{k = 1} ^{n - 1} (1 - \xi ^k) = n}$$
-		El hecho de hacer $z\to 1$ no genera problema, es sencillo verlo aplicando limites.
+		
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -156,209 +215,38 @@
 % PROBLEMA 9
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Como $\lambda _i \geq 0$ y $\lambda1 + \cdots + \lambda _n = 1$, esto implica que $\lambda _i \leq 1$. Por la desigualdad triangular: 
-			$$\abs{\sum _i \lambda _i a_i} \leq \sum _i \abs{\lambda _i a_i}$$
-		Como cada $\abs{a_i}$ y $\lambda _i$ son menores a $1$, entonces su producto también es menor a $1$, además de ser menor a ambos factores, con esto es claro que:
-			$$\sum _i \abs{\lambda _i a_i} < 1$$
-		Por ende:
-			$$\abs{\sum _i \lambda _i a_i} < 1$$
-		$\QED$
-	\end{problem}
-\end{mdframed}
-
-
-
-
-
-
-% PROBLEMA 10
-\begin{mdframed}[style = warning]
-	\begin{problem}
-		Expresando los complejos en forma polar y, por teorema de DeMoivre, se tiene:
-			$$2^m \qty[\cos{\qty(\frac{m\pi}{3})} + i\sin{\qty(\frac{m\pi }{3})}] = 2^{\flatfrac{n}{2}} \qty[\cos{\qty(\frac{n\pi}{4})} - i\sin{\qty(\frac{n\pi}{4})}]$$
-		Con esto se tiene que:
-			$$\cos{\qty[\pi \qty(\frac{m}{3} + \frac{n}{4})]} + i\sin{\qty[\pi \qty(\frac{m}{3} + \frac{n}{4})]} = 2^{\flatfrac{n}{2} - m}$$
-		Con esto es necesario que la parte imaginaria sea cero, por ende la suma del ángulo debe de ser par. Además, $m$ debe ser multiplo de $3$, y $n$ multiplo de $4$, también debe de cumplir que $n$ es el doble de $m$. Matemáticamente hablando:
-			$$\qty(\frac{m}{3} + \frac{n}{4}) \equiv 0 \quad \text{mod} \, 2$$
-		Y
-			$$\frac{n}{2} = m$$
-		Con esto, se tiene que:
-			$$\frac{5}{6} m \equiv 0 \quad \text{mod} \, 2$$
-		En otra forma $\dfrac{5}{6} m = 2q$, con lo que $m = \dfrac{12}{5} q$. Para el mínimo de $q$ para que $m$ sea entero, es decir $q = 5$, entonces $\boxed{m = 12}$ y $\boxed{n = 24}$. Al valuar se comprueba que la igualdad se cumple.
-	\end{problem}
-\end{mdframed}
-
-
-
-
-% PROBLEMA 11
-\begin{mdframed}[style = warning]
-	\begin{problem}
-		Reescribiendo la igualdad como una productoria y tomando el seno como función compleja:
-		\begin{align*}
-			\prod _{k=1} ^{n - 1} \sin{\frac{k\pi}{n}} &= \prod _{k=1} ^{n - 1} \qty(\frac{-i}{2}) \qty(e^{\frac{k\pi i}{n}} - e^{-\frac{k\pi i}{n}}) \\
-			&= \qty(\frac{i}{2})^{n - 1} \prod_{k=1} ^{n - 1} e^{-\frac{k\pi i}{n}} \qty(1 - e^{\frac{2\pi ki}{n}}) \\
-			&= \qty(\frac{i}{2})^{n - 1} \exp{\frac{-\pi i}{n} \sum _{k=1} ^{n - 1} k} \underbrace{\prod _{k=1} ^{n - 1} \qty(1 - e^{\frac{2\pi ki}{n}})}_{\frac{z^n - 1}{z - 1}}
-		\end{align*}
-		Aplicando L'Hopital a la fracción de polinomios y valuando en $1$; además, aplicando la formula de Gauss a la sumatoria dada:
-			$$ = n\qty(\frac{i}{2})^{n - 1} \exp{-\frac{\pi i(n - 1)}{2}}$$
-		Separando la exponencial y sustituyendo por la forma polar del complejo se tiene:
-			$$ = n\qty(\frac{i}{2})^{n - 1} \qty[i(-i)^n] = \frac{n}{2^{n - 1}} i^{2n} (-1)^n = \frac{n}{2^{n - 1}} (i^4)^n = \frac{n}{2^{n - 1}}$$
-		Lo que demuestra la igualdad. $\QED$
-	\end{problem}
-\end{mdframed}
-
-
-
-
-
-% PROBLEMA 12
-\begin{mdframed}[style = warning]
-	\begin{problem}
-		Para las trayectorias dadas se tienen las siguientes series: (representadas como un número complejo)
-			$$z = \qty(1 - \frac{1}{2} + \frac{1}{2 \cdot 3 \cdot 4} - \frac{1}{2\cdot 3\cdot 4 \cdot 5 \cdot 6}  + \cdots) + \qty(1 - \frac{1}{2\cdot 3} + \frac{1}{2 \cdot 3 \cdot 4 \cdot 5} - \cdots)i$$
-		Representandolo en forma de sumatoria:
-			$$z = \qty[\sum _{n = 0} ^{\infty} \frac{(-1)^{n}}{(2n)!}] + i\qty[\sum _{n = 0} ^{\infty} \frac{(-1)^n}{(2n + 1)!}]$$
-		De las cuales, la parte real es la serie de taylor (alrededor de cero) de la función $\cos{x}$ valuada en $x = 1$; similarmente, la parte imaginaria es la serie de Taylor alrededor de cero asociada a $\sin{x}$ valuada en $x = 1$, de modo que las coordenadas del punto al cual convergen las dos series es:
-			$$\boxed{\qty(\cos{1} , \sin{1})}$$
-	\end{problem}
-\end{mdframed}
-
-
-
-
-
-
-
-% PROBLEMA 13
-\begin{mdframed}[style = warning]
-	\begin{problem}
-		Sabiendo que $\abs{z} = \sqrt{2}$, de la expresión dada, se desarrolla la diferencia de cuadrados:
-			$$\abs{(z^2 - 1)(z - 1)} = \abs{(z - 1)^2 (z + 1)}$$
-		Como el módulo cuadrado es igual al producto entre el complejo y el conjugado:
-			$$\abs{(z + 1)(z - 1)^2} ^2 = (z + 1)(\bar{z} + 1)(z - 1)^2 (\bar{z} - 1)^2$$
-		Desarrollando y sustituyendo el módulo de $z$, asi como la identidad $z + \bar{z} = 2\Re{z}$, se tiene:
-			$$ = \qty[9 - 4\Re{z} ^2] \qty[3 - 2\Re{z}]$$
-			$$ = 27 - 18\Re{z} - 12 \Re{z} ^2 + 8\Re{z} ^3$$
-		Para encontrar el máximo, el máximo de esta ecuación, también es el máximo para la expresión dada, entonces, $x = \Re{z}$, se tiene:
-			$$f(x) = 27 - 18x - 12 x^2 + 8x^3$$
-		Como es una función de variable real, el criterio de la primera y segunda derivada es válido, por ende:
-			$$f'(x) = 4x^2 - 4x - 3 = 0$$
-		De esto, las dos soluciones $x_1 = \flatfrac{3}{2}$ y $x_2 = \flatfrac{-1}{2}$. Faluandolo en la segunda derivada, se tiene que el máximo de la función esta en $x_2$. Por lo que, valuando $f(x_2)$, se tiene: $f(\flatfrac{-1}{2}) = 32$, con lo que:
-			$$\boxed{\abs{(z^2 - 1)(z - 1)} = \sqrt{32}}$$
-	\end{problem}
-\end{mdframed}
-
-
-
-
-% PROBLEMA 14
-\begin{mdframed}[style = warning]
-	\begin{problem}
-		Incisos:
-		\begin{enumerate}[a)]
-			\item Sea $z\in \C$ con $\abs{\alpha} = \abs{\beta} = 1$, $\alpha , \beta \in \C$. \\
-				$(\Rightarrow)$ Sabiendo que $z = \alpha + \beta$, con esto $\abs{z} = \abs{\alpha + \beta}$. Utilizando la desigualdad triangular:
-					$$\abs{\alpha + \beta} \leq \abs{\alpha} + \abs{\beta} = 2$$
-				Con esto se tiene que:
-					$$\abs{z} \leq 2$$
-				$(\Leftarrow)$ Es claro que existen $\alpha ,\beta \in \C$ tales que $\abs{\alpha} = \abs{\beta} = 1$, puesto que son números complejos pertenecientes al circulo unitario. Además, por la desigualdad triangular se tiene que $\abs{\alpha} + \abs{\beta} \geq \abs{\alpha + \beta}$. Con esto $\alpha + \beta$ es un vector dentro de la circunferencia de radio $2$. Como $\abs{z} \leq 2$, es un vector dentro del circulo de radio $2$. Como ambos son arbitrarios, sin pérdida de generalidad, $z = \alpha + \beta \QED$
-			\item $(\Rightarrow)$ Sabiendo que existen $\alpha ,\beta ,\gamma \in \C$ con $\abs{\alpha} = \abs{\beta} = \abs{\gamma} = 1$ tales que $z = \alpha + \beta + \gamma$. Tomando el módulo de $z$ se tiene:
-				$$\abs{z} = \abs{\alpha + \beta + \gamma}$$
-			Por desigualdad triangular se tiene:
-				$$\abs{z} \leq \abs{\alpha} + \abs{\beta + \gamma}$$
-			Por la desigualdad triangular $\abs{\beta + \gamma} \leq \abs{\beta} + \abs{\gamma}$, sumando $\abs{\alpha}$ en ambos lados:
-				$$\abs{z} \leq \abs{\alpha} + \abs{\beta} + \abs{\gamma}$$
-			Sumando los $3$ módulos:
-				$$\boxed{\abs{z} \leq 3}$$
-			$(\Leftarrow)$ Tomando $\abs{z} \leq 3$ se tienen dos casos:
-			\begin{description}
-				\item[Igualdad: ] Tomando tres complejos del circulo unitario con el mismo argumento principal (es decir, tres complejos iguales) la suma de ellos es igual a otro complejo, al que se llamará $z$ cuyo módulo es $3$, i.e. $z$ es múltiplo de $\alpha$ ($\beta$ o $\gamma$). Concluyendo el caso de igualdad.
-				\item[Desigualdad estricta: ] Es trivial, puesto que tomando tres complejos con módulo $1$, cuyos argumentos sean distintos, es decir, no sean iguales, se tiene que la suma de dichos tres tiene un módulo menor a la suma de los módulos. Concluyendo la prueba. $\QED$
-			\end{description}
-		\end{enumerate}
-	\end{problem}
-\end{mdframed}
-
-
-
-
-% PROBLEMA 15
-\begin{mdframed}[style = warning]
-	\begin{problem}
-		Separando la expresión de la izquierda por pares, se tiene que:
-			$$\underbrace{\qty(\frac{\xi}{1 + \xi ^2} + \frac{\xi ^2}{1 + \xi ^4})}_{1} + \underbrace{\qty(\frac{\xi ^3}{1 + \xi} + \frac{\xi ^4}{1 + \xi ^3})}_{2}$$
-		Tomando los parentesis, tomando y desarrollando la suma de fracciones, con esto se tiene que, para $1$: (Sabiendo $\xi ^5 = 1$)
-			$$\qty(\frac{\xi}{1 + \xi ^2} + \frac{\xi ^2}{1 + \xi ^4}) = \frac{1 + \xi + \xi ^2 + \xi ^4}{(1 + \xi ^2)(1 + \xi ^4)} = \frac{1 + \xi ^2 + \xi ^4 + \xi ^6}{(1 + \xi ^2)(1 + \xi ^4)} = 1$$
-		Siguiendo con la parte $2$:
-			$$\qty(\frac{\xi ^3}{1 + \xi} + \frac{\xi ^4}{1 + \xi ^3}) = \frac{\xi ^3 + \xi ^6 + \xi ^4 + \xi ^5}{(1 + \xi)(1 + \xi ^3)} = \frac{1 + \xi + \xi ^3 + \xi ^4}{(1 + \xi)(1 + \xi ^3)} = 1$$
-		Por lo que, sumando ambas partes se tiene que:
-			$$\frac{\xi}{1 + \xi ^2} + \frac{\xi ^2}{1 + \xi ^4} + \frac{\xi ^3}{1 + \xi} + \frac{\xi ^4}{1 + \xi ^3} = 2$$
-		$\QED$
-	\end{problem}
-\end{mdframed}
-
-
-
-
-
-% PROBLEMA 16
-\begin{mdframed}[style = warning]
-	\begin{problem}
-		$(\Rightarrow)$ Tomando la forma polar del complejo se tiene $z = \cos{\theta} +i\sin{\theta}$. Con esto, y por el teorema de DeMoivre es claro que:
-			$$\sin{\theta} = -\sin{n\theta}$$
-			$$\cos{\theta} + \cos{n\theta} = -1$$
-		Claramente, la identidad del seno, y por el dominio de los argumentos, se tiene que el ángulo $\theta$ debe cumplir $\theta = 2k\pi - n\theta$. Sustituyendo en la identidad del coseno: $\cos{2k\pi - \theta} = \cos{2k\pi} \cos{\theta} + \sin{2k\pi} \sin{\theta}$, por lo que $2\cos{\theta} = -1$, por lo que $\theta = \flatfrac{2\pi}{3}$ y $n\theta = \flatfrac{4\pi}{3}$. De esto es claro que, debido a que para que $\flatfrac{2\pi}{3}$ es tres veces menor que $2\pi$, y el único angulo que cumple que la suma de los cosenos sea $-1$, es el $\flatfrac{4\pi}{3}$, por lo que el $n$ debe cumplir que $n\equiv 2 \, \text{mod} \, 3$, esto es para que el ángulo sea $240$ o un equivalente. \\[0.5cm]
-		$(\Leftarrow)$ Sabiendo que $n\equiv 2 \, \text{mod} \, 3$, implica que $n = 3q + 2$ para $q = 0,1,\ldots $. Además, tomando $x ^3 - 1 = 0$ con $\abs{x} \neq 1$. Por lo que $(x - 1)(x^2 + x + 1) = 0$, entonces $x^2 + x + 1 = 0$. Teniendo $p(z) = z^{3q + 2} + z + 1$. Despejando $(x + 1)$ del polinomio igualado a cero, y valuando $x$ en $p(z)$, se tiene $p(x) = x^2 (x^{3q} - 1) = 0$; lo que claramente implica que existe un número complejo con $\abs{x} = 1$, tal que es solución del polinomio $z^{3q + 2} + z + 1$. $\QED$
-	\end{problem}
-\end{mdframed}
-
-
-
-
-
-
-
-
-% PROBLEMA 17
-\begin{mdframed}[style = warning]
-	\begin{problem}
-		Nombrando a $\abs{z + 1} = \alpha$ y $\abs{z - 1} = \beta$, como se trata de módulos, ambos son reales. Además, nombramos a $z = a + bi$. Con esto, la igualdad se reescribe como:
-			$$\sqrt{(a - \alpha) ^2 + b^2} = \sqrt{(a + \beta)^2 + b^2}$$
-		Con esto es claro que:
-			$$(a - \alpha) ^2 = (a + \beta) ^2$$
-		Desarrollando ambos lados de la ecuación se llega a lo siguiente:
-			$$(\alpha + \beta) \qty[(\alpha - \beta) - 2a] = 0$$
-		Con esto se tienen dos casos:
-		\begin{description}
-			\item[$\alpha + \beta = 0$] Como $\alpha ,\beta \geq 0$, entonces $\alpha = -\beta = 0$. Dado esto, se tiene que:
-				$$(a \pm 1) ^2 + b^2 = 0$$
-			Con esto, se concluye que $\boxed{\Im{z} = 0}$ y $\boxed{\Re{z} = \pm 1}$.
-		\item[$(\alpha - \beta) = 2a$] Considerando $\Re{z} = 0$, la parte imaginaria queda libre, por lo que, la otra solución a la ecuación propuesta es: $\boxed{\Re{z} = 0}$ y por lo tanto $\boxed{\Im{z} = \text{libre}}$. Para esta misma condición, si $\boxed{\Im{z} = 0}$, se tiene la siguiente igualdad:
-				$$\abs{a + 1} - \abs{a - 1} \leq 2\abs{a}$$
-			Por propiedades de los números reales, se tiene que:
-				$$2\abs{a} = \abs{\abs{a + 1} - \abs{a - 1}} \leq \abs{a + 1 - a + 1} = 2$$
-			Lo que implica que $\abs{a} \leq 1$, por lo que son los valores aceptados de la parte real son $\boxed{-1 \leq \Re{z} \leq 1}$.
-		\end{description}
-	$\QED$
-	\end{problem}
-\end{mdframed}
-
-
-
-
-
-
-
-
-
-
-% PROBLEMA 18
-\begin{mdframed}[style = warning]
-	\begin{problem}
 		
 	\end{problem}
 \end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
