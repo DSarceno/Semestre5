@@ -65,7 +65,15 @@
 % PROBLEMA 4
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		$(\Rightarrow)$ Si $\pdv{f}{\bar{z}} = 0$, entonces su parte real e imaginaria es cero. Desarrollando las derivadas parciales de la definición:
+			$$\pdv{f}{x} = u_x + iv_x, \quad \quad \quad \pdv{f}{y} = u_y + iv_y .$$
+		Sustituyendo se tiene
+			$$ = \frac{1}{2} \qty[\qty(u_x - v_y) + \qty(u_y - v_y)i] .$$
+		Como la parte real e imaginaria son cero, entonces,
+			$$u_x = v_y$$
+			$$u_y = -v_x$$
+		Las cuales son las ecuaciones de Cauchy$-$Riemann. \\
+		$(\Leftarrow)$
 	\end{problem}
 \end{mdframed}
 
