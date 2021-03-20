@@ -99,7 +99,10 @@
 % PROBLEMA 5
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Para el abierto dado, se tiene que la función es holomorfa, por lo que se cumplen las ecuaciones de $CR$; donde, $u=3$ y $v=v$
+			$$u_x = v_y \quad \to \quad v_y = 0 \quad v = \phi (x)$$
+			$$u_y = -v_x \quad \to \quad v_x = 0 \quad \to \quad v = \phi (y)$$
+		Pero dicha constante de integración no puede ser función de ambas variables, por ende, la función $\boxed{v = c}$.
 	\end{problem}
 \end{mdframed}
 
@@ -170,7 +173,17 @@
 % PROBLEMA 7
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Si ambas funciones son enteras, se cumplen las ecuaciones de $CR$ en todo $\C$. Con esta idea, para $f$ se tienen las siguientes ecuaciones
+			\begin{align*}
+				u_x &= v_y \\
+				u_y &= -v_x
+			\end{align*}
+		Y para $\bar{f}$, se tiene
+			\begin{align*}
+				U_x = V_y &\to u_x = -v_y \\
+				U_y = V_x &\to u_y = v_x
+			\end{align*}
+		Con lo que, igualando las derivadas de la parte real, se concluye que $v = b$, lo que implica directamente que $u=a$, por ende $f(z) = a + bi$, constante. $\QED$
 	\end{problem}
 \end{mdframed}
 
@@ -196,7 +209,10 @@
 % PROBLEMA 8
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Por contradicción, suponemos la función holomorfa, por lo que las ecuaciones de $CR$. Con lo que:
+			$$v_y = u_x = e^x$$
+			$$v_x = 0$$
+		Integrando la primera ecuación $v = ye^x + \phi (x)$. Pero, al derivar para la segunda ecuación de $CR$, $v_x = -ye^x + \phi '(x) = 0$, lo que contradice la "utilidad" de $\phi(x)$, puesto que depende también de $y$, lo que no es posible $(\to \leftarrow)$.
 	\end{problem}
 \end{mdframed}
 
