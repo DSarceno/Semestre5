@@ -6,7 +6,11 @@
 % PROBLEMA 1
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Para realizar la contradicción del argumento propuesto se utilizará el ejercicio $6a$. Tomando a $f_1 (z) = z^3$ y $f_2 (z) = \sqrt{z - 1}$. Tomando el vector $z_o = 1+i$, entonces se prueban los primeros dos límites. 
+			$$\lim _{z\to z_o} f_1 (z) = -2 + 2i,$$
+		esto es cierto puesto que $z^3$ es entera. Además,
+			$$\lim _{z\to -2 + 2i} f_2 (z) = \sqrt{-3 + 2i} = (13)^{\flatfrac{1}{4}} e^{i\flatfrac{2.55359}{2}},$$
+		lo que también es cierto puesto que, la función $f_2$ es holomorfa en todos lados excepto en $\Re{z} \leq 1$ y $\Im{z} = 0$. Entonces, por el ejercicio $6a$, se sabe que la función $f_2 (f_1 (z)) = \sqrt{z^3 - 1}$, no es holomorfa en las rectas $y = \pm x$, entonces no es holomorfa en $z_o$, lo que contradice la hipótesis.
 	\end{problem}
 \end{mdframed}
 
@@ -21,7 +25,24 @@
 % PROBLEMA 2
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Incisos:
+		\begin{enumerate}[a)]
+			\item Tomando dos abiertos cuyas bolas (xd) son, $V_{r_1} (z_1)$ y $V_{r_2} (z_2)$. Entonces para un punto perteneciente a la intersección, se tienen dos radios, cada uno asociado a uno de los abiertos, $a$ y $a'$ respectivamente; de modo que, para un $z \in V_{r_1} (z_1) \cap V_{r_2} (z_2)$, se tiene
+				$$V_a (z) \subseteq V_{r_1} (z_1)$$
+			y
+				$$V_{a'} (z) \subseteq V_{r_2} (z_2).$$
+			Tomando $r = \text{min} (a,a')$, se tiene una bola que esta completamente contenida en la intersección de los conjuntos, i.e.
+				$$z \in V_{r} (z) \subseteq V_{r_1} (z_1) \cap V_{r_2} (z_2)$$
+			Lo que implica que la intersección es un abierto. Además, para demostrar que se cumple para cualquier número finito de abiertos, es simplemente hacer el proceso por pareados, lo que concluye la prueba inductiva. $\QED$
+			\item Tomando un conjunto de cualquier cantidad de conjuntos abiertos $\{ C_1,\ldots \}$. Tomando un $z \in C_1$, existe $V_r (z) \subseteq C_1$ de modo que
+				$$V_r (z) \subseteq C_1 \subseteq \bigcup _{i} ^{n} C_i,$$
+			lo que implica que
+				$$z \in \bigcup _{i} ^{n} C_i.$$
+			Lo que implica que es abierto, para cualquier $n \in \N$. $\QED$
+			\item Tomando el conjunto $A _n = \{ (-\flatfrac{1}{n} , \flatfrac{1}{n}): n\in \N \}$. De modo que, al tomar la intersección al infinito se tiene
+				$$\bigcap _{n = 1} ^{\infty} A_n = \{ 0 \}.$$
+			El cual es un conjunto cerrado.	
+		\end{enumerate}
 	\end{problem}
 \end{mdframed}
 
@@ -73,7 +94,13 @@
 			$$u_x = v_y$$
 			$$u_y = -v_x$$
 		Las cuales son las ecuaciones de Cauchy$-$Riemann. \\
-		$(\Leftarrow)$
+		$(\Leftarrow)$ Si cumple las ecuaciones de $CR$ entonces, 
+			$$f_x = u_x + iv_x = u_x - iu_y$$
+		y
+			$$f_y = u_y + iv_y = u_y + iu_x.$$
+		Sustituyendo en la definición dada
+			$$\pdv{f}{\bar{z}} = \frac{1}{2} \qty[f_x +i f_y] = \frac{1}{2} \qty[u_x - iu_y + iu_y - u_x] = 0$$
+		$\QED$
 	\end{problem}
 \end{mdframed}
 
@@ -135,7 +162,11 @@
 	\begin{problem}
 		Incisos:
 		\begin{enumerate}[a)]
-			\item 
+			\item Esta función no será holomorfa en donde las siguientes condiciones se cumplan: $\Re{z^3 - 1} \leq 0$ y $\Im{z^3 - 1} = 0$. Para la parte real solo se tiene
+				$$x^3 - xy^2 \leq 1$$
+			como condición. Para la parte imaginaría se tienen dos distintas, las cuales son:
+				$$y = 0 \quad \quad \quad x^2 = y^2.$$
+			De modo que, la función dada no es holomorfa en $y = 0$ y $x \leq 1$, y $x^2 - y^2$ y $0\leq 1$ (la cual no es una condición real). La segunda condición son las dos rectas perpendiculares que pasan por el origen, cuyos ángulos son $\pi / 4$ y $3\pi / 4$.
 			\item Tomando la forma exponencial del seno, se tiene que:
 				$$\sin{\sqrt{z}} = \frac{e^{i\sqrt{z}} - e^{-i\sqrt{z}}}{2i}$$
 			Utilizando el teorema de DeMoivre se puede descomponer $\sqrt{z} = \abs{z}^{\flatfrac{1}{2}} \qty(\cos{\flatfrac{\theta}{2}} + i\sin{\flatfrac{\theta}{2}})$. Por simplicidad se tomará a $a = \abs{z}^{\flatfrac{1}{2}}$. 
@@ -148,7 +179,8 @@
 			Reduciendo y simplificando:
 				$$ = \cosh{\qty(a\sins)} \sin{\qty(a\coss)} + i\cos{\qty(a\coss)} \qty(\underbrace{\frac{ -e^{a\sins} - e^{-a\sins} }{ 2 } + e^{a\sins}}_{\sinh{\qty(a\sins)}})$$
 			El resultado de la expansión es:
-				$$\sin{\sqrt{z}} = \cosh{\qty(\zsq \sins)} \sin{\qty(\zsq \coss)} + i\sinh{\qty(\zsq \sins)} \cos{\qty(\zsq \coss)}$$
+				$$\sin{\sqrt{z}} = \cosh{\qty(\zsq \sins)} \sin{\qty(\zsq \coss)} + i\sinh{\qty(\zsq \sins)} \cos{\qty(\zsq \coss)}.$$
+			Tomando $\theta$ como el argumento principal, es claro que dadas las funciones trigonométricas (normales e hiperbólicas), la función $\sin{\sqrt{z}}$ es holomorfa en todos los complejos excepto en $\Re{z} \leq 0$. 
 		\end{enumerate}
 	\end{problem}
 \end{mdframed}
@@ -239,7 +271,9 @@
 % PROBLEMA 9
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Como en los complejos se cumple que $z\ln{z} = \ln{z^z}$. Se puede reescribir la función como:
+			$$f(z) = e^{z\ln{z}},$$
+		de modo que la función $f$ es holomorfa todo $\C$ menos los reales negativos.
 	\end{problem}
 \end{mdframed}
 
