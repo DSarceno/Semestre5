@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div style='text-align:center'>
+    <h1>Registrarse</h1>
+    <h5>Datos Personales</h5>
+    <form action='/register/' method='POST'>{% csrf_token %}
+      <input type = 'text' name = 'Nombre' value = 'Nombre'>
+      <input type = 'text' name = 'Apellido' value = 'Apellido'>
+      <p>
+        <input type = 'text' name = 'Email' value = 'Email'>
+      </p>
+      <p>
+        Contraseña y Confirmación:
+      </p>
+      <p>
+        <input type = 'password' name = 'Password'>
+        <input type = 'password' name = 'ConfirmPassword'>
+      </p>
+      <input type = 'submit' value = 'Sign In'>
+    </form>
+    </div>
+  </body>
+</html>
