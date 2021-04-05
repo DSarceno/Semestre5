@@ -10,5 +10,11 @@ class formularioRegistro(forms.Form): # creacion del html, en base a 'signin.htm
     email = forms.EmailField()
     sexo = forms.ChoiceField(widget = forms.RadioSelect, choices = Genero)
     carrera = forms.ChoiceField(choices = Carreras)
-    password = forms.CharField(widget = forms.PasswordInput, label='Contraseña')
+    password = forms.CharField(widget = forms.PasswordInput, label = 'Contraseña')
     confPassword = forms.CharField(widget = forms.PasswordInput, label = 'Confirmar Contraseña')
+
+
+class formularioLogin(forms.Form):
+    nickname = forms.CharField()
+    email = forms.EmailField()
+    password = forms.CharField(widget = forms.PasswordInput, label = 'Contraseña')

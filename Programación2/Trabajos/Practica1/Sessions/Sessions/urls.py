@@ -20,4 +20,5 @@ from usersManagement import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.registro),
+    path('login/', views.login),
 ]
