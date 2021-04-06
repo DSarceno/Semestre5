@@ -818,14 +818,147 @@ Suponiendo que $\alpha : [a,b] \to \C$ es una curva suave a trozos que $F$ es un
 El trabajo de Goursat en este teorema fue, quitar la condición de que la primera derivada de $f$ fuera continua. Además, con los ejemplos dados al inicio de esta sección, queda claro que el converso del teorema de Cauchy$-$Goursat (como se enunció) no es cierto, al menos no de manera general.
 
 
-\dsnote{Falta la clase antes de esto}
+
+
 
 \subsubsection{Fórmulas de Integración de Cauchy}
 
-Del teorema de Cauchy$-$Goursat, se pueden crear ciertos casos interesantes
+
+Como consecuencia inmediata del teorema de Cauchy$-$Goursat se tiene el siguiente teorema.
+
+\begin{teorema} \it
+	{\bf Teorema de Deformación} \\
+	Sea $f$ holomorfa en una región $A$ y sea $C$ una curva cerrada simple en $A$. Supongamos que $C$ se puede deformar continuamente en $\hat{C}$ sin salir de la región $A$, entonces
+		$$\int _C f(z) \dd{z} = \int _{\hat{C}} f(z) \dd{z}$$
+	\begin{proof}
+		La idea de la demostración es la misma que la demostración del teorema de Green. Sean $C$ y $\hat{C}$ curvas unidas por dos curvas diferentes cercanas $\alpha$ y $\hat{\alpha}$. Con esto, la integral sobre esa curva es
+			$$\int _{\hat{C} + \alpha - C + \hat{\alpha}}$$
+		Por Cauchy$-$Goursat dicha integral es cero, además, realizando el límite en el cual la separacion entre $\alpha$ y $\hat{\alpha}$ es cero, entonces se tiene:
+			$$\int _{\hat{C}} f \dd{z} + \int _{\alpha} f \dd{z} - \int _{C} f \dd{z} - \int _{\alpha} f \dd{z} = 0$$
+		Lo que, claramente, impica que
+			$$\int _{\hat{C}} f \dd{z} = \int _{C} f \dd{z}$$
+	\end{proof}
+\end{teorema}
+
+
+Del teorema de Cauchy$-$Goursat, se pueden crear ciertos casos interesantes.
 
 \begin{teorema} \it
 	\textbf{Primera fórmula Integral de Cauchy} \\
 	Sea $C$ una curva cerrada simple, $f(z)$ holomorfa en $C$ y en su interior, entonces para cualquier $z_o$ dentro de la curva, se cumple:
-	$$\oint _C \frac{f(z)}{(z - z_o)^{n+1}} \dd{z} = \frac{2\pi i}{n!}f^{(n)} (z_o)$$
+	$$\oint _C \frac{f(z)}{(z - z_o)} \dd{z} = 2\pi if(z_o)$$
+	\begin{proof}
+		Utilizando el teorema de deformación, se transforma la curva $C$ a una nueva curva $\hat{C}$, la cual será un círculo dentro de la región limitada por la curva $C$. Lo que quedaría
+			$$ = \int _{\hat{C}} \frac{f(z_o) - f(z_o) + f(z)}{z - z_o} \dd{z} = \int _{\hat{C}} \frac{f(z_o)}{z - z_o} \dd{z} + \int _{\hat{C}} \frac{f(z) - f(z_o)}{z - z_o} \dd{z}$$
+		Parametrizando $\hat{C}$ como $\hat{C}:z_o + re^{it}$ ya se sabe que:
+			$$ = 2\pi i f(z_o) + \int _{\hat{C}} \frac{f(z) - f(z_o)}{z - z_o} \dd{z}$$
+		Como $f$ es holomorfa en $z_o$ entonces, es contínua en $z_o$; es decir, para todo $\varepsilon > 0$ existe $\delta > 0$ tal que
+			$$\abs{f(z) - f(z_o)} < \varepsilon \quad \quad \text{si} \quad \quad \abs{z - z_o} < \delta$$
+		Con esta idea, tomaremos el radio de la curva como $r = \frac{\delta}{2}$. Entonces se tiene que $\abs{z - z_o} = \frac{\delta}{2} < \delta$. Además, utilizando la desigualdad $ML$ (mostrada más adelante en esta sección), se tiene que $M = \flatfrac{\varepsilon}{\frac{\delta}{2}}$ y $L = 2\pi \frac{\delta}{2}$, lo que implica que
+			$$\abs{\int _{\hat{C}} \frac{f(z) - f(z_o)}{z - z_o} \dd{z}} < ML = 2\pi \varepsilon$$
+		Lo que claramente implica que el módulo de dicha integral es cero. Lo que concluye la prueba.
+	\end{proof}
 \end{teorema}
+
+Generalizando esta idea.
+
+\begin{teorema} \it
+	\textbf{Segunda fórmula Integral de Cauchy} \\
+	Sea $C$ una curva cerrada simple, $f(z)$ holomorfa en $C$ y en su interior, entonces para cualquier $z_o$ dentro de la curva, se cumple:
+	$$\oint _C \frac{f(z)}{(z - z_o)^{n+1}} \dd{z} = \frac{2\pi i}{n!}f^{(n)} (z_o)$$
+	 \begin{proof}
+	 	
+	 \end{proof}
+\end{teorema}
+
+
+
+\subsubsection{Desigualdad $ML$}
+La desigualdad $ML$ tiene cierta importancia a nivel puramente teórico, puesto que permite realizar la demostración de ciertos teoremas importantes.
+
+
+\begin{teorema} \it
+	Sea $C$ una curva poligonal, no necesariamente cerrada, de longitud $L$ y sea $f$ una funcion continua en dicha curva (todo sobre $\C$). Si existe un número real $M > 0$ tal que $\abs{f(z)} \leq M$ para todo $z$ en $C$, entonces
+	$$\abs{\int _C f(z) \dd{z}} \leq ML$$
+
+\end{teorema}
+
+\begin{proof}
+	Parametrizando la curva como usualmente se hace, $z = z(t), \, a\leq t \leq b$, se obtiene, por la integración compleja vista al inicio de esta sección
+	$$\abs{\int _C f(z) \dd{z}} = \abs{\int _a ^b f(z(t)) z'(t) \dd{t}}$$
+Por propiedades de las integrales (desigualdad triangular)
+	$$\leq \int _a ^b \abs{f(z(t))} \abs{z'(t)} \dd{t}$$
+Por hipótesis, la cota superior de $f$ es $M$
+	$$\leq M \int _a ^b \abs{z'(t)} \dd{t}$$
+La cual es la definición de longitud de arco, como se sabe que la curva tiene una longitud $L$, entonces
+	$$\leq ML$$
+\end{proof}
+
+Ya con esto, para visualizar la utilidad del teorema, realizamos el siguiente ejemplo.
+
+
+
+\begin{ejemplo} \tt
+	Demostrar que
+		$$\abs{\int _C \frac{\dd{z}}{z^2 + 1}} \leq \frac{\pi}{3}$$
+	donde $C$ es la parte del círculo $\abs{z} = 2$ en el primer cuadrante. \\
+	Sabiendo la desigualdad triangular con signos cambiados ($\abs{z + w} \geq \abs{\abs{z} - \abs{w}}$), se tiene
+		$$M:\abs{\frac{1}{z^2 + 1}} \leq \frac{1}{\abs{z}^2 - 1} = \frac{1}{3}$$
+	Además, la longitud de la curva, al ser un segmento de circunferencia, es bastante simple de calcular, de modo que $L = \pi$. Ya con esto, se aplica la desigualdad $ML$, entonces
+		$$\abs{\int _C \frac{\dd{z}}{z^2 + 1}} \leq \pi \frac{1}{3}$$
+	Justo lo que se quería demostrar. $\QED$
+\end{ejemplo}
+
+
+
+
+\subsubsection{Desigualdad de Cauchy}
+
+Sea $f$ holomorfa en un dominio simplemente conexo $D$ y $C$ una circunferencia dada por $\abs{z - z_o} = r$, que se encuentra completamente contenida en $D$. Si $\abs{f(z)} \leq M$ para todos los puntos $z$ en $C$, entonces
+	$$\abs{f^{(n)} (z_o)} \leq \frac{n! M}{r^n}$$
+	
+\begin{proof}
+	Partiendo de
+		$$\abs{\frac{f(z)}{(z - z_o) ^{n + 1}}} \leq \frac{M}{r^{n + 1}}$$
+	Entonces, utilizando la segunda fórmula de Cauchy
+		$$\abs{f^{(n)} (z_o)} = \abs{\frac{n!}{2\pi i} \oint _C \frac{f(z)}{(z - z_o) ^{n + 1}} \dd{z}}$$
+	Utilizando la desigualdad $ML$
+		$$\leq \frac{n!}{2\pi} \frac{M}{r^{n + 1}} 2\pi r = \frac{n! M}{r^n}$$
+\end{proof}
+
+
+Como un corolario de esta desigualdad, se deduce el teorema de Liuville.
+
+\begin{teorema} \it
+	Las únicas funciones enteras acotadas son constantes.
+	\begin{proof}
+		Supongamos que $\abs{f(z)} \leq M$. Sea $z_o \in \C$, sea $r$ suficientemente grande (esto es válido dado que la función es entera)
+			$$\abs{f'(z_o)} \leq \frac{M}{r^n}$$
+		Lo que hace a la cantidad $\flatfrac{M}{r^n} \to 0$, como es para cualquier número complejo, entonces la función $f$ es entera.
+	\end{proof}
+\end{teorema}
+
+
+Este teorema es muy importante en varias ramas de la matemática, en especial el álgebra, puesto que permite demostrar el teorema fundamental del álgebra.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
