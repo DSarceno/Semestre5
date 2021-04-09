@@ -939,25 +939,101 @@ Como un corolario de esta desigualdad, se deduce el teorema de Liuville.
 \end{teorema}
 
 
-Este teorema es muy importante en varias ramas de la matemática, en especial el álgebra, puesto que permite demostrar el teorema fundamental del álgebra.
+Este teorema es muy importante en varias ramas de la matemática, en especial el álgebra, puesto que permite demostrar el teorema fundamental del álgebra. 
+
+
+\subsubsection{Teorema Fundamental del Álgebra}
+
+Para demostrar este teorema, se utilizará un teorema auxiliar, el teorema del Módulo Máximo.
+
+\begin{teorema} \it
+	Este teorema es enunciado de dos formas equivalentes:
+	\begin{itemize}
+		\item Si $f(z)$ es una función holomorfa en un conjunto cerrado simplemente conexo $D$, entonces $\abs{f(z)}$ alcanza el valor máximo en la frontera de $D$.
+		\item Sea $f(x)$ es una función holomorfa en un conjunto abierto simplemente conexo $D$, si $\abs{f(z)}$ alcanza el máximo en $D$, entonces $f$ es constante.
+	\end{itemize}
+\end{teorema}
+
+
+
+
+Dado esto, se demostrará el teorema fundamental del álgebra.
+
+\begin{teorema} \it
+	Todo polinomio no constante $p(z)$ tiene al menos una raíz.
+	\begin{proof}
+		Considerando un polinomio
+			$$p(z) = a_n z^n + a_{n - 1} z^{n - 1} +\cdots + a_1 z + a_o,$$
+		con $n > 0$. Suponiendo que $p(z)$ no tienen ninguna raíz, la función $f(z)$ definida por
+			$$f(z) = \frac{1}{p(z)},$$
+		la cual es holomorfa en todo $\C$, i.e. es entera. Para comprobar que la función es acotada. Encontrando el módulo
+			$$\abs{f(z)} = \frac{1}{\abs{a_n z^n + \cdots + a_1 z + a_o}} = \frac{1}{\abs{z}^n \abs{a_n + (a_{n-1}/z + \cdots + a_1 / z^{n-1} + a_o / z^n)}}.$$
+		Sea $M > 1$ tal que
+			$$M > \abs{\frac{2na_j}{a_n}},$$
+		para $j = 0,\ldots , n - 1$. Reduciendo un poco, se llega a que, si $\abs{z} > M$,
+			$$\abs{\frac{a_j}{z^{n - j}}} < \abs{\frac{a_n}{2n}},$$
+		por lo que
+			$$\abs{a_{n-1}/z + \cdots + a_1 / z^{n-1} + a_o / z^n} \leq \frac{\abs{a_n}}{2}.$$
+		Volviendo a la función $f$, se llega a 
+			$$\abs{f(z)} \leq \frac{1}{\abs{z}^n \abs{a_n + (a_{n-1}/z + \cdots + a_1 / z^{n-1} + a_o / z^n)}}$$
+			$$\leq \frac{1}{M^n \abs{\abs{a_n} - \abs{a_n}/2}} = \frac{2}{M^n \abs{a_n}},$$
+		$f$ es acotada en $\abs{z} > M$, utilizando el Teorema de Weierstrass\footnote{Sea $f$ una función continua en un intervalo compacto, entonces la función alcanza un valor máximo y mínimo en el intervalo.}. Esto implica que la función es acotada, por Liouville se concluye que $f$ es constante, por ende $p$ es constante $(\to \leftarrow)$. Por lo que $p$ si tiene alguna raíz.
+	\end{proof}
+\end{teorema}
+
+Esta demostración al analizarla bien, demuestra que si el polinomio posee una raíz, entonces tiene $n$ raíces. Esto se debe a la factorización que se le da al polinomio generado una expresion del tipo $p(z) = (z - z_1) q(z)$.
+
+\subsubsection{Teorema de Morera}
+
+Se había mencionado que el converso del teorema de Cauchy$-$Goursat no era cierto de manera general. El teorema de Morera no es el converso del teorema de Cauchy$-$Goursat, ni el teorema de Cauchy$-$Goursat es el converso del teorema de Morera.
+
+\begin{teorema} \it
+	Si $f$ es continua en un dominio abierto conexo $D$ y si
+		$$\oint _C f(z) \dd{z} = 0,$$
+	para cada contorno cerrado $C$ en $D$, entonces $f$ es analítica en $D$.
+\end{teorema}
 
 
 
 
 
 
+\section{Series}
+
+\subsection{Series de Laurent}
+Es una especie de generalización con las series de potencias. En variable real se habla del intervalo de convergencia de la serie, en variable compleja se habla de anillo de convergencia. En las series de Laurent contiene no solo los exponentes negativos. \\
+
+Por ejemplo, las series de Lauren se suelen escribir de la siguiente forma
+	$$f(z) = \cdots + a_{-1} (z - z_o)^{-1} + a_o + a_1 (z - z_o) + a_2 (z - z_o)^2 + \cdots$$
+
+
+Lo que implica que, el punto $z_o$ no puede estar incluído el conocido, radio de convergencia, por lo que se le llama anillo de convergencia.
 
 
 
+\begin{ejemplo} \tt
+	Encontrar la serie de Lauren de 
+		$$f(z) = \frac{\sin{z}}{z^3},$$
+	en un anillo centrado en $0$. \\
+	Sabiendo que la serie de Taylor de la función $\sin{z}$
+		$$\sin{z} = z - \frac{z^3}{3!} + \cdots .$$
+	Dividiendo entre $z^3$
+		$$f(z) = \frac{1}{z^2} - \frac{1}{3!} + \frac{z^2}{5!} \cdots ,$$
+	la cual convergue para los mismos valores para los que convergue el $\sin{z}$ excepto el $0$.
+\end{ejemplo}
 
 
 
-
-
-
-
-
-
+\begin{ejemplo} \tt
+	Encontrar la serie de Lauren de 
+		$$f(z) = e^{\flatfrac{1}{z}},$$
+	en un anillo centrado en $0$. \\
+	Se sabe que la serie de Taylor de la exponencial es
+		$$e^z = \sum _{n = 0} ^\infty \frac{x^n}{n!}.$$
+	Sustituyendo $\flatfrac{1}{z}$
+		$$e^{\flatfrac{1}{z}} = 1 + \frac{1}{2} + \frac{1}{2!} \qty(\frac{1}{z}) ^2 + \cdots .$$
+	La cual es la serie de Laurent de dicha función, la cual convergue para todo $\C$ excepto el $0$.
+\end{ejemplo}
 
 
 
