@@ -24,113 +24,103 @@
 \date{Guatemala, \today}
 %% 20210307
 
-\begin{document}
+\begin{document}  
 \maketitle
 
 \begin{abstract}
-  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-  bla bla bla bla bla bla bla bla bla bla bla bla
-
-  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-  bla bla bla bla bla bla bla bla bla bla bla bla 
+  \lipsum[1]
 \end{abstract}
 
 
 \section{Introducción}
 \label{sec:intro}
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+\justify 
+\lipsum[1]
 % 
 \begin{displaymath}
   \int_a^b f(x) dx,
 \end{displaymath}
 %
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla.
+\lipsum[1]
 
+\section{Puntos de Lagrange}
+\subsection{Problema de los Tres Cuerpos}
+\label{sec:Puntos de Lagrange}
 
-\section{Método}
-\label{sec:metodo}
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+El problema de los tres cuerpos no es soluble analíticamente; sin embargo, realizando ciertas restricciónes al problema llega a poderse resolver. Consideraciones a tomar:
+\begin{enumerate}
+	\item Dos cuerpos masivos en orbitas circulares alrededor de su centro de masa.
+	\item El tercer objeto de masa $m$ tiene la condición: $m\ll M_1,M_2$, donde $M_1$ y $M_2$ son las masas de los dos objetos anteriormente mencionados.
+\end{enumerate}
 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+\subsubsection{Problema de los dos Cuerpos}
+Partiendo del problema conocido de los dos cuerpos, el cual ya es conocido, se toma el sistema respecto de un punto de referencia $O$
 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
-
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
-
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
-
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
-%
-\begin{displaymath}
-  \int_a^b f(x) dx \approx (b-a) \left( \frac{f(a)+f(b)}{2} \right).
-\end{displaymath}
-
-\begin{figure}
-  \centering
-  %\includegraphics[width=.45\columnwidth]{images/golubTrapezoidal}
-  %\includegraphics[width=.45\columnwidth]{images/cohenTrapezoidal}
-  \caption{Método del trapecio para aproximar el área bajo la curva. A la
-    izquierda mediante el área de un trapecio. A la derecha se muestra el
-    detalle del $(k+1)$-ésimo trapecio cuando se usan $N$ trapecios en la
-    aproximación, aquí se muestra con énfasis el error de aproximación.
-    Fuente: la figura de la izquierda aparece en Golub y Ortega \cite{golub},
-    cap 5.  La figura de la derecha aparece en Cohen \cite{cohen}, cap. 4.}
-  \label{fig:curva}
+\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.5]{Images/twoBodyProblem.png}
+  	\caption{Posición de ambos cuerpos en el espacio, representando su posicion relativa y respecto a un sistema de coordenadas $O$. El vector $\vb{R}$ representa la posición del centro de masa relativa al sistema $O$. Imagen extraída de \cite{b1}, cap $4$.}
+  	\label{fig:twoBodyProblem}
 \end{figure}
 
+Además, la ecuación de movimiento
+\begin{displaymath}
+	\mu \ddot{\vb{r}_{21}} = \vb{F}, \quad \quad \mu = \frac{M_1 M_2}{M_1 M_2},
+\end{displaymath}
 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+\noindent
+al término $\mu$ se le conoce como masa reducida\footnote{De \cite{b2} capítulo $8$, sección $2$}. Para la fuerza gravitacional y una trayectoria circular, la expresión para frecuencia angular del sistema, se tiene
+\begin{displaymath}
+	\omega ^2 = \frac{G(M_1 + M_2)}{a^3}.
+\end{displaymath}
+ 
+\subsubsection{Sistema de Referencia Estrellado}
 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+Para simplificar el análisis del problema, se introduce un sistema en movimiento, en concreto, en rotación. Esto es para eliminar el movimento de los cuerpos más masivos, a este nuevo sistema le llamaremos $O^*$. Este nuevo sistema tendrá su origen en el centro de masa y, a la distancia entre los cuerpos se le llamará $a$. De modo que las posiciónes en $O^*$ están dadas solo en el eje $x^*$ como
+\begin{displaymath}
+	x_1 = \frac{M_2}{M_1 + M_2}, \quad x_2 = -\frac{M_1}{M_1 + M_2};
+\end{displaymath}
+
+\noindent
+además, se fija $\vec{\omega} = \omega \vz$ y la masa $m$ solo se mueve en el plano $x^* y^*$. Con todo esto, la ecuación de moviento en el sistema $O^*$
+\begin{displaymath}
+	m\frac{\text{d}^{*2} r}{\text{d} t^2} = F_1 + F_2 - m\omega \cp (\omega \cp r) - 2m\omega \cp \frac{\text{d}^* r}{\text{d} t}.
+\end{displaymath}
+
+\noindent
+En la cual las dos fuerzas representadas son las fuerzas de cada una de las masas sobre la masa $m$ orbitando. Expresandolas en componentes
+\begin{displaymath}
+	F_1 = \frac{GM_1 m}{\qty((x - x_1)^2 + y^2)^{\flatfrac{3}{2}}} (x - x_1,y), \quad \quad F_2 = \frac{GM_2 m}{\qty((x - x_2)^2 + y^2)^{\flatfrac{3}{2}}} (x - x_2,y).
+\end{displaymath}
+
+
+Analizando el resto de términos, se tiene que la fuerza de coriolis es perpendicular a la velocidad, por lo que no tiene un potencial asociado. Para el término de la fuerza centrífuga, es sencillo corroborar que es una fuerza central\footnote{Fuerza radial conservativa.}, lo que implica que tiene una energía potencial asociada. Desarrollando el término de la fuerza centrífuga y encontrando el potencial
+\begin{align*}
+	- m\omega \cp (\omega \cp r) &= m\omega ^2 \qty(x\mathbb{\vu{x} ^*} + y \mathbb{\vu{y} ^*}) \\
+	V_c &= -\frac{1}{2} m\omega ^2 (x^2 + y^2).
+\end{align*}
+
+Con el análisis anterior, se concluye que la enería potencial total del sistema es
+\begin{displaymath}
+	V = -\frac{GM_1 m}{\qty((x - x_1)^2 + y^2)^{\flatfrac{1}{2}}} - \frac{GM_2 m}{\qty((x - x_2)^2 + y^2)^{\flatfrac{1}{2}}} - \frac{1}{2} m\omega ^2 \qty(x^2 + y^2).
+\end{displaymath}
+
+\noindent
+Por simplicidad no se tomara la enería potencial, sino que el potencial gravitacional del sistema, por simplicidad al momento de desarrollar los calculos
+\begin{displaymath}
+	\mathcal{G} = -\frac{GM_1}{\qty((x - x_1)^2 + y^2)^{\flatfrac{1}{2}}} - \frac{GM_2}{\qty((x - x_2)^2 + y^2)^{\flatfrac{1}{2}}} - \frac{1}{2} \omega ^2 \qty(x^2 + y^2).
+\end{displaymath}
+
+
+\subsection{Puntos de Lagrange}
+Para un sistema de dos cuerpos, los puntos de lagrange son las posiciones en donde un objeto/satélite podría estar en reposo respecto al sistema orbital. Estos puntos representan las posiciones en donde la atracción del sistema presenta una rotación sincrónica con la menor masa del sistema. Matemáticamente hablando, son las soluciones de equilibrio al problema de los $3$ cuerpos restringido. Para cualquier sistema de $3$ cuerpos existen $5$ de estos puntos de lagrange, representados por $L_1,L_2,L_3,L_4$ y $L_5$. 
 
 
 \section{Resultados}
 \label{sec:resultados}
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+\lipsum[1-2]
 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
-
-\begin{figure}
+\begin{figure}[H]
   \centering
   %\includegraphics[width=.85\textwidth]{images/TrapSerr}  
   \caption{Error relativo de la aproximación en función del número de
@@ -138,33 +128,16 @@ bla bla bla bla bla bla bla bla bla bla bla bla
   \label{fig:Serror}
 \end{figure}
 
-
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
-
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+\lipsum[1-2]
 
 
 
 \section{Conclusiones}
 \label{sec:conclusiones}
 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+\lipsum[1-2]
 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
-
-\begin{figure}
+\begin{figure}[H]
   \centering
   % \includegraphics[width=.85\textwidth]{images/TrapMerr}  
   \caption{Área bajo la curva obtenido medidante las dos implementaciones,
@@ -176,15 +149,7 @@ bla bla bla bla bla bla bla bla bla bla bla bla
 \end{figure}
 
 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
-
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-bla bla bla bla bla bla bla bla bla bla bla bla
+\lipsum[1-2]
 
 \section*{Agradecimientos}
 \label{sec:agradecimientos}
@@ -196,7 +161,15 @@ las pruebas de rendimiento reportadas en este trabajo.
 \nocite{*}
 \bibliographystyle{IEEEannot}%
 \bibliography{references}%
+
+\begin{thebibliography}{00}
+\bibitem{b1} R. Symon, \textit{Mechanics} 3a. Ed. Addison$-$Wesley Publishing Company, 1971
+\bibitem{b2} R. Taylor, \textit{Classical Mechanics}, Edwards Brothers, Inc. 2005.
+\end{thebibliography}
+
 \end{document}
+
+
 
 
 %%% Local Variables:
