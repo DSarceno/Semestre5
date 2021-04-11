@@ -44,9 +44,10 @@ set size ratio -1
 set grid
 set view map
 #set key outside
+set nokey
 unset surface
 set contour base
-set cntrparam levels incremental -5,0.1,0
+set cntrparam levels incremental -5,0.05,0
 
 
 
@@ -56,11 +57,15 @@ set xrange [-3.5:3.5]
 set yrange [-3.5:3.5]
 
 # constantes
-xi1 = 0.012156
+G = 6.6738E-11
+Me = 5.972E24
+Ml = 7.349E22
+a = 3.844E8
+xi1 = Ml/(Me + Ml)
 xi2 = xi1 - 1
-K = 1049600
+K = (Me + Ml)*G/a
 
-splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) )
+splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
 
 
 # END PROGRAM

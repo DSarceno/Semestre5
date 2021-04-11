@@ -1,5 +1,5 @@
 #    2021-04-07
-#    planePlotTierraLuna.gp
+#    planePlotSolJupiter.gp
 #    Diego Sarceño (dsarceno68@gmail.com)
 
 #    Programa superficies de nivel, sistema tierra luna
@@ -7,7 +7,7 @@
 #    Codificación del texto: UTF8
 #    Compiladores probados: GNUPLOT (Ubuntu 20.04 Linux) 5.2
 #    Instrucciones de compilación: no requere nada mas
-#    gnuplot planePlotTierraLuna.gp
+#    gnuplot planePlotSolJupiter.gp
 
 #    Copyright (C) 2021
 #    D. R. Sarceño Ramírez
@@ -32,10 +32,10 @@
 set encoding utf8
 # terminal
 set terminal pdf
-set output 'planePlotTierraLuna.pdf'
+set output 'planePlotSolJupiter.pdf'
 
 # labels
-set title 'Curva sobre el plano η = 0, Sistema Tierra-Luna'
+set title 'Curva sobre el plano η = 0, Sistema Sol-Jupiter'
 set xlabel 'ξ'
 set ylabel 'V(ξ,0)'
 
@@ -49,17 +49,17 @@ set grid
 
 ## plot
 # ranges
-set xrange [-2:2]
-set yrange [-5:-1]
+set xrange [-1.5:1.5]
+set yrange [-2.5:-1]
 
 # constantes
 G = 6.6738E-11
-Me = 5.972E24
-Ml = 7.349E22
-a = 3.844E8
-xi1 = Ml/(Me + Ml)
+Mj = 1.898E27
+Ms = 1.989E30
+a = 7.5E11
+xi1 = Mj/(Mj + Ms)
 xi2 = xi1 - 1
-K = (Me + Ml)*G/a
+K = (Mj + Ms)*G/a
 y = 0
 
 plot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
