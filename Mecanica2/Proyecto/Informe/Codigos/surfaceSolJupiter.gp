@@ -1,5 +1,5 @@
-#    2021-04-07
-#    contourSolTierra.gp
+#    2021-04-11
+#    surfaceSolJupiter.gp
 #    Diego Sarceño (dsarceno68@gmail.com)
 
 #    Programa superficies de nivel, sistema tierra luna
@@ -7,7 +7,7 @@
 #    Codificación del texto: UTF8
 #    Compiladores probados: GNUPLOT (Ubuntu 20.04 Linux) 5.2
 #    Instrucciones de compilación: no requere nada mas
-#    gnuplot contourSolTierra.gp
+#    gnuplot surfaceSolJupiter.gp
 
 #    Copyright (C) 2021
 #    D. R. Sarceño Ramírez
@@ -30,31 +30,29 @@
 # PROGRAM
 # terminal
 set terminal pdf
-set output 'contourSolTierra.pdf'
+set output 'surfaceSolJupiter.pdf'
 
 # divisiones en la superficies para una mejor visión
 set isosamples 50
 
 # labels
-set xlabel 'x'
-set ylabel 'y'
+set title 'Superficie del Potencial, Sistema Sol-Jupiter'
+set xlabel 'ξ'
+set ylabel 'η'
+set zlabel 'V(ξ,η)'
 
 # superficies de nivel
 set size ratio -1
-set grid
-set view map
-#set key outside
 set nokey
-unset surface
-set contour base
-set cntrparam levels incremental -5,0.05,0
+set contours
+set cntrparam levels incremental -5,0.005,0
 
 
 
 ## plot
 # ranges
-set xrange [-3.5:3.5]
-set yrange [-3.5:3.5]
+set xrange [-1.5:1.5]
+set yrange [-1.5:1.5]
 
 # constantes
 G = 6.6738E-11

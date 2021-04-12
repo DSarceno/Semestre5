@@ -1,5 +1,5 @@
 #    2021-04-07
-#    planePlotTierraLuna.gp
+#    contourTierraLuna.gp
 #    Diego Sarceño (dsarceno68@gmail.com)
 
 #    Programa superficies de nivel, sistema tierra luna
@@ -7,7 +7,7 @@
 #    Codificación del texto: UTF8
 #    Compiladores probados: GNUPLOT (Ubuntu 20.04 Linux) 5.2
 #    Instrucciones de compilación: no requere nada mas
-#    gnuplot planePlotTierraLuna.gp
+#    gnuplot contourTierraLuna.gp
 
 #    Copyright (C) 2021
 #    D. R. Sarceño Ramírez
@@ -28,29 +28,34 @@
 #    <http://www.gnu.org/licenses/>.
 
 # PROGRAM
-# Idioma
-set encoding utf8
 # terminal
 set terminal pdf
-set output 'planePlotTierraLuna.pdf'
+set output 'contourTierraLuna.pdf'
+
+# divisiones en la superficies para una mejor visión
+set isosamples 50
 
 # labels
-set title 'Curva sobre el plano η = 0, Sistema Tierra-Luna'
+set title 'Superficie de Nivel, Sistema Tierra-Luna'
 set xlabel 'ξ'
-set ylabel 'V(ξ,0)'
+set ylabel 'η'
 
 # superficies de nivel
 set size ratio -1
 set grid
-#set nokey
-
+set view map
+#set key outside
+set nokey
+unset surface
+set contour base
+set cntrparam levels incremental -5,0.05,0
 
 
 
 ## plot
 # ranges
-set xrange [-2:2]
-set yrange [-5:-1]
+set xrange [-1.5:1.5]
+set yrange [-1.5:1.5]
 
 # constantes
 G = 6.6738E-11
@@ -60,9 +65,8 @@ a = 3.844E8
 xi1 = Ml/(Me + Ml)
 xi2 = xi1 - 1
 K = (Me + Ml)*G/a
-y = 0
 
-plot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
+splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
 
 
 # END PROGRAM

@@ -1,5 +1,5 @@
 #    2021-04-07
-#    contourSolJupiter.gp
+#    planePlotSolTierra.gp
 #    Diego Sarceño (dsarceno68@gmail.com)
 
 #    Programa superficies de nivel, sistema tierra luna
@@ -7,7 +7,7 @@
 #    Codificación del texto: UTF8
 #    Compiladores probados: GNUPLOT (Ubuntu 20.04 Linux) 5.2
 #    Instrucciones de compilación: no requere nada mas
-#    gnuplot contourSolJupiter.gp
+#    gnuplot planePlotSolTierra.gp
 
 #    Copyright (C) 2021
 #    D. R. Sarceño Ramírez
@@ -28,44 +28,43 @@
 #    <http://www.gnu.org/licenses/>.
 
 # PROGRAM
+# Idioma
+set encoding utf8
 # terminal
 set terminal pdf
-set output 'contourSolJupiter.pdf'
-
-# divisiones en la superficies para una mejor visión
-set isosamples 50
+set output 'planePlotSolTierra.pdf'
 
 # labels
-set xlabel 'x'
-set ylabel 'y'
+set title 'Curva sobre el plano η = 0, Sistema Sol-Tierra'
+set xlabel 'ξ'
+set ylabel 'V(ξ,0)'
 
 # superficies de nivel
-set size ratio -1
+set size ratio 0.8
 set grid
-set view map
-#set key outside
-set nokey
-unset surface
-set contour base
-set cntrparam levels incremental -5,0.05,0
+#set nokey
+
 
 
 
 ## plot
 # ranges
-set xrange [-3.5:3.5]
-set yrange [-3.5:3.5]
+set xrange [-1.5:1.5]
+set xtics -1.5,0.3,1.5
+set yrange [-2.5:-1]
+set ytics -2.5,0.2,-1
 
 # constantes
 G = 6.6738E-11
-Mj = 1.898E27
+Me = 5.972E24
 Ms = 1.989E30
-a = 7.5E11
-xi1 = Mj/(Mj + Ms)
+a = 1.496E11
+xi1 = Me/(Me + Ms)
 xi2 = xi1 - 1
-K = (Mj + Ms)*G/a
+K = (Me + Ms)*G/a
+y = 0
 
-splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
+plot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
 
 
 # END PROGRAM

@@ -1,5 +1,5 @@
-#    2021-04-07
-#    contourTierraLuna.gp
+#    2021-04-11
+#    surfaceTierraLuna.gp
 #    Diego Sarceño (dsarceno68@gmail.com)
 
 #    Programa superficies de nivel, sistema tierra luna
@@ -7,7 +7,7 @@
 #    Codificación del texto: UTF8
 #    Compiladores probados: GNUPLOT (Ubuntu 20.04 Linux) 5.2
 #    Instrucciones de compilación: no requere nada mas
-#    gnuplot contourTierraLuna.gp
+#    gnuplot surfaceTierraLuna.gp
 
 #    Copyright (C) 2021
 #    D. R. Sarceño Ramírez
@@ -30,31 +30,29 @@
 # PROGRAM
 # terminal
 set terminal pdf
-set output 'contourTierraLuna.pdf'
+set output 'surfaceTierraLuna.pdf'
 
 # divisiones en la superficies para una mejor visión
 set isosamples 50
 
 # labels
-set xlabel 'x'
-set ylabel 'y'
+set title 'Superficie del Potencial, Sistema Tierra-Luna'
+set xlabel 'ξ'
+set ylabel 'η'
+set zlabel 'V(ξ,η)'
 
 # superficies de nivel
 set size ratio -1
-set grid
-set view map
-#set key outside
 set nokey
-unset surface
-set contour base
+set contours
 set cntrparam levels incremental -5,0.05,0
 
 
 
 ## plot
 # ranges
-set xrange [-3.5:3.5]
-set yrange [-3.5:3.5]
+set xrange [-1.5:1.5]
+set yrange [-1.5:1.5]
 
 # constantes
 G = 6.6738E-11
@@ -66,6 +64,3 @@ xi2 = xi1 - 1
 K = (Me + Ml)*G/a
 
 splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
-
-
-# END PROGRAM

@@ -78,7 +78,7 @@ al término $\mu$ se le conoce como masa reducida\footnote{De \cite{b2} capítul
 
 Para simplificar el análisis del problema, se introduce un sistema en movimiento, en concreto, en rotación. Esto es para eliminar el movimento de los cuerpos más masivos, a este nuevo sistema le llamaremos $O^*$. Este nuevo sistema tendrá su origen en el centro de masa y, a la distancia entre los cuerpos se le llamará $a$. De modo que las posiciónes en $O^*$ están dadas solo en el eje $x^*$ como
 \begin{displaymath}
-	x_1 = \frac{M_2}{M_1 + M_2}, \quad x_2 = -\frac{M_1}{M_1 + M_2};
+	x_1 = \frac{M_2}{M_1 + M_2}a, \quad x_2 = -\frac{M_1}{M_1 + M_2}a;
 \end{displaymath}
 
 \noindent
@@ -116,26 +116,102 @@ Por simplicidad no se tomara la enería potencial, sino que el potencial gravita
 Para un sistema de dos cuerpos, los puntos de lagrange son las posiciones en donde un objeto/satélite podría estar en reposo respecto al sistema orbital. Estos puntos representan las posiciones en donde la atracción del sistema presenta una rotación sincrónica con la menor masa del sistema. Matemáticamente hablando, son las soluciones de equilibrio al problema de los $3$ cuerpos restringido. Para cualquier sistema de $3$ cuerpos existen $5$ de estos puntos de lagrange, representados por $L_1,L_2,L_3,L_4$ y $L_5$. 
 
 
-\section{Resultados}
-\label{sec:resultados}
-\lipsum[1-2]
+
+
+
+
+
+
+
+
+
+
+\section{Implementación}
+\label{sec:implementacion}
+
+\subsection{Simplificación del Modelo}
+
+Para que la implementación sea más simple, y que el programa/lenguaje que se utilize no gaste recursos trabajando con números de grandes ordenes de magnitud o de ordenes muy pequeños. Se realizará el siguiente cambio de variables $\xi = x/a$ y $\eta = y/a$, con lo que
+\begin{displaymath}
+	\xi _1 = \frac{x_1}{a}, \quad \quad \xi _2 = \frac{x_2}{a} = \xi _1 - 1,
+\end{displaymath}
+
+lo que reduce la posicion de cada masa a un número entre $0$ y $1$. Dado esto, el potencial gravitacional se reescribe a (sustituyendo $M_1$ y $M_2$ despejados de las expresiones de $\xi _1$ y $\xi _2$, esto para tener una expresión más amigables)
+\begin{displaymath}
+	\mathcal{G} (\xi, \eta) = \frac{G(M_1 + M_2)}{a} \qty[\frac{\xi _2}{\sqrt{(\xi - \xi _1)^2 + \eta ^2}} - \frac{\xi _1}{\sqrt{(\xi - \xi _2)^2 + \eta ^2}} - \frac{1}{2} \qty(\xi ^2 + \eta ^2)],
+\end{displaymath}
+
+la implementación se realizó en el sistema $(\xi, \eta)$.
+
+
+\subsection{Implementación en \textit{Gnuplot}}
+
+El codigo generado, al no ser un algoritmo como tal, no se mostrará el pseudocódigo, pero si se desea ver el codigo utilizado, revisar la sección de anexos \ref{sec:anexos}.
+
+\subsubsection{Sistema Tierra$-$Luna}
+Dadas las masas $M_{e} = 5.972\times 10^{24} kg$ y $M_l = 7.329\times 10^{22} kg$, se encuentran las posiciones respectivas respecto al origen del sistema estrellado en coordenadas $(\xi ,\eta)$. De modo que, la superficie potencial y sus curvas de nivel son:
 
 \begin{figure}[H]
-  \centering
-  %\includegraphics[width=.85\textwidth]{images/TrapSerr}  
-  \caption{Error relativo de la aproximación en función del número de
-    trapecios. Fuente: elaboración propia.}
-  \label{fig:Serror}
+\centering
+\subfigure[Superficie Potencial]{\includegraphics[scale=0.65]{Codigos/surfaceTierraLuna.pdf}}\qquad
+\subfigure[Curvas de Nivel]{\includegraphics[scale=0.67]{Codigos/contourTierraLuna.pdf}}
+\caption{Sistema Tierra$-$Luna: (a) La singularidad en la superficie representa a la tierra. Como se verá más adelante, entre mayor sea la diferencia entre las masas de los cuerpos, menor será la distinción del cuerpo de menor masa. (b) En las superficies de nivel se ven representados, no al nivel que se requiere, los puntos de interes en cierto rango.}
+\label{fig: surperficie, cn t-l}
 \end{figure}
+\newpage
+\begin{multicols}{2}
+Para iniciar con algunas aproximaciones de los puntos más evidentes, se toma la coordenada $\eta = 0$. Lo que genera la siguiente curva en dicho plano: 
 
-\lipsum[1-2]
+Lo que facilita los primeros tres puntos de lagrange estan dados en $L_1 \approx (-1.17,0)$, $L_2 \approx (-0.90,0)$ y $L_3 \approx (1,0)$. Estos puntos están representados en el sistema de coordenadas $(\xi ,\eta)$; por lo que, realizando el cambio de sistema correspondiente $x = a\xi$, donde $a$ es la distancia entre ambos cuerpos (para el sistema tierra$-$luna $a = 3.844\times 10^{8} m$), se tiene que $L_1 \approx (-4.497\times 10^{8},0)$, $L_2 \approx (-3.46\times 10^{8},0)$ y $L_3 \approx (3.844\times 10^{8},0)$, todo medido en $m$.
+\columnbreak
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{Codigos/planePlotTierraLuna.pdf}
+	\caption{Curva sobre el plano $\eta = 0$, bajo un poco de análisis de calculo diferencial, o directamente por las gráficas, se pueden representar los primeros $3$ puntos de Lagrange.}
+	\label{fig:planeplot t-l}
+\end{figure}
+\end{multicols}
+
+
+
+
+
+\subsubsection{Sistema Sol$-$Jupiter}
+
+
+
+
+\subsubsection{Sistema Sol$-$Tierra}
+
+
+
+
+\subsection{Implementación en \textit{Mathematica}}
+
+
+
+
+\subsubsection{Sistema Tierra$-$Luna}
+
+
+
+
+
+\subsubsection{Sistema Sol$-$Jupiter}
+
+
+
+
+\subsubsection{Sistema Sol$-$Tierra}
+
+
 
 
 
 \section{Conclusiones}
 \label{sec:conclusiones}
 
-\lipsum[1-2]
+\lipsum[1]
 
 \begin{figure}[H]
   \centering
@@ -149,13 +225,16 @@ Para un sistema de dos cuerpos, los puntos de lagrange son las posiciones en don
 \end{figure}
 
 
-\lipsum[1-2]
+\lipsum[1]
 
-\section*{Agradecimientos}
-\label{sec:agradecimientos}
+\section{Anexos}
+\label{sec:anexos}
 
-Se agradece a la ECFM-USAC por el uso del clúster Euclides donde se realizaron
-las pruebas de rendimiento reportadas en este trabajo.
+%\section*{Agradecimientos}
+%\label{sec:agradecimientos}
+%
+%Se agradece a la ECFM-USAC por el uso del clúster Euclides donde se realizaron
+%las pruebas de rendimiento reportadas en este trabajo.
 
 % References
 \nocite{*}

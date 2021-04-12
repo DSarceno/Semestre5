@@ -1,5 +1,5 @@
-#    2021-04-07
-#    planePlotSolJupiter.gp
+#    2021-04-11
+#    surfaceSolTierra.gp
 #    Diego Sarceño (dsarceno68@gmail.com)
 
 #    Programa superficies de nivel, sistema tierra luna
@@ -7,7 +7,7 @@
 #    Codificación del texto: UTF8
 #    Compiladores probados: GNUPLOT (Ubuntu 20.04 Linux) 5.2
 #    Instrucciones de compilación: no requere nada mas
-#    gnuplot planePlotSolJupiter.gp
+#    gnuplot surfaceSolTierra.gp
 
 #    Copyright (C) 2021
 #    D. R. Sarceño Ramírez
@@ -28,41 +28,39 @@
 #    <http://www.gnu.org/licenses/>.
 
 # PROGRAM
-# Idioma
-set encoding utf8
 # terminal
 set terminal pdf
-set output 'planePlotSolJupiter.pdf'
+set output 'surfaceSolTierra.pdf'
+
+# divisiones en la superficies para una mejor visión
+set isosamples 50
 
 # labels
-set title 'Curva sobre el plano η = 0, Sistema Sol-Jupiter'
+set title 'Superficie del Potencial, Sistema Sol-Tierra'
 set xlabel 'ξ'
-set ylabel 'V(ξ,0)'
+set ylabel 'η'
+set zlabel 'V(ξ,η)'
 
 # superficies de nivel
 set size ratio -1
-set grid
-#set nokey
-
+set nokey
+set contours
+set cntrparam levels incremental -5,0.005,0
 
 
 
 ## plot
 # ranges
-set xrange [-1.5:1.5]
-set yrange [-2.5:-1]
+set xrange [-2:2]
+set yrange [-2:2]
 
 # constantes
 G = 6.6738E-11
-Mj = 1.898E27
+Me = 5.972E24
 Ms = 1.989E30
-a = 7.5E11
-xi1 = Mj/(Mj + Ms)
+a = 1.496E11
+xi1 = Me/(Me + Ms)
 xi2 = xi1 - 1
-K = (Mj + Ms)*G/a
-y = 0
+K = (Me + Ms)*G/a
 
-plot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
-
-
-# END PROGRAM
+splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
