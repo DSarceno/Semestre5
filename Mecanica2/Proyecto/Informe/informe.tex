@@ -36,12 +36,7 @@
 \label{sec:intro}
 \justify 
 \lipsum[1]
-% 
-\begin{displaymath}
-  \int_a^b f(x) dx,
-\end{displaymath}
-%
-\lipsum[1]
+
 
 \section{Puntos de Lagrange}
 \subsection{Problema de los Tres Cuerpos}
@@ -155,10 +150,12 @@ Dadas las masas $M_{e} = 5.972\times 10^{24} kg$ y $M_l = 7.329\times 10^{22} kg
 \centering
 \subfigure[Superficie Potencial]{\includegraphics[scale=0.65]{Codigos/surfaceTierraLuna.pdf}}\qquad
 \subfigure[Curvas de Nivel]{\includegraphics[scale=0.67]{Codigos/contourTierraLuna.pdf}}
-\caption{Sistema Tierra$-$Luna: (a) La singularidad en la superficie representa a la tierra. Como se verá más adelante, entre mayor sea la diferencia entre las masas de los cuerpos, menor será la distinción del cuerpo de menor masa. (b) En las superficies de nivel se ven representados, no al nivel que se requiere, los puntos de interes en cierto rango.}
+\caption{Sistema Tierra$-$Luna: (a) La singularidad en la superficie representa a la tierra. Como se verá más adelante, entre mayor sea la diferencia entre las masas de los cuerpos, menor será la distinción del cuerpo de menor masa. (b) En las curvas de nivel se ven representados, no al nivel que se requiere, los puntos de interes en cierto rango.}
 \label{fig: surperficie, cn t-l}
 \end{figure}
-\newpage
+
+
+
 \begin{multicols}{2}
 Para iniciar con algunas aproximaciones de los puntos más evidentes, se toma la coordenada $\eta = 0$. Lo que genera la siguiente curva en dicho plano: 
 
@@ -172,37 +169,121 @@ Lo que facilita los primeros tres puntos de lagrange estan dados en $L_1 \approx
 \end{figure}
 \end{multicols}
 
+Aumentando el número de curvas de nivel se remarca más, el hecho de que los puntos $L_4$ y $L_5$ estan entre las curvas alargadas verdes. Con eso, la parte más gruesa representaría la posición de los puntos; de modo que, los ultimos dos puntos serían $L_4 \approx (-0.5,0.8)$ y $L_5 \approx (-0.5,-0.8)$, es decir, en términos de coordenadas $(x,y)$: $L_4 \approx (-1.922\times 10^{8},3.075 \times 10^{8})$ y $L_5 \approx (-1.922 \times 10^{8},-3.075 \times 10^{8})$, medido en $m$.
+
 
 
 
 
 \subsubsection{Sistema Sol$-$Jupiter}
+Ya con el procedimiento explicado en el sistema anterior, las gráficas de potenciales y la curva sobre el plano $\eta = 0$, para las masas $M_s = 1.989\times 10 ^{30} kg$ y $M_J = 1.898\times 10 ^{27}$, son: 
 
+\begin{figure}[H]
+\centering
+\subfigure[Superficie Potencial \label{surface s-j}]{\includegraphics[scale=0.45]{Codigos/surfaceSolJupiter.pdf}}
+\subfigure[Curvas de Nivel \label{contour s-j}]{\includegraphics[scale=0.46]{Codigos/contourSolJupiter.pdf}}
+\subfigure[Curva en plano \label{plane s-j}]{\includegraphics[scale=0.45]{Codigos/planePlotSolJupiter.pdf}}
+\caption{Sistema Sol$-$Jupiter: (a) Superficie que representa el potencial gravitacional generado por el sistema. (b) Curvas de nivel, como se mencionó en la figura \ref{fig: surperficie, cn t-l}, entre mayor sea la diferencia entre las masas, menor será la distinción del cuerpo más pequeño. (c) Puntos de Lagrange sobre el plano $\eta = 0$.}
+\label{superficie, cn, plane s-j}
+\end{figure}
+
+Por lo dicho acerca de la figura \ref{contour s-j}, no se puede calcular la posición de los puntos $L_4$ y $L_5$. Entonces, de la figura \ref{plane s-j} las coordenadas son $L_1 \approx (-1.1,0)$, $L_2 \approx (-0.9,0)$ y $L_3 \approx (1.1,0)$. Para encontrar la posición en el plano sistema $(x,y)$, se usa el cambio de coordenadas mostrado en el sistema anterior y la distancia $a = 7.5\times 10^{11}m$: $L_1 \approx (-8.25\times 10 ^{11},0)$, $L_2 \approx (-6.75\times 10 ^{11},0)$ y $L_3 \approx (8.25\times 10 ^{11},0)$, en $m$.
 
 
 
 \subsubsection{Sistema Sol$-$Tierra}
+
+Para este sistema, la diferencia de masas es absurdamente grande ($6$ ordenes de magnitud). Las masas de los cuerpos son $M_e = 5.972\times 10^{24} kg$ y $M_s = 1.989\times 10 ^{30} kg$. Por el mismo argumento del sistema anterior, solo se mostrarán los puntos de Lagrange sobre el plano $\eta = 0$.
+
+\begin{figure}[H]
+\centering
+\subfigure[Superficie Potencial \label{surface s-e}]{\includegraphics[scale=0.45]{Codigos/surfaceSolTierra.pdf}}
+\subfigure[Curvas de Nivel \label{contour s-e}]{\includegraphics[scale=0.46]{Codigos/contourSolTierra.pdf}}
+\subfigure[Curva en plano \label{plane s-e}]{\includegraphics[scale=0.45]{Codigos/planePlotSolTierra.pdf}}
+\caption{Sistema Sol$-$Tierra: (a) Superficie potencial para el sistema Sol$-$Tierra, a diferencia de los dos sistemas anteriores, ya no es posible distinguir de ninguna forma la presencia de la tierra en la superficie. (b) Curvas de nivel, al haber $6$ ordenes de magnitud de diferencia entre las masas, no es perceptible la aportación gravitacional de la Tierra comparada con la del sol. (c) Curva sobre el plano $\eta = 0$}
+\label{superficie, cn, plane s-j}
+\end{figure}
+
+Analizando la gráfica \ref{plane s-e}, es curioso observar que los puntos $L_1$ y $L_2$ son practicamente el mismo (cosa que no es cierta), por lo que $L_1 \approx L_2 \approx (-0.95,0)$ y $L_3 \approx (1,0)$. Convirtiendo al sistema $(x,y)$, se tiene $L_1 \approx L_2 \approx (-1.4212\times 10^{11},0)$ y $L_3 \approx (1.496\times 10^{11},0)$, dado que $a = 1.456\times 10^{11}m$.
 
 
 
 
 \subsection{Implementación en \textit{Mathematica}}
 
+Dadas las implementaciones realizadas en el interprete \textit{Gnuplot}, es claro que se requiere mayor calidad en la imagen para tener una mejor presición al momento de visualizar los datos. \textit{Mathematica} permite realizar esto, de una manera más sencilla y con mejores resultados. Los datos de las masas son exactamente los mismos que la parte anterior, así como las distancias entre objetos de análisis.
 
 
 
 \subsubsection{Sistema Tierra$-$Luna}
+La gráfica del potencial y sus curvas de nivel son:
 
+\begin{figure}[H]
+\centering
+\subfigure[Superficie Potencial \label{surface e-l, math}]{\includegraphics[scale=0.5]{Images/surfaceTierraLuna.pdf}} \qquad \qquad
+\subfigure[Curvas de Nivel \label{contour e-l, math}]{\includegraphics[scale=0.5]{Images/contourTierraLuna.pdf}}
+\caption{Sistema Tierra$-$Luna: (a) Superficie potencial, la luna es distinguible como la sigunlaridad pequeña. (b) Curvas de nivel, claramente se muestran los $5$ puntos de interes.}
+\label{superficie, cn e-l, math}
+\end{figure}
 
+En la figura \ref{contour e-l, math} es claro donde se ubican todos los puntos de interes; por lo que, los puntos de lagrange de una forma más precisa son (puntos de Lagrange representados en ambos sistemas): $L_1 \approx (-1.15,0) \approx (-4.42\times 10^{8} ,0)$, $L_2 \approx (-0.835,0) \approx (-3.21\times 10^{8} ,0)$, $L_3 \approx (1,0) \approx (3.844\times 10^{8} ,0)$, $L_4 \approx (-0.6,0.8) \approx (-2.31\times 10^{8} ,3.075\times 10^{8})$ y $L_5 \approx (-0.6,-0.8) \approx (-2.31\times 10^{8} ,-3.075\times 10^{8})$. \\
+
+Dadas las aproximaciones gráficas, para comparar los datos con una solución directa del problema con bases en el cálculo. Sabiendo que los máximos o mínimos de una función se encuentrar por medio de la primera derivada igualada a cero. Como estamos trabajando con funciones de dos variables se genera un sistema de ecuaciones igualando las primeras derivadas a cero, es decir
+\begin{displaymath}
+	\left\{\begin{array}{cc}
+		\displaystyle\pdv{\mathcal{G}}{\xi} = 0 & \\
+		& \\
+		\displaystyle\pdv{\mathcal{G}}{\eta} = 0. & 
+	\end{array}\right.
+\end{displaymath}
+
+El sistema generado no es soluble analíticamente, por lo que se realiza una solución numérica con la función \texttt{NSolve[\{D[G,$\xi$] $== 0$,D[G,$\eta$] $== 0$\},\{$\xi,\eta$\}]}. Lo que nos devuelve un arreglo con los puntos de Lagrange, los cuales son: $L_1 = (-1.1557,0) = (-4.44\times 10^{8},0)$, $L_2 = (-0.83689, 0) = (-3.22\times 10^{8},0)$, $L_3 = (1.005, 0) = (3.863\times 10^{8},0)$, $L_4 = (-0.4878, 0.866) = (-1.875\times 10^{8},3.33\times 10^{8})$ y $L_5 = (-0.4878, -0.866) = (-1.875\times 10^{8},-3.33\times 10^{8})$. \\
+
+Comparando los tres datos recopilados, es claro que, a pesar de la discrepacia que pueda haber (que mayormente puede ser debida al hecho de ser método gráfico), practicamente coinciden, lo que refuerza las validez de las medidas.
 
 
 
 \subsubsection{Sistema Sol$-$Jupiter}
+Las gráficas representativas del sistema:
 
+\begin{figure}[H]
+\centering
+\subfigure[Superficie Potencial \label{surface s-j, math}]{\includegraphics[scale=0.55]{Images/surfaceSolJupiter.pdf}} \qquad \qquad
+\subfigure[Curvas de Nivel \label{contour s-j, math}]{\includegraphics[scale=0.55]{Images/contourSolJupiter.pdf}}
+\caption{Sistema Sol$-$Jupiter: (a) Superficie potencial, Jupiter es apenas distinguible. (b) Curvas de nivel, los puntos $4$ y $5$ ya no son tan distinguibles, con la idea de la implementación en gnuplot, se puede conjeturar la posición.}
+\label{superficie, cn s-j, math}
+\end{figure}
+
+En base a \ref{contour s-j, math}, las posiciones de los puntos de Lagrange, en ambos sistemas, son: $L_1 \approx (-1.06,0) \approx (-7.95\times 10^{11} ,0)$, $L_2 \approx (-0.94,0) \approx (-7.05\times 10^{11} ,0)$, $L_3 \approx (1,0) \approx (7.5\times 10^{11} ,0)$, $L_4 \approx (-0.5,0.85) \approx (-3.75\times 10^{11} ,6.375\times 10^{11})$ y $L_5 \approx (-0.5,-0.85) \approx (-3.75\times 10^{11} ,-6.375\times 10^{11})$, medido en $m$. \\
+
+Realizando el mismo procedimiento que en sistema anterior, se encuentran los siguientes puntos de Lagrange, por medio de métodos numéricos: $L_1 = (-1.0688,0) = (-8.016\times 10^{11} ,0)$, $L_2 = (-0.9324,0) = (-6.993\times 10^{11} ,0)$, $L_3 = (1,0) = (7.5\times 10^{11} ,0)$, $L_4 = (-0.499,0.866) = (-3.7425\times 10^{11} ,6.495\times 10^{11})$ y $L_5 = (-0.499,-0.866) = (-3.7425\times 10^{11} ,-6.495\times 10^{11})$, medido en $m$.
 
 
 
 \subsubsection{Sistema Sol$-$Tierra}
+
+Gráficas representativas:
+
+\begin{figure}[H]
+\centering
+\subfigure[Superficie Potencial \label{surface s-e, math}]{\includegraphics[scale=0.4]{Images/surfaceSolTierra.pdf}} \qquad
+\subfigure[Curvas de Nivel \label{contour s-e, math}]{\includegraphics[scale=0.4]{Images/contourSolTierra.pdf}} \qquad
+\subfigure[Curva en plano \label{contour s-e, math}]{\includegraphics[scale=0.5]{Images/planePlotSolTierra.pdf}}
+\caption{Sistema Sol$-$Tierra: (a) Superficie potencial, la Tierra no es distinguible, la diferencia en ordenes de magnitud. (b) Curvas de nivel, los puntos no son distinguibles. (c) Así como en la implementación en \textit{Gnuplot}, no es perceptible la contribución gravitacional de la tierra, los puntos $L_1$ y $L_2$ practicamente en el mismo punto (gráficamente hablado, es claro que físicamente no es cierto).}
+\label{superficie, cn s-e, math}
+\end{figure}
+
+Gráficamente, de \ref{contour s-e, math}, solo es posible encontrar los primeros $3$ puntos de Lagrange: $L_1 \approx L_2 \approx (-1,0) \approx (-1.5\times 10^{11},0)$ y $L_3 \approx (1,0) \approx (1.5\times 10^{11},0)$. \\
+
+Utilizando métodos numéricos, los puntos de Lagrange para el sistema son: $L_1 = (-1.01, 0) = (-1.515\times 10^{11} ,0)$, $L_2 = (-0.99, 0) = (-1.485\times 10^{11} ,0)$, $L_3 = (1,0) = (7.5\times 10^{11} ,0)$, $L_4 = (-0.499997, 0.866) = (-7.49996\times 10^{10} ,1.299\times 10^{11})$ y $L_5 = (-0.499997,-0.866) = (-7.49996\times 10^{10} ,-1.299\times 10^{11})$, medido en $m$.
+
+
+
+
+
+\section{Resultados}
+\label{sec:resultados}
+
 
 
 
@@ -213,22 +294,129 @@ Lo que facilita los primeros tres puntos de lagrange estan dados en $L_1 \approx
 
 \lipsum[1]
 
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=.85\textwidth]{images/TrapMerr}  
-  \caption{Área bajo la curva obtenido medidante las dos implementaciones,
-    secuencial y paralelo en función del número de trapecios.  En el inserto
-    está la diferencia del valor obtenido en la implementación secuencial
-    menos el valor obtenido en la implementación paralela.  Fuente:
-    elaboración propia.}
-  \label{fig:Merror}
-\end{figure}
-
-
-\lipsum[1]
 
 \section{Anexos}
 \label{sec:anexos}
+
+\subsection{Códigos \textit{Gnuplot}}
+Los códigos creados para el análisis bajo el lenguaje de \textit{Gnuplot} son en principio iguales para cada sistema, asi que solo se mostrarán para cada tipo de gráfica un único código.
+
+\begin{multicols}{2}
+	\subsubsection{Superficie de Potencial}
+\begin{lstlisting}
+# PROGRAM
+# terminal
+set terminal pdf
+set output 'surfaceSolJupiter.pdf'
+
+# divisiones en la superficies para una mejor vision
+set isosamples 50
+
+# labels
+set title 'Superficie del Potencial, Sistema Sol-Jupiter'
+set xlabel 'xi'
+set ylabel 'eta'
+set zlabel 'V(xi,eta)'
+
+# superficies de nivel
+set size ratio -1
+set nokey
+set contours
+set cntrparam levels incremental -5,0.005,0
+
+
+## plot
+# ranges
+set xrange [-1.5:1.5]
+set yrange [-1.5:1.5]
+
+# constantes
+xi1 = M2/(M2 + M1)
+xi2 = xi1 - 1
+
+splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
+\end{lstlisting}	
+
+	\columnbreak
+	\subsubsection{Curvas de Nivel}
+\begin{lstlisting}
+# PROGRAM
+# terminal
+set terminal pdf
+set output 'contourSolTierra.pdf'
+
+# divisiones en la superficies para una mejor vision
+set isosamples 50
+
+# labels
+set title 'Superficie de Nivel, Sistema Sol-Tierra'
+set xlabel 'xi'
+set ylabel 'eta'
+
+# superficies de nivel
+set size ratio -1
+set grid
+set view map
+set nokey
+unset surface
+set contour base
+set cntrparam levels incremental -5,0.05,0
+
+
+## plot
+# ranges
+set xrange [-3.5:3.5]
+set yrange [-3.5:3.5]
+
+# constantes
+xi1 = M2/(M2 + M1)
+xi2 = xi1 - 1
+
+splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
+
+\end{lstlisting}	
+\end{multicols}
+
+\subsubsection{Plano $\eta = 0$}
+
+\begin{lstlisting}
+# PROGRAM
+# Idioma
+set encoding utf8
+# terminal
+set terminal pdf
+set output 'planePlotSolTierra.pdf'
+
+# labels
+set title 'Curva sobre el plano eta = 0, Sistema Sol-Tierra'
+set xlabel 'xi'
+set ylabel 'V(xi,0)'
+
+# superficies de nivel
+set size ratio 0.8
+set grid
+#set nokey
+
+## plot
+# ranges
+set xrange [-1.5:1.5]
+set xtics -1.5,0.3,1.5
+set yrange [-2.5:-1]
+set ytics -2.5,0.2,-1
+
+# constantes
+xi1 = M2/(M2 + M1)
+xi2 = xi1 - 1
+y = 0
+
+plot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
+
+
+# END PROGRAM
+\end{lstlisting}
+
+\subsection{Código \textit{Mathematica}}
+La implementación en el lenguaje de \textit{Mathematica} fue realizada en un Notebook, por estética del informe no se colocaron imagenes del mismo; sin embargo, los códigos utilzados y el notebook de \textit{Mathematica} estan disponibles en un repositorio de \textit{GitHub}\footnote{Repositorio: \href{https://github.com/DSarceno/Semestre5/tree/main/Mecanica2/Proyecto/Informe}{\textit{GitHub}}}.
 
 %\section*{Agradecimientos}
 %\label{sec:agradecimientos}

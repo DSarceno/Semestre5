@@ -1035,6 +1035,99 @@ Lo que implica que, el punto $z_o$ no puede estar incluído el conocido, radio d
 	La cual es la serie de Laurent de dicha función, la cual convergue para todo $\C$ excepto el $0$.
 \end{ejemplo}
 
+\subsection{Clasificación de Singularidades}
+
+Sea 
+$$f(z) = \cdots + a_{-1} (z - z_o)^{-1} + a_o + a_1 (z - z_o) + \cdot ,$$
+la serie de Laurent de $f(z)$ en algún anillo $0 < \abs{z - z_o} < R$, y $z_o$ una singularidad de $f$, entonces:
+
+\begin{enumerate}[a)]
+	\item $z_o$ es una singularidad removible, si la serie de Laurent no tiene exponentes negativos.
+	\item $z_o$ es una singularidad esencial, si la serie de Laurent tiene infinitos términos con exponentes negativos.
+	\item $z_o$ es un polo, si la serie de Laurent tiene una cantidad finita de exponentes negativos; además, si $a_{-n}$ es el menor coeficiente no nulo, entonces $z_o$ es un polo de orden $n$.
+\end{enumerate}
+
+Para ejemplificar de mejor manera la implicación de la definición dada:
+
+\begin{ejemplo} \tt
+	Clasificar las singularidades de
+		$$f(z) = e^{\flatfrac{1}{z}}$$
+	La singularidad $z_o = 0$, la serie de Laurent para la exponencial esta dada por
+		$$e^{\flatfrac{1}{z}} = 1 + \frac{1}{2} + \frac{1}{2!} \qty(\frac{1}{z}) ^2 + \cdots,$$
+	lo que implica que $z_o$ es una singularidad esencial.
+\end{ejemplo}
+
+
+
+
+
+
+\begin{ejemplo} \tt
+	Clasificar las singularidades de
+		$$f(z) = \frac{\sin{z}}{z}$$
+	La singularidad de $f$ esta en $z_o = 0$ y su serie de Laurent es:
+		$$f(z) = 1 - \frac{z^2}{3!} + \cdot,$$
+	como no hay términos de exponentes negativos, la singularidad removible.
+\end{ejemplo}
+
+
+
+
+\begin{ejemplo} \tt
+	Clasificar las singularidades de
+		$$f(z) = \frac{1}{z(z - 1)}$$
+	La singularidades de $f$ estan en $z_o = 0$ y $z_o = 1$. Para ver que tipo de singularidades son, es necesario encontrar una serie de Laurent. Reescribiendo la función
+		$$f(z) = \frac{-1}{z} \qty(\frac{1}{1 - z}),$$
+	por la serie geométrica
+		$$1 + z + z^2 + \cdots = \frac{1}{1 - z}.$$
+	Sustituyendo en la función
+		$$f(z) = -\frac{1}{z} - 1 - z - z^2 - \cdots,$$
+	por ende, $z_o = 0$ es un polo de orden $1$. Para $z_o = 1$ manipulando la función para generar la serie de Laurent
+		$$f(z) = \qty(\frac{1}{z - 1}) \qty(\frac{1}{1 + (z - 1)}),$$
+	utlizando la serie geométrica con $x = -(z - 1)$; de modo que
+		$$f(z) = \qty(\frac{1}{(z - 1)}) \qty[1 - (z - 1) + (z - 1)^2 - \cdots] = \frac{1}{z - 1} - 1 + (z - 1) - (z - 1)^2 + \cdots,$$
+	por lo que $z_o = 1$ es un polo de orden $1$.
+\end{ejemplo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

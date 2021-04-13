@@ -40,7 +40,7 @@ set xlabel 'ξ'
 set ylabel 'V(ξ,0)'
 
 # superficies de nivel
-set size ratio 0.8
+set size ratio 1
 set grid
 #set nokey
 
@@ -51,8 +51,8 @@ set grid
 # ranges
 set xrange [-1.5:1.5]
 set xtics -1.5,0.3,1.5
-set yrange [-2.5:-1]
-set ytics -2.5,0.2,-1
+set yrange [-1.6:-1.47]
+set ytics -1.8,0.01,-1.47
 
 # constantes
 G = 6.6738E-11

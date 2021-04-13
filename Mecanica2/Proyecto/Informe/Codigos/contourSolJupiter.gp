@@ -54,8 +54,8 @@ set cntrparam levels incremental -5,0.05,0
 
 ## plot
 # ranges
-set xrange [-3.5:3.5]
-set yrange [-3.5:3.5]
+set xrange [-1.5:1.5]
+set yrange [-1.5:1.5]
 
 # constantes
 G = 6.6738E-11
