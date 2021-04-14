@@ -18,6 +18,150 @@
 
 
 
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Se toma una integral auxiliar para llegar a las integrales propuestas
+			$$\int _{\abs{z} = 1} e^{-iz^n} \dd{z}.$$
+		Como la integral esta sobre el circulo unitario, parametrizando la curva
+			$$z = \cos{\theta} + i\sin{\theta},$$
+		de esto, sustituyendo la integral
+			$$\int_{0} ^{2\pi} e^{\sin{n\theta}} \qty[\cos{(-\cos{n\theta})} + i\sin{(-\cos{n\theta})}] \qty[-\sin{\theta} + i\cos{\theta}] \dd{z}.$$
+		Separando parte real y parte imaginaria, y utilizando identidades trigonométricas,
+			$$-\int _{0} ^{2\pi} e^{\sin{\theta}} \qty[ \sin{\theta} \cos{(-\cos{n\theta})} + \cos{\theta} \sin{(-\cos{n\theta})} ] \dd{\theta} + i\int _{0} ^{2\pi} e^{\sin{\theta}} \qty[\cos{\theta} \cos{(-\cos{n\theta})} - \sin{\theta} \sin{(-\cos{n\theta})}] \dd{\theta}$$
+			$$-\int _{0} ^{2\pi} e^{\sin{\theta}} \sin{(\theta - \cos{n\theta})} \dd{\theta} + i\int _{0} ^{2\pi} e^{\sin{\theta}} \cos{(\theta - \cos{n\theta})} \dd{\theta}.$$
+		Además, como la función $e^{-iz^n}$ es claro que es holomorfa en el circulo unitario; entonces, por Cauchy, la integral es cero
+			$$\int _{\abs{z} = 1} e^{-iz^n} \dd{z} = 0.$$
+		Por lo que, la parte real y parte imaginaria de la integral deben de ser cero, lo que demuestra que las integrales propuestas son cero.		
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Definiendo la función
+			$$g(z) = \frac{f(z)}{z - z_o},$$
+		derivando respecto a $z$
+			$$g'(z) = \frac{f'(z)}{z - z_o} - \frac{f(z)}{(z - z_o)^2}.$$
+		Integrando la función propuesta, como $z_o \notin \gamma$ ni a su interior, entonces $g'(z)$ es holomorfa en $\gamma$:
+			$$\oint _\gamma g'(z) \dd{z} = 0.$$
+		Por lo que
+			$$\int _\gamma \frac{f'(z)}{z - z_o} \dd{z} = \int _\gamma \frac{f(z)}{(z - z_o)^2} \dd{z}.$$
+		$\QED$
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Dada la parametrización $\gamma (t) = re^{it}$, para la integral
+			$$\int _\gamma \frac{e^{iz}}{z} \dd{z},$$
+		sustituyendo en la integral,
+			$$\int _0 \pi e^{ir(\cos{t} + i\sin{t})} \frac{1}{re^{it}} ire^{it} \dd{t}.$$
+		Simplificando
+			$$\int _0 \pi e^{-r\sin{t}} \qty(i\cos{(r\cos{t})} - \sin{(r\cos{t})}) \dd{t},$$
+		esto es análogo a las soluciones de estado estable de ecuaciones diferenciales, en este caso no hay parte estable, solo transitoria, de modo que, al realizar el límite
+			$$\lim _{r\to \infty} \int _0 ^\pi e^{-r\sin{t}} \qty(i\cos{(r\cos{t})} - \sin{(r\cos{t})}) \dd{t} = 0,$$
+		obviamente, la analogía es para la variable $r$.
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Incisos:
+		\begin{enumerate}[a)]
+			\item En $\gamma$ el número de raíces del polinomio para la función dada, son singularidades de dicha función, puesto que cada polinomio (por teorema fundamental del álgebra) se puede represetar de la siguiente forma
+				$$f(z) = (z - z_1)^{d_1} \cdots (z - z_n)^{d_n},$$
+			donde $\sum d_{i} = m$ con $n \leq m$, $d_i$ la multiplicidad de cada raíz y $m$ el grado de $f$. Suponiendo que de las $n$ raíces $p$ de ellas están dentro de $\gamma$, $p\leq n$. Se realiza la derivada del polinomio
+				$$f'(z) = d_1 (z - z_1) ^{d_1 - 1} \cdots (z - z_n)^{d_n} + \cdots + (z - z_1)^{d_1} \cdots d_n (z - z_n)^{d_n - 1},$$
+			con esto, se dividen ambas funciones y se separan en $n$ fracciones
+				$$\frac{f'(z)}{f(z)} = \frac{d_1 (z - z_1) ^{d_1 - 1} \cdots (z - z_n)^{d_n} + \cdots + (z - z_1)^{d_1} \cdots d_n (z - z_n)^{d_n - 1}}{(z - z_1)^{d_1} \cdots (z - z_n)^{d_n}}$$
+				$$\frac{f'(z)}{f(z)} = \frac{d_1}{z - z_1} + \cdots + \frac{d_n}{z - z_n}.$$
+			Al momento de integrar, todas aquellas raíces que no esten dentro de $\gamma$, por cauchy, la integral será cero, para las $p$ raíces dentro, se utiliza la primera fórmula de integración de cauchy, se tiene
+				$$\int _{\gamma} \frac{f'(z)}{f(z)} \dd{z} = d_1 (2\pi i) + \cdots + d_p (2\pi i)$$
+				$$\frac{1}{2\pi i} \int _{\gamma} \frac{f'(z)}{f(z)} \dd{z} = \sum _{i = 1} ^p d_i,$$
+			lo que es el número de raíces dentro de $\gamma$ contando sus multiplicidades.
+			\item 
+		\end{enumerate}
+	\end{problem}
+\end{mdframed}
 
 
 
@@ -40,6 +184,12 @@
 
 
 
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		Como $f$ es holomorfa en $\gamma$; además, es acotada por $M = 1$ en dicha región. Por la desigualdad de cauchy
+	\end{problem}
+\end{mdframed}
 
 
 
@@ -48,6 +198,44 @@
 
 
 
+
+
+
+
+
+
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		
+	\end{problem}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% PROBLEMA 1
+\begin{mdframed}[style = warning]
+	\begin{problem}
+		
+	\end{problem}
+\end{mdframed}
 
 
 

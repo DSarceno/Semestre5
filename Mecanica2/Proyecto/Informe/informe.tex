@@ -19,8 +19,7 @@
 %pdfkeywords={template, template}]{hyperref}
 
 \title{\sc Problema de los 3 Cuerpos, Puntos de Lagrange}%
-\author{Diego Sarceño \thanks{Escuela de Ciencias Físicas y Matemáticas,
-  Universidad de San Carlos de Guatemala.}}
+\author{Diego Sarceño \\ $201900109$}
 \date{Guatemala, \today}
 %% 20210307
 
@@ -28,14 +27,14 @@
 \maketitle
 
 \begin{abstract}
-  \lipsum[1]
+  Los puntos de Lagrange son ubicaciones específicas para un sistema de dos cuerpos que representan las posiciones en donde la atracción debida al campo gravitacional del sistema presenta una rotación sincrónica para un tercer cuerpo ubicado en dicha posición. En este trabajo se muestra la ubicación de dichos puntos para varios sistemas planetarios dentro del sistema solar. Se realizaron modelos gráficos sobre los cuales se intuyeron las ubicaciones de los puntos; los modelos fueron realizados con el lenguaje de \textit{Gnuplot} y \textit{Mathematica}. Para corroborar las aproximaciones gráficas se realizó una solución numérica de sistemas de ecuaciones no lienales.
 \end{abstract}
 
 
 \section{Introducción}
 \label{sec:intro}
 \justify 
-\lipsum[1]
+Se utiliza el potencial gravitacional generado por el sistema, al tratarse de un método gráfico, se utilizaron las curvas de nivel para generar la posición de los puntos de lagrange relativas a un sistema en reposo asociado con el sistema de dos cuerpos. Además, se utilizarón conceptos básicos de cálculo multivariable, definición de derivada parcial y su interpretación geométrica. Las implentaciones, gracias a la facilidad que proporcionan ambos lenguajes no requieren de ningún módulo o paquete extra, así como las soluciones numéricas.	
 
 
 \section{Puntos de Lagrange}
@@ -169,7 +168,7 @@ Lo que facilita los primeros tres puntos de lagrange estan dados en $L_1 \approx
 \end{figure}
 \end{multicols}
 
-Aumentando el número de curvas de nivel se remarca más, el hecho de que los puntos $L_4$ y $L_5$ estan entre las curvas alargadas verdes. Con eso, la parte más gruesa representaría la posición de los puntos; de modo que, los ultimos dos puntos serían $L_4 \approx (-0.5,0.8)$ y $L_5 \approx (-0.5,-0.8)$, es decir, en términos de coordenadas $(x,y)$: $L_4 \approx (-1.922\times 10^{8},3.075 \times 10^{8})$ y $L_5 \approx (-1.922 \times 10^{8},-3.075 \times 10^{8})$, medido en $m$.
+Aumentando el número de curvas de nivel se remarca más, el hecho de que los puntos $L_4$ y $L_5$ estan entre las curvas alargadas verdes. Con eso, la parte más gruesa representaría la posición de los puntos, además estan posicionados de modo que genere un triangulo equilátero con las masas como vértices; de modo que, los ultimos dos puntos serían $L_4 \approx (-0.5,0.8)$ y $L_5 \approx (-0.5,-0.8)$, es decir, en términos de coordenadas $(x,y)$: $L_4 \approx (-1.922\times 10^{8},3.075 \times 10^{8})$ y $L_5 \approx (-1.922 \times 10^{8},-3.075 \times 10^{8})$, medido en $m$.
 
 
 
@@ -187,7 +186,7 @@ Ya con el procedimiento explicado en el sistema anterior, las gráficas de poten
 \label{superficie, cn, plane s-j}
 \end{figure}
 
-Por lo dicho acerca de la figura \ref{contour s-j}, no se puede calcular la posición de los puntos $L_4$ y $L_5$. Entonces, de la figura \ref{plane s-j} las coordenadas son $L_1 \approx (-1.1,0)$, $L_2 \approx (-0.9,0)$ y $L_3 \approx (1.1,0)$. Para encontrar la posición en el plano sistema $(x,y)$, se usa el cambio de coordenadas mostrado en el sistema anterior y la distancia $a = 7.5\times 10^{11}m$: $L_1 \approx (-8.25\times 10 ^{11},0)$, $L_2 \approx (-6.75\times 10 ^{11},0)$ y $L_3 \approx (8.25\times 10 ^{11},0)$, en $m$.
+Por lo dicho acerca de la figura \ref{contour s-j}, no se puede calcular la posición de los puntos $L_4$ y $L_5$ directamente; sin embargo, la posición de dichos puntos, esta dada por los dos triangulos equiláteros generados por la distancia entre las masas, lo que nos da los puntos $L_4, L_5 \approx (-0.5,\pm 0.866) \approx (-3.75\times 10^{11},\pm 6.5\times 10^{11})$. Entonces, de la figura \ref{plane s-j} las coordenadas son $L_1 \approx (-1.1,0)$, $L_2 \approx (-0.9,0)$ y $L_3 \approx (1.1,0)$, para $L_4 , L_5 = $. Para encontrar la posición en el plano sistema $(x,y)$, se usa el cambio de coordenadas mostrado en el sistema anterior y la distancia $a = 7.5\times 10^{11}m$: $L_1 \approx (-8.25\times 10 ^{11},0)$, $L_2 \approx (-6.75\times 10 ^{11},0)$ y $L_3 \approx (8.25\times 10 ^{11},0)$, en $m$.
 
 
 
@@ -204,7 +203,7 @@ Para este sistema, la diferencia de masas es absurdamente grande ($6$ ordenes de
 \label{superficie, cn, plane s-j}
 \end{figure}
 
-Analizando la gráfica \ref{plane s-e}, es curioso observar que los puntos $L_1$ y $L_2$ son practicamente el mismo (cosa que no es cierta), por lo que $L_1 \approx L_2 \approx (-0.95,0)$ y $L_3 \approx (1,0)$. Convirtiendo al sistema $(x,y)$, se tiene $L_1 \approx L_2 \approx (-1.4212\times 10^{11},0)$ y $L_3 \approx (1.496\times 10^{11},0)$, dado que $a = 1.456\times 10^{11}m$.
+Analizando la gráfica \ref{plane s-e}, es curioso observar que los puntos $L_1$ y $L_2$ son practicamente el mismo (cosa que no es cierta), por lo que $L_1 \approx L_2 \approx (-0.95,0)$ y $L_3 \approx (1,0)$. Convirtiendo al sistema $(x,y)$, se tiene $L_1 \approx L_2 \approx (-1.4212\times 10^{11},0)$ y $L_3 \approx (1.496\times 10^{11},0)$, dado que $a = 1.456\times 10^{11}m$. A pesar de que los ordenes de magnitud son muy diferentes, en base a la hipótesis de que los puntos $L_4$ y $L_5$ forman un triangulo equilátero con la posicion de las masas, y la posición es practicamente $(0,0)$ y $(1,0)$, lo que da $L_4, L_5 \approx (-7.5\times 10^{10},\pm 2.99\times 10^{11}) m$.
 
 
 
@@ -256,7 +255,7 @@ Las gráficas representativas del sistema:
 
 En base a \ref{contour s-j, math}, las posiciones de los puntos de Lagrange, en ambos sistemas, son: $L_1 \approx (-1.06,0) \approx (-7.95\times 10^{11} ,0)$, $L_2 \approx (-0.94,0) \approx (-7.05\times 10^{11} ,0)$, $L_3 \approx (1,0) \approx (7.5\times 10^{11} ,0)$, $L_4 \approx (-0.5,0.85) \approx (-3.75\times 10^{11} ,6.375\times 10^{11})$ y $L_5 \approx (-0.5,-0.85) \approx (-3.75\times 10^{11} ,-6.375\times 10^{11})$, medido en $m$. \\
 
-Realizando el mismo procedimiento que en sistema anterior, se encuentran los siguientes puntos de Lagrange, por medio de métodos numéricos: $L_1 = (-1.0688,0) = (-8.016\times 10^{11} ,0)$, $L_2 = (-0.9324,0) = (-6.993\times 10^{11} ,0)$, $L_3 = (1,0) = (7.5\times 10^{11} ,0)$, $L_4 = (-0.499,0.866) = (-3.7425\times 10^{11} ,6.495\times 10^{11})$ y $L_5 = (-0.499,-0.866) = (-3.7425\times 10^{11} ,-6.495\times 10^{11})$, medido en $m$.
+Realizando el mismo procedimiento que en sistema anterior, se encuentran los siguientes puntos de Lagrange, por medio de métodos numéricos: $L_1 = (-1.0688,0) = (-8.016\times 10^{11} ,0)$, $L_2 = (-0.9324,0) = (-6.993\times 10^{11} ,0)$, $L_3 = (1,0) = (7.5\times 10^{11} ,0)$, $L_4 = (-0.499,0.866) = (-3.7425\times 10^{11} ,6.495\times 10^{11})$ y $L_5 = (-0.499,-0.866) = (-3.7425\times 10^{11} ,-6.495\times 10^{11})$, medido en $m$. 
 
 
 
@@ -273,9 +272,9 @@ Gráficas representativas:
 \label{superficie, cn s-e, math}
 \end{figure}
 
-Gráficamente, de \ref{contour s-e, math}, solo es posible encontrar los primeros $3$ puntos de Lagrange: $L_1 \approx L_2 \approx (-1,0) \approx (-1.5\times 10^{11},0)$ y $L_3 \approx (1,0) \approx (1.5\times 10^{11},0)$. \\
+Gráficamente, de \ref{contour s-e, math}, solo es posible encontrar los primeros $3$ puntos de Lagrange: $L_1 \approx L_2 \approx (-1,0) \approx (-1.5\times 10^{11},0)$ y $L_3 \approx (1,0) \approx (1.5\times 10^{11},0)$. Para los puntos $L_4$ y $L_5$ se utiliza la idea de lo realizado con la implementación en \textit{Gnuplot}, $L_4,L_5 \approx (-7.5\times 10^{10},\pm 2.99\times 10^{11})$ \\
 
-Utilizando métodos numéricos, los puntos de Lagrange para el sistema son: $L_1 = (-1.01, 0) = (-1.515\times 10^{11} ,0)$, $L_2 = (-0.99, 0) = (-1.485\times 10^{11} ,0)$, $L_3 = (1,0) = (7.5\times 10^{11} ,0)$, $L_4 = (-0.499997, 0.866) = (-7.49996\times 10^{10} ,1.299\times 10^{11})$ y $L_5 = (-0.499997,-0.866) = (-7.49996\times 10^{10} ,-1.299\times 10^{11})$, medido en $m$.
+Utilizando métodos numéricos, los puntos de Lagrange para el sistema son: $L_1 = (-1.01, 0) = (-1.515\times 10^{11} ,0)$, $L_2 = (-0.99, 0) = (-1.485\times 10^{11} ,0)$, $L_3 = (1,0) = (1.5\times 10^{11} ,0)$, $L_4 = (-0.499997, 0.866) = (-7.49996\times 10^{10} ,1.299\times 10^{11})$ y $L_5 = (-0.499997,-0.866) = (-7.49996\times 10^{10} ,-1.299\times 10^{11})$, medido en $m$.
 
 
 
@@ -284,25 +283,113 @@ Utilizando métodos numéricos, los puntos de Lagrange para el sistema son: $L_1
 \section{Resultados}
 \label{sec:resultados}
 
+Las tablas de resultados para cada los $5$ puntos de Lagrange de cada sistema, encontrados de las $3$ formas anteriormente planteadas. Las posiciones estarán dadas en el sistema $(x,y)$.
+
+\subsection{Sistema Tierra$-$Luna}
+
+\begin{table}[H]
+\centering
+	\caption{Puntos de Lagrange en coordenadas $(x,y)$, sistema Tierra$-$Luna.}
+	\begin{tabular}{||c||c|c|c|c||}
+		\hline
+		\hline
+		Implementación & $L_1$ & $L_2$ & $L_3$ & $L_4 ,L_5$ \\
+		\hline
+		\hline
+		Gnuplot & $(-4.497\times 10^{8} ,0)$ & $(-3.46\times 10^{8} ,0)$ & $(3.84\times 10^8 ,0)$ & $(-1.92\times 10^8 ,\pm 3.075\times 10^8)$ \\
+		\hline
+		Mathematica & $(-4.42\times 10^{8} ,0)$ & $(-3.21\times 10^{8} ,0)$ & $(3.84\times 10^{8} ,0)$ & $(-2.31\times 10^{8} ,\pm 3.075\times 10^{8})$ \\
+		\hline
+		Numérica & $(-4.44\times 10^{8},0)$ & $(-3.22\times 10^{8},0)$ & $(3.86\times 10^{8},0)$ & $(-1.88\times 10^{8},\pm 3.33\times 10^{8})$ \\
+		\hline
+		\hline
+	\end{tabular}
+	\label{tab:t-l}
+\end{table}
 
 
 
+
+
+\subsection{Sistema Sol$-$Jupiter}
+
+\begin{table}[H]
+\centering
+	\caption{Puntos de Lagrange en coordenadas $(x,y)$, sistema Sol$-$Jupiter.}
+	\begin{tabular}{||c||c|c|c|c||}
+		\hline
+		\hline
+		Implementación & $L_1$ & $L_2$ & $L_3$ & $L_4 ,L_5$ \\
+		\hline
+		\hline1
+		Gnuplot & $(-8.25\times 10 ^{11},0)$ & $(-6.75\times 10 ^{11},0)$ & $(8.25\times 10 ^{11},0)$ & $(-3.75\times 10^{11},\pm 6.5\times 10^{11})$ \\
+		\hline
+		Mathematica & $(-7.95\times 10^{11} ,0)$ & $(-6.99\times 10^{11} ,0)$ & $(7.5\times 10^{11} ,0)$ & $(-3.74\times 10^{11} ,\pm 6.495\times 10^{11})$ \\
+		\hline
+		Numérica & $(-8.02\times 10^{11} ,0)$ & $(-6.99\times 10^{11} ,0)$ & $(7.5\times 10^{11} ,0)$ & $(-3.74\times 10^{11} ,\pm 6.495\times 10^{11})$ \\
+		\hline
+		\hline
+	\end{tabular}
+	\label{tab:t-l}
+\end{table}
+
+
+\subsection{Sistema Sol$-$Tierra}
+
+\begin{table}[H]
+\centering
+	\caption{Puntos de Lagrange en coordenadas $(x,y)$, sistema Sol$-$Tierra.}
+	\begin{tabular}{||c||c|c|c|c||}
+		\hline
+		\hline
+		Implementación & $L_1$ & $L_2$ & $L_3$ & $L_4 ,L_5$ \\
+		\hline
+		\hline
+		Gnuplot & $(-1.42\times 10^{11},0)$ & $(-1.42\times 10^{11},0)$ & $(1.496\times 10^{11},0)$ & $(-7.5\times 10^{10},\pm 2.99\times 10^{11})$ \\
+		\hline
+		Mathematica & $(-1.5\times 10^{11},0)$ & $(-1.5\times 10^{11},0)$ & $(1.5\times 10^{11},0))$ & $(-7.5\times 10^{10},\pm 2.99\times 10^{11})$ \\
+		\hline
+		Numérica & $(-1.52\times 10^{11} ,0)$ & $(-1.48\times 10^{11} ,0)$ & $(1.5\times 10^{11} ,0)$ & $(-7.5\times 10^{10} ,\pm 1.3\times 10^{11})$ \\
+		\hline
+		\hline
+	\end{tabular}
+	\label{tab:t-l}
+\end{table}
+
+\subsection{Representación Gráfica}
+
+\begin{figure}[H]
+\centering
+\subfigure[Sistema Tierra$-$Luna \label{lag t-lj}]{\includegraphics[scale=0.6]{Images/contourTierraLunaLagrange.pdf}}
+\subfigure[Sistema Sol$-$Jupiter \label{lag s-j}]{\includegraphics[scale=0.6]{Images/contourSolJupiterLagrange.pdf}}
+\subfigure[Sistema Sol$-$Tierra \label{lag s-t}]{\includegraphics[scale=0.6]{Images/contourSolTierraLagrange.pdf}}
+\caption{Cada sistema planetario representado por sus curvas de nivel y los puntos de Lagrange encontrados.}
+\label{superficie, cn, plane s-j}
+\end{figure}
+
+
+
+\section{Discución de Resultados}
+\label{sec:discucion}
+
+Los resultados obtenidos con cada uno de los métodos y lenguajes utilizados se sustentan entre sí. El método gráfico, el cual es el más impreciso, también dió valores acordes a lo esperado por medio de las soluciones numéricas. Sin embargo, para sistemas con mayor diferencia en ordenes de magnitud entre las masas, el método gráfico dejaría de ser viable para el calculo de puntos de lagrange, puesto que las imagenes no tienen una resolución ni presición infinita.
 
 
 \section{Conclusiones}
 \label{sec:conclusiones}
 
-\lipsum[1]
+Los resultados obtenidos, para el modelo explicado en la sección \ref{sec:Puntos de Lagrange} y al inicio de la sección \ref{sec:implementacion}, son válidos y sustentables bajo métodos precisos. Sin embargo, al compararlos con los datos reales proporcionados en Wikipedia, extraidos de páginas oficiales de la NASA, algunos de los puntos tienen una discrepacia significativa, esto es debido a las restricciones del modelo, es decir, las orbitas circulares; además, de las no consideraciones de los efectos gravitacionales externos al sistema. A pesar de ello, las aproximaciones encontradas en el trabajo son válidas y muy buenas en relación al modelo resuelto y las herramientas utilizadas.
 
 
 \section{Anexos}
 \label{sec:anexos}
 
 \subsection{Códigos \textit{Gnuplot}}
-Los códigos creados para el análisis bajo el lenguaje de \textit{Gnuplot} son en principio iguales para cada sistema, asi que solo se mostrarán para cada tipo de gráfica un único código.
+Los códigos creados para el análisis bajo el lenguaje de \textit{Gnuplot} son en principio iguales para cada sistema, asi que solo se mostrarán para cada tipo de gráfica un único código\footnote{Cada código se ejecuta en terminal desde la carpeta en la que se encuentre el archivo con la siguiente línea: \\
+\texttt{gnuplot <filename.gp>}}.
 
 \begin{multicols}{2}
-	\subsubsection{Superficie de Potencial}
+\subsubsection{Superficie de Potencial}
 \begin{lstlisting}
 # PROGRAM
 # terminal
@@ -335,10 +422,11 @@ xi1 = M2/(M2 + M1)
 xi2 = xi1 - 1
 
 splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
+
+# END PROGRAM
 \end{lstlisting}	
 
-	\columnbreak
-	\subsubsection{Curvas de Nivel}
+\subsubsection{Curvas de Nivel}
 \begin{lstlisting}
 # PROGRAM
 # terminal
@@ -374,8 +462,8 @@ xi2 = xi1 - 1
 
 splot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2 + y**2) ) t 'V'
 
+# END PROGRAM
 \end{lstlisting}	
-\end{multicols}
 
 \subsubsection{Plano $\eta = 0$}
 
@@ -414,6 +502,9 @@ plot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2
 
 # END PROGRAM
 \end{lstlisting}
+\end{multicols}
+
+
 
 \subsection{Código \textit{Mathematica}}
 La implementación en el lenguaje de \textit{Mathematica} fue realizada en un Notebook, por estética del informe no se colocaron imagenes del mismo; sin embargo, los códigos utilzados y el notebook de \textit{Mathematica} estan disponibles en un repositorio de \textit{GitHub}\footnote{Repositorio: \href{https://github.com/DSarceno/Semestre5/tree/main/Mecanica2/Proyecto/Informe}{\textit{GitHub}}}.

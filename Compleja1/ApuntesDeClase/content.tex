@@ -1091,22 +1091,51 @@ Para ejemplificar de mejor manera la implicación de la definición dada:
 
 
 
+\subsection{Ceros}
+
+
+\begin{definicion}
+	$z_o$ es un cero de orden $n \in \Z ^+$ de una funcion $f$ si existe una funcion $g(z)$ tal que
+	$$f(z) = (z - z_o) g(z),$$
+con $g(z_o) \neq 0$.
+\end{definicion}
+
+\subsubsection{Residuos}
+
+\begin{definicion}
+	Sea $z_o$ una singularidad aislada de $f(z)$, entonces el residuo de $f$ en $z_o$ es el coeficiente $a_{-1}$ de la serie de Laurent de $f$ centrada en $z_o$.
+\end{definicion}
 
 
 
 
+\begin{ejemplo} \tt
+	Dada la función 
+		$$f(z) = \frac{\sin{z}}{z},$$
+	calcule el residuo para $z_o = 0$. \\
+	Por ejemplos anteriores, se conoce la serie de Laurent, y es claro que $a_{-1} = 0$, por ende $\text{Res} (f:0) = 0$.
+\end{ejemplo}
+
+Para los polos de orden $1$, tienen una serie de Laurent
+	$$f(z) = \frac{a_{-1}}{(z - z_o)} + a_o + a_1 (z - z_o) + \cdots ,$$
+multiplcando todo por $(z - z_o)$ se tiene
+	$$(z - z_o) f(z) = a_{-1} + a_o (z - z_o) + \cdots .$$
+
+\begin{teorema}
+	Si $z_o$ es un polo de orden $1$ de una función $f$, entonces
+		$$\text{Res} (f:z_o) = \lim _{z \to z_o} (z - z_o) f(z)$$
+\end{teorema}
 
 
+Siguiendo la idea del teorema mostrado, se utiliza para demostrar la generalización para un polo de orden $n$. Multiplicando la serie por $(z - z_o)^n$ y derivando dicha serie $n-1$ veces se tiene
+	$$\dv[n-1]{z} \qty[(z - z_o)^n f(z)] = (n - 1)! a_{-1}.$$
+De modo que, el teorema quedaría
 
 
-
-
-
-
-
-
-
-
+\begin{teorema}
+	Si $z_o$ es un polo de orden $n$ de una función $f$, entonces
+		$$\text{Res} (f:z_o) = \frac{1}{(n - 1)!} \lim _{z \to z_o} \dv[n-1]{z} \qty[(z - z_o)^n f(z)]$$
+\end{teorema}
 
 
 
