@@ -27,7 +27,7 @@
 \maketitle
 
 \begin{abstract}
-  Los puntos de Lagrange son ubicaciones específicas para un sistema de dos cuerpos que representan las posiciones en donde la atracción debida al campo gravitacional del sistema presenta una rotación sincrónica para un tercer cuerpo ubicado en dicha posición. En este trabajo se muestra la ubicación de dichos puntos para varios sistemas planetarios dentro del sistema solar. Se realizaron modelos gráficos sobre los cuales se intuyeron las ubicaciones de los puntos; los modelos fueron realizados con el lenguaje de \textit{Gnuplot} y \textit{Mathematica}. Para corroborar las aproximaciones gráficas se realizó una solución numérica de sistemas de ecuaciones no lienales.
+  Los puntos de Lagrange son ubicaciones específicas, para un sistema de dos cuerpos, que representan las posiciones en donde la atracción debida al campo gravitacional del sistema presenta una rotación sincrónica para un tercer cuerpo ubicado en dicha posición. En este trabajo se muestra la ubicación de dichos puntos para varios sistemas planetarios dentro del sistema solar. Se realizaron modelos gráficos sobre los cuales se intuyeron las ubicaciones de los puntos; los modelos fueron realizados con el lenguaje de \textit{Gnuplot} y \textit{Mathematica}. Para corroborar las aproximaciones gráficas se realizó una solución utilizando métodos numéricos.
 \end{abstract}
 
 
@@ -41,7 +41,7 @@ Se utiliza el potencial gravitacional generado por el sistema, al tratarse de un
 \subsection{Problema de los Tres Cuerpos}
 \label{sec:Puntos de Lagrange}
 
-El problema de los tres cuerpos no es soluble analíticamente; sin embargo, realizando ciertas restricciónes al problema llega a poderse resolver. Consideraciones a tomar:
+El problema de los tres cuerpos no es soluble analíticamente; sin embargo, realizando ciertas restricciones al problema llega a ser posible resolverse. Consideraciones a tomar:
 \begin{enumerate}
 	\item Dos cuerpos masivos en orbitas circulares alrededor de su centro de masa.
 	\item El tercer objeto de masa $m$ tiene la condición: $m\ll M_1,M_2$, donde $M_1$ y $M_2$ son las masas de los dos objetos anteriormente mencionados.
@@ -88,7 +88,7 @@ En la cual las dos fuerzas representadas son las fuerzas de cada una de las masa
 \end{displaymath}
 
 
-Analizando el resto de términos, se tiene que la fuerza de coriolis es perpendicular a la velocidad, por lo que no tiene un potencial asociado. Para el término de la fuerza centrífuga, es sencillo corroborar que es una fuerza central\footnote{Fuerza radial conservativa.}, lo que implica que tiene una energía potencial asociada. Desarrollando el término de la fuerza centrífuga y encontrando el potencial
+Analizando el resto de términos, se tiene que la fuerza de coriolis es perpendicular a la velocidad, por lo que no ningún trabajo. Para el término de la fuerza centrífuga, es sencillo corroborar que es una fuerza central\footnote{Fuerza radial conservativa.}, lo que implica que tiene una energía potencial asociada. Desarrollando el término de la fuerza centrífuga y encontrando el potencial
 \begin{align*}
 	- m\omega \cp (\omega \cp r) &= m\omega ^2 \qty(x\mathbb{\vu{x} ^*} + y \mathbb{\vu{y} ^*}) \\
 	V_c &= -\frac{1}{2} m\omega ^2 (x^2 + y^2).
@@ -100,7 +100,7 @@ Con el análisis anterior, se concluye que la enería potencial total del sistem
 \end{displaymath}
 
 \noindent
-Por simplicidad no se tomara la enería potencial, sino que el potencial gravitacional del sistema, por simplicidad al momento de desarrollar los calculos
+Por simplicidad no se tomara la enería potencial, sino que el potencial gravitacional del sistema, para que no halla dependencia de una masa arbitraria
 \begin{displaymath}
 	\mathcal{G} = -\frac{GM_1}{\qty((x - x_1)^2 + y^2)^{\flatfrac{1}{2}}} - \frac{GM_2}{\qty((x - x_2)^2 + y^2)^{\flatfrac{1}{2}}} - \frac{1}{2} \omega ^2 \qty(x^2 + y^2).
 \end{displaymath}
@@ -257,7 +257,7 @@ En base a \ref{contour s-j, math}, las posiciones de los puntos de Lagrange, en 
 
 Realizando el mismo procedimiento que en sistema anterior, se encuentran los siguientes puntos de Lagrange, por medio de métodos numéricos: $L_1 = (-1.0688,0) = (-8.016\times 10^{11} ,0)$, $L_2 = (-0.9324,0) = (-6.993\times 10^{11} ,0)$, $L_3 = (1,0) = (7.5\times 10^{11} ,0)$, $L_4 = (-0.499,0.866) = (-3.7425\times 10^{11} ,6.495\times 10^{11})$ y $L_5 = (-0.499,-0.866) = (-3.7425\times 10^{11} ,-6.495\times 10^{11})$, medido en $m$. 
 
-
+\newpage
 
 \subsubsection{Sistema Sol$-$Tierra}
 
@@ -360,9 +360,9 @@ Las tablas de resultados para cada los $5$ puntos de Lagrange de cada sistema, e
 
 \begin{figure}[H]
 \centering
-\subfigure[Sistema Tierra$-$Luna \label{lag t-lj}]{\includegraphics[scale=0.6]{Images/contourTierraLunaLagrange.pdf}}
-\subfigure[Sistema Sol$-$Jupiter \label{lag s-j}]{\includegraphics[scale=0.6]{Images/contourSolJupiterLagrange.pdf}}
-\subfigure[Sistema Sol$-$Tierra \label{lag s-t}]{\includegraphics[scale=0.6]{Images/contourSolTierraLagrange.pdf}}
+\subfigure[Sistema Tierra$-$Luna \label{lag t-lj}]{\includegraphics[scale=0.5]{Images/contourTierraLunaLagrange.pdf}}
+\subfigure[Sistema Sol$-$Jupiter \label{lag s-j}]{\includegraphics[scale=0.5]{Images/contourSolJupiterLagrange.pdf}}
+\subfigure[Sistema Sol$-$Tierra \label{lag s-t}]{\includegraphics[scale=0.5]{Images/contourSolTierraLagrange.pdf}}
 \caption{Cada sistema planetario representado por sus curvas de nivel y los puntos de Lagrange encontrados.}
 \label{superficie, cn, plane s-j}
 \end{figure}
