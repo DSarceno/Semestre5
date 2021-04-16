@@ -322,36 +322,94 @@ A esto se le conoce como una ecuación diferencial parcial.
 Antes de discutir los métodos de solución, es importante estudiar de donde vienen y como surgieron. Estas surgieron de problemas geométricos, las identidades geométricas pueden ser representadas por medio de soluciones de ecuaciones diferenciales parciales. Muchas relaciones pueden ser escritas en la forma:
 	$$F(x,y,z,a,b) = 0$$
 De modo que, al derivarlas se obtiene:
-	$$\pdv{F}{x} + \pdv{F}{z} = 0 \quad \quad \quad \pdv{F}{y} + \pdv{F}{z} = 0$$
+	$$\pdv{F}{x} + p\pdv{F}{z} = 0 \quad \quad \quad \pdv{F}{y} + q\pdv{F}{z} = 0$$
 
-Lo que implica que una supeficie, o sistema de superficies, da inicio a las EDP de primer orden.
+Lo que implica que una supeficie, o sistema de superficies, da inicio a las EDP de primer orden. Eliminando $a$ y $b$ llegando a una relación del tipo $f(x,y,z,p,q) = 0$. Partiendo de una función general
+	$$F(u,v) = 0,$$
+donde $u$ y $v$, son funciones de las tres variables $x,y,z$. Derivando la ecuación propuesta respecto a $x$ e $y$, se obtienen las siguientes ecuaciones
+\begin{align*}
+	\pdv{F}{u} \qty[\pdv{u}{x} + p\pdv{u}{z}] + \pdv{F}{v} \qty[\pdv{v}{x} + p \pdv{v}{z}] &= 0 \\
+	\pdv{F}{u} \qty[\pdv{u}{y} + q\pdv{u}{z}] + \pdv{F}{v} \qty[\pdv{v}{y} + q\pdv{v}{z}] &= 0.
+\end{align*}
+
+Eliminando $\pdv{F}{u}$ y $\pdv{F}{v}$, se obtiene
+$$p\pdv{(u,v)}{(y,z)} + q\pdv{(u,v)}{(z,x)} = \pdv{(u,v)}{(x,y)},$$
+que es una EDP del tipo $f(x,y,z,p,q) = 0$.
+
+\subsection{Problemas}
 
 
 
 \section{Problema de Cauchy para Ecuaciones de Primer Orden}
+En la teoría de ecuaciones diferenciales es necesario tener un teorema que confirme la existencia de la solución para una EDP; además, de otro que implique la unicidad de dicha solución. Para las EDPs de primer orden se tienen definidas las condiciones para que se de esto, en el \textit{problema de Cauchy}. \\
+
+\textit{Problema de Cauchy:} \\
+\begin{itemize}
+	\item Si $x_o (\mu)$, $y_o (\mu)$ y $z_o (\mu)$ son funciones tales que sus primeras derivadas con continuas en el intervalo definido por $\mu _1 < \mu < \mu _2$.
+	\item Y si $F(x,y,z,p,q)$ es una función continua de $x,y,z,p,q$ en una región específica $U$ en el espacio $xyzpq$, entonces, es necesario establecer la exisstencia de una función $\phi (x,y)$ con las siguientes propiedades
+	\begin{enumerate}
+		\item $\phi (x,y)$ y sus primeras derivadas parciales son continuas en $R$.
+		\item Para todos los valores de $x$ y $y$ en la región en la que las primeras derivadas son continuas, el punto $(x,y,\phi (x,y),\phi _x (x,y), \phi _y (x,y))$ esta en $U$ y 
+		$$F(x,y,\phi (x,y),\phi _x (x,y), \phi _y (x,y)) = 0.$$
+		\item para todo $\mu$ en el intervalo, el punto $(x_o (\mu), y_o (\mu))$ esta en $R$, y 
+		$$\phi (x_o (\mu), y_o (\mu)) = z_o$$
+	\end{enumerate}
+\end{itemize}
+
+Lo que se espera demostrar geométricamente es que existe una superficie $\phi (x,y) = z$ que pasa por la curva $\Gamma$ cuyas ecuaciones paramétricas son
+	$$x = x_o (\mu) \quad \quad y = y_o (\mu) \quad \quad z = z_o (\mu).$$	
+
+No se demostrará este teorema de existencia, se creerá por fé. Teorema de Sonia Kowalewski.
+
+\begin{teorema}
+	Si $g(y)$ y todas sus derivadas son continuas para $\abs{y - y_o} < \delta$, si $x_o$ es un número dado y $z_o = g(y_o),q_o = g'(y_o)$, y si $f(x,y,z,q)$ y  todas sus derivadas parciales son continuas en una región definida por
+	$$\abs{x - x_o} < \delta \quad \quad \abs{y - y_o} < \delta \quad \quad \abs{z - z_o} < \delta ,$$
+existe una única función $\phi (x,y)$ tal que:
+\begin{enumerate}[a)]
+	\item $\phi (x,y)$ y todas sus derivadas parciales continuas en una región $R$ definida por $\abs{x - x_o} < \delta _1$, $\abs{y - y_o} < \delta _2$.
+	\item Para todo $(x,y)$ en $R$, $z = \phi (x,y)$ es una solución de la ecuación
+	$$\pdv{z}{x} = f\qty(x,y,z,\pdv{z}{y})$$
+	\item Para todos los valores de $y$ en el intervalo $\abs{y - y_o} < \delta _1$, $\phi (x_o ,y) = g(y)$.
+\end{enumerate}
+\end{teorema}
 
 \section{Ecuaciones Lineales de Primer Orden}
 
+Ya se discutieron ecuaciones lineales de la forma
+	$$P\pdv{z}{x} + Q\pdv{z}{y} = R,$$
+donde $P,Q,R$ son funciones de $x,y,z$. El precursor en esta teoreia fue lagrange, de modo que es comunmente llamada a la ecuación anterior, la ecuación de Lagrange. Generalizado a $n$ variables independientes
+	$$X_1 \pdv{f}{x_1} + \cdots + X_n \pdv{f}{x_n} = Y,$$
+donde cada $X_i$ e $Y$ son funciones de $n$ variables independientes $x_i$, $i = 0,\ldots ,n$.
+
+\begin{teorema}
+	La solución general de la EDP
+		$$P\pdv{z}{x} + Q\pdv{z}{y} = R,$$
+	es
+		$$F(u,v) = 0,$$
+	donde $F$ es una solución arbitraria y $u(x,y,z) = c_1$ y $v(x,y,z) = c_2$ forman solución a las ecuaciones
+		$$\frac{\dd{x}}{P} = \frac{\dd{y}}{Q} = \frac{\dd{z}}{R}.$$
+\end{teorema}
+
+La generalización del teorema es:
+
+\begin{teorema}
+	Si $u_i (x_1 ,x_2 ,\ldots x_n ,z) = c_i$ para $i = 1 ,\ldots ,n$ son soluciones independientes de las ecuaciones
+	$$\frac{\dd{x_1}}{P_1} = \cdots = \frac{\dd{x_n}}{P_n} = \frac{\dd{z}}{R},$$
+	entonces la relación $\Phi (u_1 ,\ldots , u_n) = 0$, en donde la función $\Phi$ es arbitraria, es una solución general de la EDP lineal
+	$$P_1 \pdv{z}{x_1} + \cdots + P_n \pdv{z}{x_n} = R.$$
+\end{teorema}
+
+
 \section{Superficies Integrales}
 
-\section{Superficies Ortogonales a un Sistema de Superficies}
-
-\section{Ecuaciones Diferenciales Parciales No Lineales}
-
-\section{Método de Características de Cauchy}
-
-\section{Sistemas Compatibles de Ecuaciones de Primer Orden}
-
-\section{Método de Charpit}
-
-\section{Tipos Especiales de Ecuaciones de Primer Orden}
-
-\section{Soluciones Satisfactorias a Condiciones}
-
-\section{Método de Jacobi}
-
-\section{Aplicaciones}
-
+De lo visto en la sección anterior, suponemos que de la ecuación se encontraron dos soluciones
+	$$f(x,y,z) = c_1, \quad \quad v(x,y,z) = c_2.$$
+Además, se sabe que cualquier solución de una ecuación lineal es de la forma
+	$$F(u,v) = 0,$$
+el problema a tratar es encontrar la función $F$ para casos especiales. Para encontrar la superficie integral que pase por la curva $\Gamma$ cuyas ecuaciones paramétricas son
+	$$x = x(t) \quad y = y(t) \quad z = z(t),$$ 
+entonces, la solución partícular debe cumplir
+	$$u(x(t),y(t),z(t)), \quad \quad v(x(t),y(t),z(t)).$$
 
 
 \newpage
@@ -361,25 +419,42 @@ Lo que implica que una supeficie, o sistema de superficies, da inicio a las EDP 
 
 \section{Origen de Ecuaciones de Segundo Orden}
 
-\section{Ecuaciones de Segundo Orden en Física}
+Suponiendo una función del tipo
+	$$z = f(u) + g(v) + w$$
+las derivadas son de la forma
+	
+\begin{align*}
+	p &= \pdv{z}{x} = f'(u) u_x + g'(v) v_x + w_x \\
+	q &= \pdv{z}{y} = f'(u) u_y + g'(v) v_y + w_y \\
+	r &= \pdv[2]{z}{x} = f''(u) u_x ^2 + g''(v) v_x ^2 + f'(u) u_{xx} g'(v) v_{xx} + w_{xx} \\
+	s &= \pdv[2]{z}{x}{y} = f''(u) u_x u_y + g''(v) v_x u_y + f'(u) u_{xy} + g'(v) v_{xy} + w_{xy} \\
+	t &= \pdv[2]{z}{y} = f''(u) u_y ^2 + g''(v) v_y ^2 + f'(u) u_{yy} g'(v) v_{yy} + w_{yy}
+\end{align*}
 
-\section{Ecuaciones de Orden Superior en Física}
+
+eliminando las perimeras y segundas derivadas de las funciones $f$ y $g$, se tiene:
+\begin{align*}
+	\left|\begin{array}{ccccc}
+		p-w_x & u_x & v_x & 0 & 0 \\
+		q-w_y & u_y & v_y & 0 & 0 \\
+		r-w_{xx} & u_{xx} & v_{xx}  & u_x ^2 & v_x ^2 \\
+		s-w_{xy} & u_{xy} & v_{xy}  & u_x u_y & v_x v_y \\
+		t-w_{yy} & u_{yy} & v_{yy}  & u_y ^2 & v_y ^2 
+	\end{array}\right|
+	= 0,
+\end{align*}
+
+expandiendo el determinante en términos de la primera columna, se tiene la siguiente relación
+	$$Rr + Ss + Tt + Pp + Q = W.$$
+Donde las letras mayusculas representan funciones de $x,y,z$.
 
 \section{Ecuaciones Diferenciales Parciales Lineales con Coeficientes Constantes}
 
 \section{Ecuaciones con Coeficientes Variables}
 
-\section{Curvas Características de Ecuaciones de Segundo Orden}
-
-\section{Características de Ecuaciones en Tres Variables}
-
-\section{Solución de Ecuaciones Hiperbólicas Lineales}
-
 \section{Separación de Variables}
 
-\section{Método de Transformaciones Integrales}
 
-\section{Ecuaciones No Lineales de Segundo Orden}
 
 
 
