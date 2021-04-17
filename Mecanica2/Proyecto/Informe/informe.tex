@@ -1,12 +1,5 @@
 \input{Preamble_general.tex}
 
-% COMPILAR USANDO
-
-% pdflatex template
-% bibtex template
-% pdflatex template
-% pdflatex template
-
 
 
 
@@ -372,7 +365,9 @@ Las tablas de resultados para cada los $5$ puntos de Lagrange de cada sistema, e
 \section{Discución de Resultados}
 \label{sec:discucion}
 
-Los resultados obtenidos con cada uno de los métodos y lenguajes utilizados se sustentan entre sí. El método gráfico, el cual es el más impreciso, también dió valores acordes a lo esperado por medio de las soluciones numéricas. Sin embargo, para sistemas con mayor diferencia en ordenes de magnitud entre las masas, el método gráfico dejaría de ser viable para el calculo de puntos de lagrange, puesto que las imagenes no tienen una resolución ni presición infinita.
+Los resultados obtenidos con cada uno de los métodos y lenguajes utilizados se sustentan entre sí. El método gráfico, el cual es el más impreciso, también dió valores acordes a lo esperado por medio de las soluciones numéricas. Sin embargo, para sistemas con mayor diferencia en ordenes de magnitud entre las masas, el método gráfico dejaría de ser viable para el calculo de puntos de lagrange, puesto que las imagenes no tienen una resolución ni presición infinita. \\
+
+Además, las soluciones numéricas devuelven más puntos de los que se espera, esto es normal puesto que los puntos extras difieren de manera insignificante ($\approx 10^{-6}$, revisar notebook en el repositorio\footnote{Repositorio: \href{https://github.com/DSarceno/Semestre5/tree/main/Mecanica2/Proyecto/Informe}{\textit{GitHub}}}). Asimismo, los métodos numericos pueden ser suceptibles a pequeñas variaciones, es decir, al tratarse de una región en la que se encuentra el punto máximo, puntos muy cercanos a este, puede que el mismo método también los considere máximos. Como se mencionó, la diferencia es insignificante, por lo que el método numérico devuelve $5$ puntos de Lagrange.
 
 
 \section{Conclusiones}
@@ -386,7 +381,7 @@ Los resultados obtenidos, para el modelo explicado en la sección \ref{sec:Punto
 
 \subsection{Códigos \textit{Gnuplot}}
 Los códigos creados para el análisis bajo el lenguaje de \textit{Gnuplot} son en principio iguales para cada sistema, asi que solo se mostrarán para cada tipo de gráfica un único código\footnote{Cada código se ejecuta en terminal desde la carpeta en la que se encuentre el archivo con la siguiente línea: \\
-\texttt{gnuplot <filename.gp>}}.
+\texttt{gnuplot <filename.gp>}}. \vspace*{0.2cm}
 
 \begin{multicols}{2}
 \subsubsection{Superficie de Potencial}
@@ -507,13 +502,11 @@ plot ( xi2/sqrt((x - xi1)**2 + y**2) - xi1/sqrt((x - xi2)**2 + y**2) - 0.5*(x**2
 
 
 \subsection{Código \textit{Mathematica}}
-La implementación en el lenguaje de \textit{Mathematica} fue realizada en un Notebook, por estética del informe no se colocaron imagenes del mismo; sin embargo, los códigos utilzados y el notebook de \textit{Mathematica} estan disponibles en un repositorio de \textit{GitHub}\footnote{Repositorio: \href{https://github.com/DSarceno/Semestre5/tree/main/Mecanica2/Proyecto/Informe}{\textit{GitHub}}}.
+La implementación en el lenguaje de \textit{Mathematica} fue realizada en un Notebook, por estética del informe no se colocaron imagenes del mismo; sin embargo, los códigos utilzados y el notebook de \textit{Mathematica} estan disponibles en un repositorio de \textit{GitHub}, revisar pie de página de \ref{sec:discucion}.
 
 %\section*{Agradecimientos}
 %\label{sec:agradecimientos}
-%
-%Se agradece a la ECFM-USAC por el uso del clúster Euclides donde se realizaron
-%las pruebas de rendimiento reportadas en este trabajo.
+
 
 % References
 \nocite{*}
