@@ -6,7 +6,9 @@
 % PROBLEMA 1
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		
+		Dividiendo en casos, se toma un $\abs{\varepsilon} > 0, \, \varepsilon \in \C$ cualquiera. Haciendolo muy pequeño se tiene que
+			$$f(a) < \abs{\varepsilon},$$
+		como es para cualquier valor, entonces $f(a) = 0$. Ahora, tomando a $(a) = f(z)$ para todo $z \in G$, implica que $f(z)$ tiene un máximo en $\C$, por lo que esta acotada. Utilizando el teorema de Liouville, implica que la función $f(z)$ es constante.
 	\end{problem}
 \end{mdframed}
 
@@ -28,8 +30,11 @@
 		de esto, sustituyendo la integral
 			$$\int_{0} ^{2\pi} e^{\sin{n\theta}} \qty[\cos{(-\cos{n\theta})} + i\sin{(-\cos{n\theta})}] \qty[-\sin{\theta} + i\cos{\theta}] \dd{z}.$$
 		Separando parte real y parte imaginaria, y utilizando identidades trigonométricas,
-			$$-\int _{0} ^{2\pi} e^{\sin{\theta}} \qty[ \sin{\theta} \cos{(-\cos{n\theta})} + \cos{\theta} \sin{(-\cos{n\theta})} ] \dd{\theta} + i\int _{0} ^{2\pi} e^{\sin{\theta}} \qty[\cos{\theta} \cos{(-\cos{n\theta})} - \sin{\theta} \sin{(-\cos{n\theta})}] \dd{\theta}$$
-			$$-\int _{0} ^{2\pi} e^{\sin{\theta}} \sin{(\theta - \cos{n\theta})} \dd{\theta} + i\int _{0} ^{2\pi} e^{\sin{\theta}} \cos{(\theta - \cos{n\theta})} \dd{\theta}.$$
+		\begin{align*}
+			&-\int _{0} ^{2\pi} e^{\sin{\theta}} \qty[ \sin{\theta} \cos{(-\cos{n\theta})} + \cos{\theta} \sin{(-\cos{n\theta})} ] \dd{\theta} \\
+			&+ i\int _{0} ^{2\pi} e^{\sin{\theta}} \qty[\cos{\theta} \cos{(-\cos{n\theta})} - \sin{\theta} \sin{(-\cos{n\theta})}] \dd{\theta}
+		\end{align*}
+			$$ = -\int _{0} ^{2\pi} e^{\sin{\theta}} \sin{(\theta - \cos{n\theta})} \dd{\theta} + i\int _{0} ^{2\pi} e^{\sin{\theta}} \cos{(\theta - \cos{n\theta})} \dd{\theta}.$$
 		Además, como la función $e^{-iz^n}$ es claro que es holomorfa en el circulo unitario; entonces, por Cauchy, la integral es cero
 			$$\int _{\abs{z} = 1} e^{-iz^n} \dd{z} = 0.$$
 		Por lo que, la parte real y parte imaginaria de la integral deben de ser cero, lo que demuestra que las integrales propuestas son cero.		
@@ -187,7 +192,15 @@
 % PROBLEMA 1
 \begin{mdframed}[style = warning]
 	\begin{problem}
-		Como $f$ es holomorfa en $\gamma$; además, es acotada por $M = 1$ en dicha región. Por la desigualdad de cauchy
+		Como $\gamma$ es una curva cerrada simple, utilizando la primera fórmula de cauchy, se tiene que
+			$$f'(0) = \frac{1!}{2\pi i} \int _\gamma \frac{f(z)}{z^2} \dd{z}.$$
+		Encontrando el módulo de ambos lados; además, sabiendo que $\abs{z} < 1$, se tiene
+			$$\abs{f'(0)} = \abs{\frac{1}{2\pi i}} \abs{\int _\gamma \frac{f(z)}{z^2} \dd{z}} < \frac{1}{2\pi} \abs{\int_\gamma f(z) \dd{z}},$$
+		por desigualdad $ML$
+			$$\frac{1}{2\pi} \abs{\int_\gamma f(z) \dd{z}} \leq \frac{1}{2\pi} (M = 1)*(L = 2\pi) = 1.$$
+		Por lo que
+			$$\abs{f'(0)} \leq 1.$$
+		$\QED$
 	\end{problem}
 \end{mdframed}
 
