@@ -1142,21 +1142,50 @@ De modo que, el teorema quedaría
 
 
 
+\dsnote{Faltan Clases del $19/04$ y $20/04$}
+
+\begin{teorema} \it
+	Si $p(x)$ es un polinomio de grado $m$ y $q(x)$ es un polinomio de grado $n$, con $m \geq n + 2$, entonces
+	$$\int _\gamma \frac{q(x)}{p(x)} = 0$$
+	donde $\gamma$ es la parte superior del círculo $\abs{z} = R$.
+\end{teorema}
 
 
 
 
+\subsection{Transformadas de Fourier}
+
+Recordando las transformadas de Laplace
+$$\mathcal{L} = \{ f(t) \} = \int _{0} ^\infty f(t) e^{-st} \dd{t},$$
+
+para la transformada de fourier, se toman los números complejos y se el núcleo de la transformada cambia, de modo que
+
+$$\mathcal{F} \{ f(t) \} = \int _{-\infty} ^\infty f(t) e^{i\omega t} \dd{t}.$$
+
+Esto nos da pie, para calcular integrales de la forma
+$$\int _{-\infty} ^\infty f(x) \cos{\alpha x} \dd{x}.$$
+
+\begin{teorema}
+	Sea $f(z) = \frac{p(z)}{q(z)}$ una función racional con $\text{deg} p(z) \leq \text{deg} q(z) - 1$. Si $C_R$ es el contorno semicircular $z = Re^{i\theta}$, $0\leq \theta \leq \pi$, $\alpha > 0$, entonces
+	$$\int _{C_R} f(z) e^{i\alpha z} \dd{z} \xrightarrow[]{R\to 0}0$$
+\end{teorema}
 
 
+\begin{ejemplo} \tt
+	Encontrar
+		$$V.P. \, \int _{0} ^\infty \frac{x \sin{x}}{x^2 + 9} \dd{x},$$
+	transformando la integral a
+		$$ = \frac{1}{2} \int _{-\infty} ^\infty \frac{x\sin{x}}{x^2 + 9} \dd{x}.$$
+	Tomando la integral
+		$$\int _{C_R} \frac{z}{z^2 + 9} e^{iz} \dd{z} + \int _{-R} ^R \frac{x}{x^2 + 9} \dd{x}$$
+		$$2\pi i\text{Res} (f(z):3i) = 2\pi i \frac{e^{-3}}{2},$$
+	por el teorema anterior se tiene que
+		$$V.P. \, \int _{0} ^\infty \frac{x}{x^2 + 9} e^{ix} \dd{x} = \pi i e^{-3},$$
+	separando en parte real y compleja
+		$$V.P. \, \int _{0} ^\infty \frac{x \sin{x}}{x^2 + 9} \dd{x}  = \pi e^{-3}.$$
+	
+\end{ejemplo}
 
 
-
-
-
-
-
-
-
-
-
+Cuando la singularidad esta sobre el eje real, se crea un pequeño semicirculo, excluyendo a la singularidad. Haciendo tender el radio del nuevo semicirculo a cero.
 
