@@ -1100,7 +1100,7 @@ Para ejemplificar de mejor manera la implicación de la definición dada:
 con $g(z_o) \neq 0$.
 \end{definicion}
 
-\subsubsection{Residuos}
+\subsection{Residuos}
 
 \begin{definicion}
 	Sea $z_o$ una singularidad aislada de $f(z)$, entonces el residuo de $f$ en $z_o$ es el coeficiente $a_{-1}$ de la serie de Laurent de $f$ centrada en $z_o$.
@@ -1142,7 +1142,48 @@ De modo que, el teorema quedaría
 
 
 
-\dsnote{Faltan Clases del $19/04$ y $20/04$}
+
+
+
+\subsubsection{Teorema de Residuos de Cauchy}
+Dadas todas las herramientas de integración proporcionadas, aún existen integrales que no son posibles de realizar. Entonces, tomando
+	$$\int _{\abs{z} = r} \frac{1}{z - z_o} \dd{z} = 2\pi i,$$
+ahora, tomando
+	$$\int _{\abs{z} = r} \frac{1}{(z - z_o)^n} \dd{z} = 0.$$
+Entonces, teniendo una función escrita en su respectiva serie de Laurent
+	$$f(z) = \cdots + a_{-1} (z - z_o)^{-1} + a_o + a_1 (z - z_o) + \cdots ,$$
+lo que, al momento de integrar sobre una curva $C$, se tiene
+	$$\int_C f(z) \dd{z} = \int _C \cdots + a_{-1} (z - z_o)^{-1} + a_o + a_1 (z - z_o) + \cdots \dd{z}.$$
+Separando la integral en una sumatoria de integrales, entonces, gracias al teorema de Cauchy y a las herramientas dadas, únicamente queda el término 
+	$$\int _C \frac{a_{-1}}{z - z_o} \dd{z} = 2\pi i a_{-1}.$$
+Al $a_{-1}$, como ya se mencionó, es el residuo y de ahí viene el nombre.
+
+\begin{teorema} \it
+	Sea $C$ una curva cerrada simple y $f(z)$ holomorfa en $C$ excepto en una cantidad finita de singularidades aisladas $z_1,z_2,\ldots z_n$, entonces
+		$$\int _C f(z) \dd{z} = \sum _{i=1} ^n 2\pi i \text{Res} \, (f:z_i).$$
+\end{teorema}
+	
+Este teorema ya esta demostrado, gracias al teorema de deformación.
+
+
+
+
+\section{Extras}
+
+\subparagraph{Cálculo de Integrales Reales}
+Esto puede parecer innecesario, pero, ya con todas las propiedades y teoremas aprendidos, se pueden calcular integrales conocidas sobre los reales, mediante la utilización de los complejos. \\
+
+Por ejemplo, realizando las susituciones 
+	$$z = e^{i\theta}\quad \quad \dd{\theta} = -i\qty(\frac{1}{z}) \dd{z},$$
+para reescribir las funciones trigonométricas como
+	$$\cos{\theta} = \frac{z + \frac{1}{z}}{2} \quad \quad \sin{\theta} = \frac{z - \frac{1}{z}}{2i}.$$
+Obviamente, sobre el círuclo unitario. \\
+
+Además, las integrales impropias también pueden ser resueltas utilizando propiedades de los complejos. De ahí viene el valor principal de cauchy
+
+	$$V.P. \int _{-\infty} ^{\infty} f(x) \dd{x} = \lim _{R\to \infty} \int _{-R} ^R f(x) \dd{x}$$
+
+
 
 \begin{teorema} \it
 	Si $p(x)$ es un polinomio de grado $m$ y $q(x)$ es un polinomio de grado $n$, con $m \geq n + 2$, entonces
