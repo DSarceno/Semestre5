@@ -1,0 +1,28 @@
+\section{Números}
+Para los números se arma por partes, tomando el conjunto de los dígitos
+	$$d = [0,9] = {0,1,2,\ldots ,9},$$
+se arman los números enteros con la clausura positiva, para asegurar que entre al menos un dígito, parte entera
+	$$d^+;$$
+ahora, tomando la parte de los reales, es necesario agregar el punto decimal y otra sucesión de dígitos que contenga al menos a uno de ellos
+	$$d^+ \qty(.d^+ |d^*),$$
+la primera parte del condicional da los reales y la segunda parte es simplemente para continuar con el número de entero. Para los complejos solo se agranda la expresión sumandole una igual con la unidad imaginaria añadida
+	$$d^+ \qty(.d^+ |d^*) \qty(\lambda | + d^+ \qty(.d^+ |d^*)i)$$
+
+
+\section{Fecha}
+Para los tres formatos de fecha, se tomarán los intevalos de enteros:
+\begin{align*}
+	\left\{\begin{array}{c}
+		d \in [1,31] \\
+		m \in [1,12] \\
+		a_1 \in [00,99] \\
+		a_2 \in [1000,9999]
+	\end{array}\right.
+\end{align*}
+Dados los formatos, no se tomarán años, anteriores a los $1000$ d.c. ni posteriores a los $1000$ a.c. Dado esto, la expresión regular es
+\begin{align*}
+	\Aboxed{d\qty(/m/(a_1|a_2)|-m-(a_1|a_2))}
+\end{align*}
+Se coloca de este modo, para no combinar formatos, es decir, que la fecha $17/12-2000$ no sea aceptada.
+
+\section{Palabras Clave}
