@@ -2,7 +2,9 @@
 #    lexema_numeros.py
 #    Diego Sarceño (dsarceno68@gmail.com)
 
-#    Implementación de expresión regular.
+#    Lectura de documento y representación de ciertas palabras (numeros enteros,
+#    reales, complejos y notación científica; asi como, fechas y palabras
+#    clave) se propone un texto ejemplo del lorem ipsum modificado.
 
 #    Codificación del texto: UTF8
 #    Compiladores probados: Python (Ubuntu 20.04 Linux) 3.8.5
@@ -29,54 +31,115 @@
 
 # PROGRAM
 
-class Analizador:
+# FALTA DARLE FORMATO DE CLASE!!!!
+import re # librería para el manejo de expresiones regulares.
+texto = 'Lorem ipsum dolor 55 sit amet, consectetur adipiscing elit. Aenean \
+ interdum bibendum turpis, at vehicula dolor 1.26 scelerisque non. Integer \
+ blandit nisi dui, 65 quis congue dui posuere a 11/09/2000. Vivamus at metus eu dolor \
+ vehicula 6.67E-11 tempus. Interdum 1.5-60i et 5236.6548 malesuada 5.6+9.025i fames ac ante 15/6/1999 ipsum primis in \
+ faucibus. Nam malesuada 14 est 6.642 eget nibh tristique 2.36E8 ultrices 23-05-99. Pero se me jodio el carro el día 6/8/22'
 
-    def __init__(self):
-        self.letra_actual=''
-        self.estado_actual=0
-        self.valor_lexema=''
-        self.aceptacion = False
 
-    def switch(self, estado):
-        self.estados = {
-        0: self.estado_cero,
-        1: self.estado_uno,
-        2: self.estado_dos,
-        }
-        func = self.estados.get(estado, lambda: 'No es un caracter válido' )
-        return func()
 
-    def estado_cero(self):
-        if int(self.letra_actual) > 0:
-            self.estado_actual = 2
-            self.valor_lexema = self.valor_lexema + self.letra_actual
-        elif int(self.letra_actual) == 0:
-            self.estado_actual = 1
-            self.valor_lexema = self.valor_lexema + self.letra_actual
-        else:
-            self.aceptacion = False
-            print('No hay transición disponible de estado 0 con ', self.letra_actual)
-            self.valor_lexema = ''
+# expresión regular para las fechas.
+fechas = '-?\d+[/-]\d+[/-]\d+\.?\d*'
+#fechas = '-?\d+\.?\d*[/-]?\d+\.?\d*[/-]?\d+\.?\d*'
 
-    def estado_uno(self):
-        print("He aceptado el lexema ", self.valor_lexema)
-        self.estado_actual = 0
-        self.aceptacion = True
 
-    def estado_dos(self):
-        if self.letra_actual.isdigit():
-            self.estado_actual = 2
-            self.valor_lexema = self.valor_lexema + self.letra_actual
-            self.aceptacion = True
-        else:
-            self.estado_actual = 0
-            print("He aceptado el lexema ", self.valor_lexema)
 
-    def analizar(self, cadena):
-        cadena = str(cadena)
-        for x in cadena:
-            self.letra_actual = x
-            self.switch(self.estado_actual)
-        print("He aceptado el lexema ", self.valor_lexema)
+texto_splitted = texto.split()
+texto_fechas = []
 
-Analizador().analizar('1224aq555')
+for i in range(len(texto_splitted)):
+    fecha = re.match(fechas, texto_splitted[i])
+    if fecha != None:
+        texto_fechas.append('<font color="orange">' + texto_splitted[i] + '</font>')
+    else:
+        texto_fechas.append(texto_splitted[i])
+
+
+#print(' '.join(texto_newnew))
+
+enteros = '^\d+$'
+
+texto_enteros = []
+for i in range(len(texto_fechas)):
+    entero = re.match(enteros,texto_fechas[i])
+    if entero != None:
+        texto_enteros.append('<font color="blue">' + texto_fechas[i] + '</font>')
+    else:
+        texto_enteros.append(texto_fechas[i])
+
+
+
+
+
+
+reales = '^\d+[.]\d+$'
+
+texto_reales = []
+for i in range(len(texto_enteros)):
+    real = re.match(reales,texto_enteros[i])
+    if real != None:
+        texto_reales.append('<font color="green">' + texto_enteros[i] + '</font>')
+    else:
+        texto_reales.append(texto_enteros[i])
+#print(' '.join(texto_reales))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cientificas = '^(\d+[.]\d+|\d+)[E]-?\d+$'
+texto_cientificas = []
+for i in range(len(texto_reales)):
+    cientific = re.match(cientificas,texto_reales[i])
+    if cientific != None:
+        texto_cientificas.append('<font color="purple">' + texto_reales[i] + '</font>')
+    else:
+        texto_cientificas.append(texto_reales[i])
+print(' '.join(texto_cientificas))
+
+
+
+
+
+
+
+
+
+
+
+
+
+complejos = '^(\d+[.]\d+|\d+)[+-](\d+[.]\d+|\d+)[i]$'
+texto_complejos = []
+for i in range(len(texto_cientificas)):
+    complex = re.match(complejos,texto_cientificas[i])
+    if complex != None:
+        texto_complejos.append('<font color="red">' + texto_cientificas[i] + '</font>')
+    else:
+        texto_complejos.append(texto_cientificas[i])
+print(' '.join(texto_complejos))
+
+
+
+
+
+
+
+
+
+
+
+# END
