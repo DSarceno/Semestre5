@@ -1,5 +1,5 @@
 #    2021-04-28
-#    lexema_numeros.py
+#    analizador.py
 #    Diego Sarceño (dsarceno68@gmail.com)
 
 #    Lectura de documento y representación de ciertas palabras (numeros enteros,
@@ -9,7 +9,7 @@
 #    Codificación del texto: UTF8
 #    Compiladores probados: Python (Ubuntu 20.04 Linux) 3.8.5
 #    Instrucciones de compilación: no requere nada mas
-#    python3 lexema_numeros.py
+#    python3 analizador.py
 
 #    Copyright (C) 2021
 #    D. R. Sarceño Ramírez
