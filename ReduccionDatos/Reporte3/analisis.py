@@ -1,5 +1,6 @@
-from math import sqrt, ceil
+from math import sqrt, ceil, floor
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 
@@ -75,12 +76,19 @@ for frec in frecuencias:
 print(suma_1, suma_2, suma_3, suma_4, suma_5, suma_6)
 
 
+sumas = [suma_1, suma_2, suma_3, suma_4, suma_5, suma_6]
 
 
+frec, extremos = np.histogram(datos, bins = (0,2.288,2.902,3.516,4.13,4.744,6))
 
 
+print(frec, extremos)
 
 
+plt.hist(datos, bins = (0,2.288,2.902,3.516,4.13,4.744,6))
+plt.xticks((0,2.288,2.902,3.516,4.13,4.744,6))
+plt.savefig('histo.pdf')
+plt.show()
 
 
 
