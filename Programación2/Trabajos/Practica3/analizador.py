@@ -52,7 +52,11 @@ class File_reading:
             file = open(name,'r')
             text = [line.split() for line in file]
             file.close()
-            self.texto = text[0]
+            if len(text) == 1:
+                self.texto = text[0]
+            else:
+                for i in range(len(text)):
+                    self.texto += text[i]
             return self.texto
         else:
             print('Tipo de archivo no aceptado.')
@@ -67,9 +71,12 @@ class File_writing:
             <meta charset="utf-8"> \n \
             <title>Prueba</title> \n \
           </head> \n \
-          <body> \n'
-        self.pie_html = '</body> \n \
-        </html>'
+          <body> \n \
+          <div style="text-align:center"> \n \
+          <h1>Texto Analizado</h1>'
+        self.pie_html = '</div> \n \
+            </body> \n \
+            </html>'
 
     def escritura(self,texto):
         if type(texto) == str:
@@ -85,11 +92,11 @@ class File_writing:
 class Analizador:
     def __init__(self):
         self.fechas = '-?\d+[/-]\d+[/-]\d+\.?\d*'
-        self.enteros = '^\d+$'
-        self.reales = '^\d+[.]\d+$'
-        self.cientificas = '^(\d+[.]\d+|\d+)[E]-?\d+($|.)'
-        self.complejos = '^(\d+[.]\d+|\d+)[+-](\d+[.]\d+|\d+)[i]$'
-        self.palabras_clave = []
+        self.enteros = '(^|.)\d+($|.)'
+        self.reales = '(^|.)\d+[.]\d+($|.)'
+        self.cientificas = '(^|.)(\d+[.]\d+|\d+)[E]-?\d+($|.)'
+        self.complejos = '^(\d+[.]\d+|\d+)[+-](\d+[.]\d+|\d+)[i]($|.)'
+        self.palabras_clave = '[,.\s]?(Teorema|Matemática|Matemático|Hilbert|Turing|Análisis|Euler|Fermat|Pitágoras|Autómata|Boole|Cantor|Perelman|Experimentación|Físico|Física|Astronomía|Mecánica|Newton|Einstein|Galileo|Modelo|Tesla|Dinámica|Partículas)[,.\s?]'
 
 
     def analizar(self,texto_splitted):
@@ -133,7 +140,15 @@ class Analizador:
                     texto_complejos.append('<font color="red">' + texto_cientificas[i] + '</font>')
                 else:
                     texto_complejos.append(texto_cientificas[i])
-            return ' '.join(texto_complejos)
+
+            texto_palabras_clave = []
+            for i in range(len(texto_complejos)):
+                keywords = re.match(self.palabras_clave,texto_complejos[i],re.IGNORECASE)
+                if keywords:
+                    texto_palabras_clave.append('<font color="gray">' + texto_complejos[i] + '</font>')
+                else:
+                    texto_palabras_clave.append(texto_complejos[i])
+            return ' '.join(texto_palabras_clave)
         else:
             print('Objeto no analizable')
             return
