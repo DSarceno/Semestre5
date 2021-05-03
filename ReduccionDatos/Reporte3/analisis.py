@@ -92,6 +92,13 @@ plt.show()
 
 
 
+expected = [4.56,27.18,68.26,68.56,27.18,4.56]
+chi = 0
+for i in range(len(expected)):
+    chi += ((sumas[i] - expected[i])**2)/expected[i]
+
+print(chi)
+
 
 
 
