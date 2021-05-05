@@ -2,14 +2,16 @@
 #    analizador.py
 #    Diego Sarceño (dsarceno68@gmail.com)
 
-#    Lectura de documento y representación de ciertas palabras (numeros enteros,
-#    reales, complejos y notación científica; asi como, fechas y palabras
-#    clave) se propone un texto ejemplo del lorem ipsum modificado.
+#    Clases de lectura, escritura (en HTML) de un archivo con extención
+#    '.p2', así como el análisis léxico de dicho documento; representando
+#    enteros, reales, complejos, números en notación científica, fechas y 
+#    palabras clave. El análisis se realiza en base al módulo de python
+#    "regex" el cual se basa en expresiones regulares.
 
 #    Codificación del texto: UTF8
 #    Compiladores probados: Python (Ubuntu 20.04 Linux) 3.8.5
-#    Instrucciones de compilación: no requere nada mas
-#    python3 analizador.py
+#    Instrucciones de importación: requiere módulo regex.
+#    from analizador import File_reading, File_writing, Analizador
 
 #    Copyright (C) 2021
 #    D. R. Sarceño Ramírez
@@ -33,17 +35,9 @@
 
 # FALTA DARLE FORMATO DE CLASE!!!!
 import re # librería para el manejo de expresiones regulares.
-texto = 'Lorem ipsum dolor 55 sit amet, consectetur adipiscing elit. Aenean \
- interdum bibendum turpis, at vehicula dolor 1.26 scelerisque non. Integer \
- blandit nisi dui, 65 quis congue dui posuere a 11/09/2000. Vivamus at metus eu dolor \
- vehicula 6.67E-11 tempus. Interdum 1.5-60i et 5236.6548 malesuada 5.6+9.025i fames ac ante 15/6/1999 ipsum primis in \
- faucibus. Nam malesuada 14 est 6.642 eget nibh tristique 2.36E8 ultrices 23-05-99. Pero se me jodio el carro el día 6/8/22'
 
 
-
-
-
-class File_reading:
+class File_reading: # Lectura de archivo de texto extensión ".p2"
     def __init__(self):
         self.texto = []
 
@@ -57,7 +51,7 @@ class File_reading:
             else:
                 for i in range(len(text)):
                     self.texto += text[i]
-            return self.texto
+            return self.texto		# Devuelve una lista con elementos como las palabras.
         else:
             print('Tipo de archivo no aceptado.')
 
@@ -65,6 +59,7 @@ class File_reading:
 class File_writing:
     def __init__(self):
         self.name = 'texto_analizado.html'
+        # escritura del archivo .html secillo
         self.encabezado_html = '<!DOCTYPE html> \n \
         <html lang="en" dir="ltr"> \n \
           <head> \n \
@@ -78,7 +73,7 @@ class File_writing:
             </body> \n \
             </html>'
 
-    def escritura(self,texto):
+    def escritura(self,texto): # recibe el texto analizado por medio de un string.
         if type(texto) == str:
             file = open(self.name,'w')
             file.write(self.encabezado_html)
@@ -91,24 +86,24 @@ class File_writing:
 
 class Analizador:
     def __init__(self):
-        self.fechas = '-?\d+[/-]\d+[/-]\d+\.?\d*'
-        self.enteros = '(^|.)\d+($|.)'
-        self.reales = '(^|.)\d+[.]\d+($|.)'
-        self.cientificas = '(^|.)(\d+[.]\d+|\d+)[E]-?\d+($|.)'
-        self.complejos = '^(\d+[.]\d+|\d+)[+-](\d+[.]\d+|\d+)[i]($|.)'
-        self.palabras_clave = '[,.\s]?(Teorema|Matemática|Matemático|Hilbert|Turing|Análisis|Euler|Fermat|Pitágoras|Autómata|Boole|Cantor|Perelman|Experimentación|Físico|Física|Astronomía|Mecánica|Newton|Einstein|Galileo|Modelo|Tesla|Dinámica|Partículas)[,.\s?]'
+        self.fechas = '-?\d+[/-]\d+[/-]\d+\.?\d*'	# fechas, aceptadas en ambos formatos, guiones y slash.
+        self.enteros = '(^|.)\d+($|.)'	# enteros.
+        self.reales = '(^|.)\d+[.]\d+($|.)'	# reales.
+        self.cientificas = '(^|.)(\d+[.]\d+|\d+)[E]-?\d+($|.)'	# notación científica aceptada con la "E"
+        self.complejos = '^(\d+[.]\d+|\d+)[+-](\d+[.]\d+|\d+)[i]($|.)'	# números complejos en notación z = a + bi
+        self.palabras_clave = '[,.\s]?(Teorema|Matemática|Matemático|Hilbert|Turing|Análisis|Euler|Fermat|Pitágoras|Autómata|Boole|Cantor|Perelman|Experimentación|Físico|Física|Astronomía|Mecánica|Newton|Einstein|Galileo|Modelo|Tesla|Dinámica|Partículas)[,.\s?]'	# Palabras clave a buscar relacionadas con física y matemática.
 
 
     def analizar(self,texto_splitted):
         if type(texto_splitted) == list:
-            texto_fechas = []
+            texto_fechas = [] # para almacenar el texto con fechas analizadas
             for i in range(len(texto_splitted)):
                 fecha = re.match(self.fechas, texto_splitted[i])
-                if fecha != None:
+                if fecha != None: # si encuentra una fecha le añade el código
                     texto_fechas.append('<font color="orange">' + texto_splitted[i] + '</font>')
-                else:
+                else: # sino, simplemente añade la palabra
                     texto_fechas.append(texto_splitted[i])
-
+		# esto se realiza para cada expresión regular.	
             texto_enteros = []
             for i in range(len(texto_fechas)):
                 entero = re.match(self.enteros,texto_fechas[i])
