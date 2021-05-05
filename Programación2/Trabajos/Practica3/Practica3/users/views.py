@@ -1,11 +1,33 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from usersManagement.models import usuarios # tabla en base de datos
-from usersManagement.forms import formularioRegistro, formularioLogin # formulario para crear html
+from users.models import usuarios # tabla en base de datos
+from users.forms import formularioRegistro, formularioLogin # formulario para crear html
 from django.core.mail import send_mail # envio de correos
 from django.conf import settings # datos para el envio de correos
 
 # Create your views here.
+
+encabezado = '<!DOCTYPE html> \n \
+<html lang="es" dir="ltr"> \n \
+  <head> \n \
+    <meta charset="utf-8"> \n \
+    <title>{name}</title> \n \
+  </head> \n \
+  <body> \n \
+    <div style="text-align:center"> \n \
+    <h1>Ingresar</h1> \n \
+    <h5>Datos Personales</h5> \n \
+    <form action='' method="POST">{% csrf_token %} \n \
+        <table style="margin: 0 auto;"> \n \
+            {{form.as_table}} \n \
+        </table> \n \
+        <input type = "submit" value = "Login"> \n \
+    </form> \n \
+    </div> \n \
+  </body> \n \
+</html>'
+
+
 
 def registro(request):
     if request.method == 'POST':
@@ -17,9 +39,9 @@ def registro(request):
                 return render(request, 'registro.html',{'form':formulario}) # regreso a la pagina de registro
             elif (infFormulario['password'] == infFormulario['confPassword']):
                 # ingreso de datos en base de datos
-                user = usuarios(email = infFormulario['email'], nickname = infFormulario['nickname'], nombre = infFormulario['nombre'], apellido = infFormulario['apellido'], sexo = infFormulario['sexo'], carrera = infFormulario['carrera'], password = infFormulario['password'])
-                user.save() # guardado
-
+                #user = usuarios(email = infFormulario['email'], nickname = infFormulario['nickname'],CUI = infFormulario['CUI'], carrera = infFormulario['carrera'], password = infFormulario['password'])
+                #user.save() # guardado
+                print('Ok')
                 # Envío de confirmacion de registro (PROBLEMAS CON GMAIL)
                 ### send_mail('Registro','Su registro ha sido aprobado correctamente.', 'dsarceno69@gmail.com',[infFormulario['email']],fail_silently = False,)
                 return redirect('/login/') # corroboracion de ingreso correcto
