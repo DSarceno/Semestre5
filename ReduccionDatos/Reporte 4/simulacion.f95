@@ -8,7 +8,7 @@
 !    Compiladores probados: GNU Fortran (Ubuntu 20.04 Linux) 9.3.0
 !    Instrucciones de compilación: no requiere nada más
 !    gfortran -Wall -pedantic -std=f95 -c -o simulacion.o simulacion.f95
-!    gfortran -o simulacion.x simulacion.o 
+!    gfortran -o simulacion.x simulacion.o
 
 !    Copyright (C) 2021
 !    D. R. Sarceño Ramírez
@@ -28,7 +28,7 @@
 !    You should have received a copy of the GNU General Public License
 !    along with this program.  If not, see
 !    <http://www.gnu.org/licenses/>.
-! 
+!
 ! Inicio
 PROGRAM simulacion
 IMPLICIT NONE
@@ -81,9 +81,9 @@ DO i = 1,n
   DO j = 1,10
     frecuencia = frecuencia + FLOOR(2*num(i,j))
   END DO
-  WRITE(99,*) frecuencia
+  WRITE(1,*) frecuencia
 END DO
- CLOSE(99)
+ CLOSE(1)
 
 
 

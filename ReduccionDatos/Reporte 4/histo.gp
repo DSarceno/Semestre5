@@ -37,20 +37,11 @@ set boxwidth binwidth
 #set yrange [-0.001:0.4]
 #set xtics ("0" -0.5, "2.288" 0.5, "2.9" 1.5, "3.516" 2.5, "4.13" 3.5, "4.744" 4.5, "5.5" 5.5)
 
+set xlabel "Número de Caras por Lanzamiento"
+set ylabel "Frecuencia"
+set title "Histograma de Frecuencias 10 Lanzamientos"
 
-#set xlabel "Intervalos"
-#set ylabel "Frecuencia Relativa"
-#set title "Histograma de Frecuencias"
-
-#X = 3.516
-#sigma = 0.614
-
-#phi(x) = (1/(sigma*sqrt(2*pi)))*exp(-(x - X)**2/2*sigma**2)
-
-#plot "dat.dat" with boxes lc "red" t "Medidos", "dat2.dat" with boxes lc "blue" t "Esperados"
-
-plot "300frec.dat" with boxes lc "red"
-plot sin(x)
+plot "10exp.dat" with boxes lc "red" t "Medido", "10sim.dat" with boxes lc "blue" t "Simulado"
 
 
 
@@ -58,8 +49,48 @@ plot sin(x)
 
 
 
+set xlabel "Número de Caras por Lanzamiento"
+set ylabel "Frecuencia"
+set title "Histograma de Frecuencias 50 Lanzamientos"
+
+plot "50exp.dat" with boxes lc "red" t "Medido", "50sim.dat" with boxes lc "blue" t "Simulado"
 
 
 
 
-! END PROGRAM histo
+
+
+
+
+
+
+set xlabel "Número de Caras por Lanzamiento"
+set ylabel "Frecuencia"
+set title "Histograma de Frecuencias 100 Lanzamientos"
+
+plot "100exp.dat" with boxes lc "red" t "Medido", "100sim.dat" with boxes lc "blue" t "Simulado"
+
+
+
+
+
+
+
+
+set xlabel "Número de Caras por Lanzamiento"
+set ylabel "Frecuencia"
+set title "Histograma de Frecuencias 300 Lanzamientos"
+
+plot "300exp.dat" with boxes lc "red" t "Medido", "300sim.dat" with boxes lc "blue" t "Simulado"
+
+
+
+
+
+
+
+
+
+
+
+# END PROGRAM histo
