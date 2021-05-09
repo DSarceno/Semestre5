@@ -29,6 +29,7 @@
 #    <http://www.gnu.org/licenses/>.
 # PROGRAM analisis
 import numpy as np
+from math import sqrt
 import sys
 
 name_input = sys.argv[1]
@@ -52,7 +53,17 @@ for num in frecuencias:
 file.close()
 
 
+sum_fn = 0
+for i in range(len(bins)):
+    sum_fn += bins[i]*frecuencias[i]
 
+prom = sum_fn/len(frec)
+
+sum_des = 0
+for i in range(len(bins)):
+    sum_des += frecuencias[i]*(bins[i] - prom)**2
+desvest = sqrt(sum_des/len(frec))
+print(prom, desvest)
 
 
 

@@ -33,9 +33,7 @@ set output "normal.pdf"
 
 binwidth = 0.8
 set boxwidth binwidth
-#set xrange [-1:6]
-#set yrange [-0.001:0.4]
-#set xtics ("0" -0.5, "2.288" 0.5, "2.9" 1.5, "3.516" 2.5, "4.13" 3.5, "4.744" 4.5, "5.5" 5.5)
+
 
 set xlabel "Número de Caras por Lanzamiento"
 set ylabel "Frecuencia"
