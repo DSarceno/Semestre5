@@ -1,4 +1,5 @@
 from django import forms
+from .models import files
 
 Carreras = [('Licenciatura en Matemática','Licenciatura en Matemática'), ('Licenciatura en Física','Licenciatura en Física')]
 
@@ -16,5 +17,13 @@ class formularioLogin(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(widget = forms.PasswordInput, label = 'Contraseña')
 
+'''
 class formularioUsuarios(forms.Form):
+    nickname = forms.CharField()
     file = forms.FileField()
+'''
+
+class filesForm(forms.ModelForm):
+    class Meta:
+        model = files
+        fields = ('nickname', 'file')

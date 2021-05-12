@@ -1,32 +1,102 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from users.models import usuarios # tabla en base de datos
-from users.forms import formularioRegistro, formularioLogin # formulario para crear html
+from users.forms import formularioRegistro, formularioLogin, filesForm # formulario para crear html
 from django.core.mail import send_mail # envio de correos
 from django.conf import settings # datos para el envio de correos
+from django.core.files.storage import FileSystemStorage
+import re
+#import analizador as a
 
 # Create your views here.
 
-encabezado = '<!DOCTYPE html> \n \
-<html lang="es" dir="ltr"> \n \
-  <head> \n \
-    <meta charset="utf-8"> \n \
-    <title>{name}</title> \n \
-  </head> \n \
-  <body> \n \
-    <div style="text-align:center"> \n \
-    <h1>Ingresar</h1> \n \
-    <h5>Datos Personales</h5> \n \
-    <form action='' method="POST">{% csrf_token %} \n \
-        <table style="margin: 0 auto;"> \n \
-            {{form.as_table}} \n \
-        </table> \n \
-        <input type = "submit" value = "Login"> \n \
-    </form> \n \
-    </div> \n \
-  </body> \n \
-</html>'
+##################################################
+class File_reading: # Lectura de archivo de texto extensión ".p2"
+    def __init__(self):
+        self.texto = []
 
+    def lectura(self,name):
+        if name[len(name) - 2:len(name)] == 'p2':
+            file = open(name,'r')
+            text = [line.split() for line in file]
+            file.close()
+            if len(text) == 1:
+                self.texto = text[0]
+            else:
+                for i in range(len(text)):
+                    self.texto += text[i]
+            return self.texto		# Devuelve una lista con elementos como las palabras.
+        else:
+            print('Tipo de archivo no aceptado.')
+
+
+class Analizador:
+    def __init__(self):
+        self.fechas = '-?\d+[/-]\d+[/-]\d+\.?\d*'	# fechas, aceptadas en ambos formatos, guiones y slash.
+        self.enteros = '^\d+$'	# enteros.
+        self.reales = '^\d+[.]\d+$'	# reales.
+        self.cientificas = '^(\d+[.]\d+|\d+)[E]-?\d+$'	# notación científica aceptada con la "E"
+        self.complejos = '^(\d+[.]\d+|\d+)[+-](\d+[.]\d+|\d+)[i]$'	# números complejos en notación z = a + bi
+        self.palabras_clave = '(^|.)(Teorema|Matemática|Matemático|Hilbert|Turing|Análisis|Euler|Fermat|Pitágoras|Autómata|Boole|Cantor|Perelman|Experimentación|Físico|Física|Astronomía|Mecánica|Newton|Einstein|Galileo|Modelo|Tesla|Dinámica|Partículas)($|.)'	# Palabras clave a buscar relacionadas con física y matemática.
+
+
+    def analizar(self,texto_splitted):
+        if type(texto_splitted) == list:
+            texto_fechas = [] # para almacenar el texto con fechas analizadas
+            for i in range(len(texto_splitted)):
+                fecha = re.match(self.fechas, texto_splitted[i])
+                if fecha != None: # si encuentra una fecha le añade el código
+                    texto_fechas.append('<font color="orange">' + texto_splitted[i] + '</font>')
+                else: # sino, simplemente añade la palabra
+                    texto_fechas.append(texto_splitted[i])
+		# esto se realiza para cada expresión regular.
+            texto_enteros = []
+            for i in range(len(texto_fechas)):
+                entero = re.match(self.enteros,texto_fechas[i])
+                if entero != None:
+                    texto_enteros.append('<font color="blue">' + texto_fechas[i] + '</font>')
+                else:
+                    texto_enteros.append(texto_fechas[i])
+
+            texto_reales = []
+            for i in range(len(texto_enteros)):
+                real = re.match(self.reales,texto_enteros[i])
+                if real != None:
+                    texto_reales.append('<font color="green">' + texto_enteros[i] + '</font>')
+                else:
+                    texto_reales.append(texto_enteros[i])
+
+            texto_cientificas = []
+            for i in range(len(texto_reales)):
+                cientific = re.match(self.cientificas,texto_reales[i])
+                if cientific != None:
+                    texto_cientificas.append('<font color="purple">' + texto_reales[i] + '</font>')
+                else:
+                    texto_cientificas.append(texto_reales[i])
+
+            texto_complejos = []
+            for i in range(len(texto_cientificas)):
+                complex = re.match(self.complejos,texto_cientificas[i])
+                if complex != None:
+                    texto_complejos.append('<font color="red">' + texto_cientificas[i] + '</font>')
+                else:
+                    texto_complejos.append(texto_cientificas[i])
+
+            texto_palabras_clave = []
+            for i in range(len(texto_complejos)):
+                keywords = re.match(self.palabras_clave,texto_complejos[i],re.IGNORECASE)
+                if keywords:
+                    texto_palabras_clave.append('<font color="gray">' + texto_complejos[i] + '</font>')
+                else:
+                    texto_palabras_clave.append(texto_complejos[i])
+            return ' '.join(texto_palabras_clave)
+        else:
+            print('Objeto no analizable')
+            return
+##################################################
+
+def inicio(request):
+    return render(request, 'inicio.html')
 
 
 def registro(request):
@@ -39,9 +109,10 @@ def registro(request):
                 return render(request, 'registro.html',{'form':formulario}) # regreso a la pagina de registro
             elif (infFormulario['password'] == infFormulario['confPassword']):
                 # ingreso de datos en base de datos
-                #user = usuarios(email = infFormulario['email'], nickname = infFormulario['nickname'],CUI = infFormulario['CUI'], carrera = infFormulario['carrera'], password = infFormulario['password'])
-                #user.save() # guardado
-                print('Ok')
+                user = usuarios(email = infFormulario['email'], nickname = infFormulario['nickname'],CUI = infFormulario['CUI'], carrera = infFormulario['carrera'], password = infFormulario['password'])
+                user.save() # guardado
+
+                #print('Ok')
                 # Envío de confirmacion de registro (PROBLEMAS CON GMAIL)
                 ### send_mail('Registro','Su registro ha sido aprobado correctamente.', 'dsarceno69@gmail.com',[infFormulario['email']],fail_silently = False,)
                 return redirect('/login/') # corroboracion de ingreso correcto
@@ -95,10 +166,83 @@ def login(request):
             infFormulario = formulario.cleaned_data # crear un diccionario con dicha informacion
             print(email_existence(infFormulario), nickname_existence(infFormulario), password_existence(infFormulario))
             if email_existence(infFormulario) and nickname_existence(infFormulario) and password_existence(infFormulario): # si ya existen
-                return render(request, 'gracias.html') # aceptacion del ingreso
+                nickname = infFormulario['nickname']
+                return redirect(f'/{nickname}/') # aceptacion del ingreso
             else:
                 return render(request, 'ingreso.html',{'form':formulario}) # regreso a la pagina de ingreso
 
     else:
         formulario = formularioLogin()
     return render(request, 'ingreso.html',{'form':formulario}) # al ingresar al servidor, lleva a la pagina de ingreso
+
+
+
+
+def upload(request, nickname):
+    if request.method == 'POST':
+        formulario = filesForm(request.POST, request.FILES)
+        if formulario.is_valid():
+            directory = '/home/diego/Documents/TrabajosSemestre5/Semestre5/Programación2/Trabajos/Practica3/Practica3/media/archivos/'
+
+            formulario.save()
+            infFormulario = formulario.cleaned_data
+            nickname = infFormulario['nickname']
+            uploaded_file = infFormulario['file']
+            file_name = directory + uploaded_file.name
+
+            readed = File_reading().lectura(file_name)
+            analyzed = Analizador().analizar(readed)
+
+            file_analizado = f'<!DOCTYPE html> \n \
+            <html lang="es" dir="ltr"> \n \
+              <head> \n \
+                <meta charset="utf-8"> \n \
+                <title>Analizado</title> \n \
+              </head> \n \
+              <body> \n \
+                <div style="text-align:center"> \n \
+                    <h1>Texto Analizado</h1> \n \
+                    <h5>Usuario {nickname}</h5> \n \
+                      <table style="margin: 0 auto;"> \n \
+                        {analyzed} \n \
+                      </table> \n \
+                    <a href="/{nickname}/">Subir Otro Archivo</a> \n \
+                </div> \n \
+              </body> \n \
+            </html>'
+            html_file = open('/home/diego/Documents/TrabajosSemestre5/Semestre5/Programación2/Trabajos/Practica3/Practica3/users/templates/texto_analizado_real.html','w')
+            html_file.write(file_analizado)
+            html_file.close()
+
+            return render(request, 'texto_analizado_real.html')
+    else:
+        formulario = filesForm()
+    return render(request, 'upload.html', {'form':formulario})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# END
