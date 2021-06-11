@@ -3,6 +3,7 @@
 
 #### Incluye
 
+- Resumenes y notas de clases.
 - Trabajos realizados y sus respectivos códigos en caso de ser utilizados.
 
 #### Códigos
